@@ -5,7 +5,8 @@
     "price": 99,
     "description": "Dark roasted beans for your delightful morning...",
     "category": ["Dark roast", "SML"], //SML stands for available sizes
-    "productImage": "assets/product_images/cafe1.png"
+    "productImage": "assets/product_images/cafe1.png",
+    "discount": "nodiscount",
   },
   {
     "productId": 2,
@@ -13,6 +14,8 @@
     "price": 99,
     "description": "Holiday stuff, good stuff...",
     "category": ["Light roast", "SL"],
-    "productImage": "assets/product_images/cafe2.png"
+    "productImage": "assets/product_images/cafe2.png",
+    "other": ["discount15"],
+    "discount" : "discount15"
   }
-]
+] 
