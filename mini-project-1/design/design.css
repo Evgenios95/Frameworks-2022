@@ -103,6 +103,7 @@ h6 {
     background-attachment: fixed;
     background-position: center center;
     background-image: linear-gradient(to bottom, #2A4D14, #774936);
+    min-height: 70vh;
 }
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
@@ -254,50 +255,6 @@ nav ul {
     padding-bottom: 2px;
     border-radius: 33px 33px 33px 33px;
     overflow: hidden; /*hide the extra corners*/
-}
-
-/*///////////////////////////////////////////////////////////////////*/
-/*///////////////////////////////////////////////////////////////////*/
-/*///////////////////////////////////////////////////////////////////*/
-/*/////////////////////////PageAdvantages////////////////////////////*/
-.websiteAdvantages {
-    padding-left: 160px;
-    padding-right: 160px;
-    margin-bottom: 0;
-}
-.websiteAdvantages li {
-    background-color: #cea75ee8;
-}
-
-.oneThirdLi {
-    display: block;
-    float: none;
-    width: auto;
-    border-radius: 13px;
-    background-color: #f7d4b394;
-}
-
-.oneThirdLi {
-    display: inline-block;
-    margin: 0 0 0 4.21052%;
-    list-style: none;
-    margin-bottom: 70px;
-    margin-top: 0px;
-    width: 27.52631%;
-}
-
-.fa-shield-alt,
-.fa-headset,
-.fa-shipping-fast {
-    color: #cc7511;
-    float: left;
-}
-
-.oneThirHeading {
-    color: rgb(58, 39, 3);
-}
-.orangeAhref {
-    color: #35210f;
 }
 
 /*///////////////////////////////////////////////////////////////////*/
