@@ -26,23 +26,23 @@
     <title>Coffeenator</title>
   </head>
   <body>
-    <div id="backgroundPicture">
-      <nav id="mosttopnav" class="mostTop"></nav>
-      <nav id="navMainer" class="navMain"></nav>
+    <div id="background-image">
+      <nav class="login-and-logo-section" class="login-and-logo-section"></nav>
+      <nav class="navigation-section"></nav>
 
       <div class="cartProducts-grid-container">
-        <div class="gridItem"></div>
-        <div class="basketTotalContainer"></div>
+        <div class="cart-products-wrapper"></div>
+        <div class="cart-total-wrapper"></div>
       </div>
     </div>
 
-    <footer class="coffeenator-footer"></footer>
+    <footer class="footer-section"></footer>
 
-    <script src="../utils/myScript.js"></script>
-    <script src="../utils/organization.js"></script>
-    <script src="../utils/productdetails.js"></script>
+    <script src="../utils/login.js"></script>
+    <script src="../utils/appendNavigationAndFooter.js"></script>
+    <script src="../utils/individual-product.js"></script>
     <script type="text/javascript">
-      document.body.onload = addTopNavFooter();
+      document.body.onload = appendNavigationAndFooter();
       document.body.onload = addUserName();
     </script>
     <script src="../utils/cart.js"></script>

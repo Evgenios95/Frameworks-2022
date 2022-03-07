@@ -25,22 +25,22 @@
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous"
     />
-    <title>Tradishional-GR</title>
+    <title>Coffeenator</title>
   </head>
 
   <body>
-    <div id="backgroundPicture">
-      <nav id="mosttopnav" class="mostTop"></nav>
-      <nav id="navMainer" class="navMain"></nav>
+    <div id="background-image">
+      <nav class="login-and-logo-section"></nav>
+      <nav class="navigation-section"></nav>
 
-      <h1 id="titlewebsite">Title of the page</h1>
-      <h3 id="titleSub">Subtitle of the page</h3>
+      <h1 class="website-title">Title of the page</h1>
+      <h3 class="website-subtitle">Subtitle of the page</h3>
 
       <!-- SLIDER WITH CAPTIONS -->
       <div
         class="carousel slide mb-5"
         data-ride="carousel"
-        id="tradishionalSlider"
+        id="coffeenator-slider"
       >
         <div class="carousel-inner">
           <ol class="carousel-indicators">
@@ -62,14 +62,14 @@
 
         <!-- controls -->
         <a
-          href="#tradishionalSlider"
+          href="#coffeenator-slider"
           class="carousel-control-prev"
           data-slide="prev"
         >
           <span class="carousel-control-prev-icon"></span>
         </a>
         <a
-          href="#tradishionalSlider"
+          href="#coffeenator-slider"
           class="carousel-control-next"
           data-slide="next"
         >
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <footer class="coffeenator-footer"></footer>
+    <footer class="footer-section"></footer>
 
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -86,10 +86,10 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../utils/myScript.js"></script>
-    <script src="../utils/organization.js"></script>
+    <script src="../utils/login.js"></script>
+    <script src="../utils/appendNavigationAndFooter.js"></script>
     <script text="text/javascript">
-      document.body.onload = addTopNavFooter();
+      document.body.onload = appendNavigationAndFooter();
       document.body.onload = addUserName();
     </script>
     <script src="../utils/cart.js"></script>

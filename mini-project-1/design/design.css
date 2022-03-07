@@ -12,15 +12,16 @@ h6 {
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
-/*////////////////Mosttop Navigation, logo, login////////////////////*/
-#loginNameMessage {
+/*////////////////login-and-logo-section Navigation, logo, login////////////////////*/
+.welcome-message {
   margin-right: 0%;
 }
+
 .login {
   display: flex;
 }
 
-.userInput {
+.user-input {
   padding: 0.4rem 0rem;
   font-size: 1.2rem;
   text-align: center;
@@ -31,24 +32,24 @@ h6 {
   border: 1px solid rgb(129, 75, 75);
 }
 
-.userInput:focus {
+.user-input:focus {
   outline: none;
   border: 1px solid #ccc;
 }
 
 /*Placeholder*/
-.userInput::placeholder {
+.user-input::placeholder {
   color: rgb(173, 111, 111);
 }
-.userInput:hover::placeholder {
+.user-input:hover::placeholder {
   color: rgba(173, 111, 111, 0.274);
 }
-.userInput:focus::placeholder {
+.user-input:focus::placeholder {
   color: transparent;
 }
 
 /*arrow*/
-.loginButton {
+.login-button {
   border: none;
   background: none;
   font-size: 2rem;
@@ -57,16 +58,17 @@ h6 {
   transition: all 0.3s;
 }
 
-.welcomeMessage {
+.welcome-message {
   font-size: 1.4rem;
   font-weight: 500;
   padding-top: 15px;
 }
-.logo {
+
+.coffeenator-logo {
   height: 5.1rem;
 }
 
-#mosttopnav {
+.login-and-logo-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,7 +97,7 @@ h6 {
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*////////////////////////////Background picture/////////////////////*/
-#backgroundPicture {
+#background-image {
   padding: 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -113,80 +115,80 @@ nav ul {
   text-align: center;
   background-color: #805f5f5b;
 }
-#navMainer ul {
+.navigation-section ul {
   text-transform: uppercase;
   margin: 0;
   padding: 0;
 }
-#navMainer ul ul {
+.navigation-section ul ul {
   position: absolute;
   width: 180px;
   text-transform: none;
 }
-#navMainer li {
+.navigation-section li {
   display: inline-block;
   position: relative;
   margin: 0 8px 0 0;
   padding: 0;
 }
-#navMainer li li {
+.navigation-section li li {
   width: 100%;
   margin: 0;
 }
-#navMainer li a {
+.navigation-section li a {
   display: block;
   padding: 3px 0;
 }
-#navMainer .drop {
+.navigation-section .drop {
   padding-left: 5px;
 }
-#navMainer li li a,
-#navMainer li li .drop {
+.navigation-section li li a,
+.navigation-section li li .drop {
   display: block;
   margin: 0;
   padding: 12px 9px;
 }
 /*Hide it, but drop when I hover over it*/
-#navMainer ul ul {
+.navigation-section ul ul {
   visibility: hidden;
   opacity: 0;
 }
-#navMainer ul li:hover > ul {
+.navigation-section ul li:hover > ul {
   visibility: visible;
   opacity: 1;
 }
-#navMainer li a {
+.navigation-section li a {
   color: inherit;
 }
-#navMainer .active a,
-#navMainer a:hover,
-#navMainer li:hover > a {
+.navigation-section .active a,
+.navigation-section a:hover,
+.navigation-section li:hover > a {
   color: #ece4dc;
   background-color: inherit;
 }
-#navMainer li li a,
-#navMainer .active li a {
+.navigation-section li li a,
+.navigation-section .active li a {
   color: #ffd240;
   background-color: rgb(0, 0, 0);
   border-color: rgba(206, 166, 166, 0.6);
   border-radius: 15%;
 }
-#navMainer li li:hover > a {
+.navigation-section li li:hover > a {
   color: inherit;
   background-color: #dc8e47;
 }
 
 /*Basket icon*/
-.myBasketButton {
+.cart-icon-wrapper {
   position: relative;
   cursor: pointer;
 }
-.spanBasketButton {
+.shopping-cart-icon {
   font-size: 2rem;
 }
 
 /*Basket number span*/
-.itemsToBasket {
+.items-in-cart-number {
   position: absolute;
   top: 0px;
   right: 10px;
@@ -198,7 +200,7 @@ nav ul {
 }
 
 /*Product categories*/
-.filterbtn {
+.filter-button {
   font-family: "Montserrat";
   border: 0.2px solid black;
   background-color: #cc7511;
@@ -208,7 +210,7 @@ nav ul {
   line-height: normal;
 }
 
-.filterbtn:hover {
+.filter-button:hover {
   background-color: #875215;
   color: #f3b977;
 }
@@ -217,11 +219,11 @@ nav ul {
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*////////////////////////////Title and Subtitle/////////////////////*/
-#titlewebsite {
+.website-title {
   font-size: 93px;
   font-style: oblique;
 }
-#titleSub {
+.website-subtitle {
   font-size: 35px;
   font-style: oblique;
 }
@@ -247,7 +249,7 @@ nav ul {
   width: inherit;
   height: inherit;
 }
-#tradishionalSlider {
+#coffeenator-slider {
   width: 55%;
   display: block;
   margin: auto;
@@ -261,7 +263,7 @@ nav ul {
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////Product Page//////////////////////////*/
-.product-center-container {
+.products-wrapper {
   background-color: rgba(137, 43, 226, 0);
   display: flex;
   justify-content: center;
@@ -282,37 +284,37 @@ nav ul {
   margin: 13px;
 }
 
-.p_image {
+.product_image {
   height: 280px;
   width: 220px;
   display: block;
   margin: auto;
 }
 
-.product .p_price,
-.p_title,
+.product .product_price,
+.product_name,
 .toBasket {
   text-align: center;
 }
 
-.product .p_title {
+.product .product_name {
   padding-top: 12px;
 }
 
-.itemsToCart {
+.add-to-basket {
   display: contents;
 }
-.itemsToCart img {
+.add-to-basket img {
   width: 175px;
 }
-.itemsToCart img:hover {
+.add-to-basket img:hover {
   width: 193px;
 }
 
-.product .p_price {
+.product .product_price {
   color: rgb(158, 18, 18);
 }
-.product > .p_title {
+.product > .product_name {
   font-size: 20px;
   font-family: "Montserrat";
 }
@@ -321,7 +323,7 @@ nav ul {
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////Footer/////////////////////////////*/
-.coffeenator-footer {
+.footer-section {
   background-color: #24252b;
   /*top right bottom left*/
   padding: 45px 0 20px;
@@ -330,12 +332,12 @@ nav ul {
   color: #c4c4c494;
 }
 
-.coffeenator-footer hr {
+.footer-section hr {
   border-top-color: #f7d4b394;
   opacity: 0.8;
 }
 
-.coffeenator-footer h6 {
+.footer-section h6 {
   color: #fff;
   font-size: 17px;
   text-transform: uppercase;
@@ -343,11 +345,11 @@ nav ul {
   letter-spacing: 2.6px;
 }
 
-.coffeenator-footer a {
+.footer-section a {
   color: #ee9e43;
 }
 
-.coffeenator-footer a:hover {
+.footer-section a:hover {
   color: #fffffff8;
   text-decoration: none;
 }
@@ -365,11 +367,11 @@ nav ul {
   color: #f7d4b394;
 }
 
-.coffeenator-footer .social-icons {
+.footer-section .social-icons {
   text-align: right;
 }
 
-.coffeenator-footer .social-icons a {
+.footer-section .social-icons a {
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -474,47 +476,47 @@ nav ul {
   padding: 15px 100px 15px 100px;
 }
 
-.gridItem > div {
+.cart-products-wrapper > div {
   height: 230px;
 }
-.gridItem {
+.cart-products-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 10px;
   text-align: center;
 }
 
-.gridItem > .child-1 > img {
+.cart-products-wrapper > .child-1 > img {
   vertical-align: middle;
   width: 130px;
   height: 180px;
 }
 
-.gridItem > .child-1 {
+.cart-products-wrapper > .child-1 {
   vertical-align: middle;
   border-radius: 35px 0 0 35px;
   background-color: rgba(162, 145, 46, 0.809);
 }
 
-.gridItem > .child-2 {
+.cart-products-wrapper > .child-2 {
   background-color: rgba(193, 171, 43, 0.809);
   border-radius: 0 35px 35px 0;
 }
 
-.gridItem > .child-2 > div {
+.cart-products-wrapper > .child-2 > div {
   padding-top: 34px;
 }
 
-.gridItem > .child-2 > div > h1 {
+.cart-products-wrapper > .child-2 > div > h1 {
   font-size: large;
   display: block;
 }
-.gridItem > .child-2 > div > h3,
-.gridItem > .child-2 > div > h4 {
+.cart-products-wrapper > .child-2 > div > h3,
+.cart-products-wrapper > .child-2 > div > h4 {
   font-size: medium;
 }
 
-.basketTotalContainer {
+.cart-total-wrapper {
   background-color: #9dbb31e9;
   border-radius: 35px;
   margin-top: 10px;
