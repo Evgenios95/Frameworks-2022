@@ -1,6 +1,11 @@
 $(document).ready(function() {
     welcomeMessage()
     triggerLogoutButton()
+    $(".carousel").carousel({
+        interval: 3000,
+        keyboard: true,
+        pause: "hover",
+    });
 });
 
 function welcomeMessage(){
