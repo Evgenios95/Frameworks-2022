@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////
 const mostTopNavFinder = document.querySelector(".mostTop");
 const navFinder = document.querySelector(".navMain");
-const footerFinder = document.querySelector(".Tradishional-Footer");
+const footerFinder = document.querySelector(".coffeenator-footer");
 
 const addTopNavFooter = function () {
   const navTString = `
