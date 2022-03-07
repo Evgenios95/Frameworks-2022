@@ -1,4 +1,4 @@
-[
+const productlist = [
   {
     "productId": 1,
     "productName": "Starbucks Espresso, 340gr",
