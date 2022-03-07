@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>[COMPANY]</title>
-    <link rel="stylesheet" href="design/main.css">
-    <link rel="stylesheet" href="design/menu.css">
+    <link rel="stylesheet" href="design/main.css" />
+    <link rel="stylesheet" href="design/menu.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="utils/main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="menuWrapper">
-        <a href="/">
-            <div class="logo">
-                <img src="assets/logo.png" alt="logo"/>
-            </div>
-        </a>
-    <nav class="options">
-            <a href="">Products</a>
-            <a href="">Basket</a>
-        </nav>
-        <div class="login">
-            <h1 id="welcomeMessage"></h1>
-            <div id="logoutbutton" onclick="logout()">X</div>
-            <form onsubmit="login()" id="loginForm">
-                <input type="text" placeholder="name" id="name"/>
-                <input type="password" placeholder="password" id="password"/>
-                <button id="loginSubmit">
-                    >
-                </button>
-            </form>
+      <a href="/">
+        <div class="logo">
+          <img src="assets/logo.png" alt="logo" />
         </div>
+      </a>
+      <nav class="options">
+        <a href="">Products</a>
+        <a href="">Basket</a>
+      </nav>
+      <div class="login">
+        <h1 id="welcomeMessage"></h1>
+        <div id="logoutbutton" onclick="logout()">X</div>
+        <form onsubmit="login()" id="loginForm">
+          <input type="text" placeholder="name" id="name" />
+          <input type="password" placeholder="password" id="password" />
+          <button id="loginSubmit">></button>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
 </html>
