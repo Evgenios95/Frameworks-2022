@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/all.css" />
+    <link rel="stylesheet" href="layout/Styling.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <title>Tradishional-GR</title>
+  </head>
+
+  <body>
+    <div id="backgroundPicture">
+      <nav id="mosttopnav" class="mostTop"></nav>
+      <nav id="navMainer" class="navMain"></nav>
+
+      <h1 id="titlewebsite">Title of the page</h1>
+      <h3 id="titleSub">Subtitle of the page</h3>
+
+      <!-- SLIDER WITH CAPTIONS -->
+      <div
+        class="carousel slide mb-5"
+        data-ride="carousel"
+        id="tradishionalSlider"
+      >
+        <div class="carousel-inner">
+          <ol class="carousel-indicators">
+            <li class="active" data-target="" data-slide-to="0"></li>
+            <li data-target="" data-slide-to="1"></li>
+            <li data-target="" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-item active">
+            <img class="d-block img-fluid" src="" alt="First Slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="" alt="Second Slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="" alt="Third Slide" />
+          </div>
+        </div>
+
+        <!-- controls -->
+        <a
+          href="#tradishionalSlider"
+          class="carousel-control-prev"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a
+          href="#tradishionalSlider"
+          class="carousel-control-next"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <ul class="websiteAdvantages">
+        <li class="oneThirdLi">
+          <h6 class="oneThirHeading">
+            <i class="fas fa-shield-alt"></i>Message
+          </h6>
+          <p>Message&hellip;</p>
+          <a href="#" class="orangeAhref">
+            <h4>View Details &raquo;</h4>
+          </a>
+        </li>
+        <li class="oneThirdLi">
+          <h6 class="oneThirHeading"><i class="fas fa-headset"></i>Message</h6>
+          <p>A message here&hellip;</p>
+          <a href="#" class="orangeAhref">
+            <h4>View Details &raquo;</h4>
+          </a>
+        </li>
+        <li class="oneThirdLi">
+          <h6 class="oneThirHeading">
+            <i class="fas fa-shipping-fast"></i>A message here
+          </h6>
+          <p>A message here&hellip;</p>
+          <a href="#" class="orangeAhref">
+            <h4>View Details &raquo;</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <footer class="Tradishional-Footer"></footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="myScript.js"></script>
+    <script src="navtopfoot/organization.js"></script>
+    <script text="text/javascript">
+      document.body.onload = addTopNavFooter();
+      document.body.onload = addUserName();
+    </script>
+    <script src="cart.js"></script>
+
+    <script>
+      $(".carousel").carousel({
+        interval: 3000,
+        keyboard: true,
+        pause: "hover",
+      });
+    </script>
+  </body>
+</html>
