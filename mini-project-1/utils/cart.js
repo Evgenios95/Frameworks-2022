@@ -2,8 +2,8 @@ const cartButtons = document.querySelectorAll(".itemsToCart");
 
 for (let i = 0; i < cartButtons.length; i++) {
   cartButtons[i].addEventListener("click", () => {
-    cartQty(products[i]);
-    totalCost(products[i]);
+    cartQty(productList[i]);
+    totalCost(productList[i]);
   });
 }
 

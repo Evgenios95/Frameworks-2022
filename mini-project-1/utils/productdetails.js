@@ -15,7 +15,7 @@ function renderProduct() {
 
 function fetchProduct(product) {
   return `
-  <div class="product" id="${product.prID}">
+  <div class="product" id="${product.productId}">
   <a href="pDescription.html"><img class="p_image" src="${product.img}"></a>
   <h1 class="p_title">${product.tit}</h1>
   <h4 class="p_price">$ ${product.p},00</h4>

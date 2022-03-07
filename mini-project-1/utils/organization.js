@@ -35,9 +35,9 @@ const addTopNavFooter = function () {
     <li><a href="products.html" class="allProd">All Products</a></li>
     <li><a class="drop" href="#">Categories</a>
     <ul>
-        <li><button class="filterbtn" onclick="filterProductCategory('')"></button></li>
-        <li><button class="filterbtn" onclick="filterProductCategory('')"></button></li>
-        <li><button class="filterbtn" onclick="filterProductCategory('')"></button></li>
+        <li><button class="filterbtn" onclick="filterProductCategory('Dark roast')">Dark Roast</button></li>
+        <li><button class="filterbtn" onclick="filterProductCategory('Medium roast')">Medium Roast</button></li>
+        <li><button class="filterbtn" onclick="filterProductCategory('Light roast')">Light roast</button></li>
     </ul>
     </li>
     <li>
