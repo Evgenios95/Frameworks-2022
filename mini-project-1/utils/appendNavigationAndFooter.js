@@ -86,17 +86,16 @@ const appendNavigationAndFooter = () => {
       <div class="row">
         <div class="col-sm-12 col-md-6">
           <h6>About</h6>
-          <p class="text-justify">Just a text here</p>
+          <p class="text-justify">Coffeenator was created to give you a one-stop to buy quality coffee beans from around the world and deliver to your door step. Coffenator is located in Copenhagen, Denmark.</p>
         </div>
 
         <div class="col-xs-6 col-md-3">
           <h6>Categories</h6>
           <ul class="footer-links" style="text-align: center">
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="#">Lightly roasted selection</a></li>
+            <li><a href="#">Medium roasted selection</a></li>
+            <li><a href="#">Dark roasted selection</a></li>
+            <li><a href="#">Discounts</a></li>
           </ul>
         </div>
 
@@ -117,8 +116,8 @@ const appendNavigationAndFooter = () => {
       <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-            <a href="#">Tradishional-GR</a>.
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+            <a href="#">Coffeenator®</a>.
           </p>
         </div>
 
