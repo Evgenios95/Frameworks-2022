@@ -85,8 +85,8 @@ function displayCart() {
             <div class ="child-2">
             <div>
                 <h2> ${item.productName} </h2>
-                <h3> $${item.price},00 </h3>
-                <h4 class ="total">Total item cost:  $${
+                <h3> €${item.price},00 </h3>
+                <h4 class ="total">Total item cost:  €${
                   item.isInCart * item.price
                 },00</h4>
                 </div>
@@ -100,7 +100,7 @@ function displayCart() {
         </h4>
         <hr>
         <h4 class ="cart-total-cost">
-            $ ${cartTotalCost},00
+            € ${cartTotalCost},00
         </h4>`;
   }
 }
