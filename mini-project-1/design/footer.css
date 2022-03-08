@@ -25,7 +25,8 @@
   }
   
   .footer-section a:hover {
-    color: #fffffff8;
+    /* color: #fffffff8; */
+    color: #ee9e43;
     text-decoration: none;
   }
   
@@ -53,7 +54,8 @@
     margin-left: 6px;
     margin-right: 0;
     border-radius: 100%;
-    background-color: #f7d4b3a9;
+    /* background-color: #f7d4b394; */
+    background-color: #ee9e43;
   }
   
   .copyright-text {
@@ -81,7 +83,8 @@
   
   .social-icons a {
     background-color: #eceeef;
-    color: #818a91;
+    /* color: #818a91; */
+    color: rgb(236, 219, 186);
     font-size: 16px;
     display: inline-block;
     line-height: 44px;
