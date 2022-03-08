@@ -104,7 +104,7 @@ h6 {
   margin: 0%;
   background-attachment: fixed;
   background-position: center center;
-  background-image: linear-gradient(to bottom, #2a4d14, #774936);
+  background-image: linear-gradient(to bottom, #D09259, #562A0E);
   min-height: 70vh;
 }
 /*///////////////////////////////////////////////////////////////////*/
@@ -275,13 +275,13 @@ nav ul {
 }
 /* Product inner part */
 .product {
-  background-color: rgba(226, 157, 67, 0.816);
-  border-radius: 3rem;
+  background-color: rgb(222, 195, 157);
+  border-radius: 1rem;
   text-align: center;
-  width: 300px;
-  height: 500px;
-  border: 3px solid rgb(172, 109, 15);
-  margin: 13px;
+  width: 360px;
+  height: 480px;
+  border: 3px ridge rgb(208, 146, 89);
+  margin: 20px;
 }
 
 .product_image {
@@ -301,6 +301,10 @@ nav ul {
   padding-top: 12px;
 }
 
+.product .product_weight {
+  font-size: 0.8rem;
+}
+
 .add-to-basket {
   display: contents;
 }
@@ -312,7 +316,7 @@ nav ul {
 }
 
 .product .product_price {
-  color: rgb(158, 18, 18);
+  color: rgb(255, 255, 255);
 }
 .product > .product_name {
   font-size: 20px;

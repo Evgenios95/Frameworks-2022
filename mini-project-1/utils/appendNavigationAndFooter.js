@@ -22,7 +22,7 @@ const appendNavigationAndFooter = () => {
         <ul>
           <li><button class="filter-button" onclick="filterProductCategory('Dark roast')">Dark Roast</button></li>
           <li><button class="filter-button" onclick="filterProductCategory('Medium roast')">Medium Roast</button></li>
-          <li><button class="filter-button" onclick="filterProductCategory('Light roast')">Light roast</button></li>
+          <li><button class="filter-button" onclick="filterProductCategory('Light roast')">Light Roast</button></li>
         </ul>
       </li>
       <li>
