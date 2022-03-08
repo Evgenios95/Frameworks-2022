@@ -1,15 +1,16 @@
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
-/*////////////////Mosttop Navigation, logo, login////////////////////*/
-#loginNameMessage {
+/*////////////////login-and-logo-section Navigation, logo, login////////////////////*/
+.welcome-message {
     margin-right: 0%;
-}
-.login {
+  }
+  
+  .login {
     display: flex;
-}
-
-.userInput {
+  }
+  
+  .user-input {
     padding: 0.4rem 0rem;
     font-size: 1.2rem;
     text-align: center;
@@ -18,52 +19,53 @@
     margin-right: 0.4rem;
     background-color: #ffffff42;
     border: 1px solid rgb(129, 75, 75);
-}
-
-.userInput:focus {
+  }
+  
+  .user-input:focus {
     outline: none;
     border: 1px solid #ccc;
-}
-
-/*Placeholder*/
-.userInput::placeholder {
+  }
+  
+  /*Placeholder*/
+  .user-input::placeholder {
     color: rgb(173, 111, 111);
-}
-.userInput:hover::placeholder {
+  }
+  .user-input:hover::placeholder {
     color: rgba(173, 111, 111, 0.274);
-}
-.userInput:focus::placeholder {
+  }
+  .user-input:focus::placeholder {
     color: transparent;
-}
-
-/*arrow*/
-.loginButton {
+  }
+  
+  /*arrow*/
+  .login-button {
     border: none;
     background: none;
     font-size: 2rem;
     color: inherit;
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.welcomeMessage {
+  }
+  
+  .welcome-message {
     font-size: 1.4rem;
     font-weight: 500;
     padding-top: 15px;
-}
-.logo {
+  }
+  
+  .coffeenator-logo {
     height: 5.1rem;
-}
-
-#mosttopnav {
+  }
+  
+  .login-and-logo-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     background-color: #805f5f42;
-}
+  }
 
-/*///////////////////////////////////////////////////////////////////*/
+  /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*////////////////////////////Hr in navigation///////////////////////*/
@@ -74,94 +76,95 @@
     height: 3px;
     background-color: #805f5f5b;
     background-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0.377),
-            rgba(0, 0, 0, 0)
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.377),
+      rgba(0, 0, 0, 0)
     );
-}
-/*///////////////////////////////////////////////////////////////////*/
+  }
+  
+  /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /*///////////////////////////////////////////////////////////////////*/
 /* main navigation under topmost */
 nav ul {
     text-align: center;
     background-color: #805f5f5b;
-}
-#navMainer ul {
+  }
+  .navigation-section ul {
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-}
-#navMainer ul ul {
+  }
+  .navigation-section ul ul {
     position: absolute;
     width: 180px;
     text-transform: none;
-}
-#navMainer li {
+  }
+  .navigation-section li {
     display: inline-block;
     position: relative;
     margin: 0 8px 0 0;
     padding: 0;
-}
-#navMainer li li {
+  }
+  .navigation-section li li {
     width: 100%;
     margin: 0;
-}
-#navMainer li a {
+  }
+  .navigation-section li a {
     display: block;
     padding: 3px 0;
-}
-#navMainer .drop {
+  }
+  .navigation-section .drop {
     padding-left: 5px;
-}
-#navMainer li li a,
-#navMainer li li .drop {
+  }
+  .navigation-section li li a,
+  .navigation-section li li .drop {
     display: block;
     margin: 0;
     padding: 12px 9px;
-}
-/*Hide it, but drop when I hover over it*/
-#navMainer ul ul {
+  }
+  /*Hide it, but drop when I hover over it*/
+  .navigation-section ul ul {
     visibility: hidden;
     opacity: 0;
-}
-#navMainer ul li:hover > ul {
+  }
+  .navigation-section ul li:hover > ul {
     visibility: visible;
     opacity: 1;
-}
-#navMainer li a {
+  }
+  .navigation-section li a {
     color: inherit;
-}
-#navMainer .active a,
-#navMainer a:hover,
-#navMainer li:hover > a {
+  }
+  .navigation-section .active a,
+  .navigation-section a:hover,
+  .navigation-section li:hover > a {
     color: #ece4dc;
     background-color: inherit;
-}
-#navMainer li li a,
-#navMainer .active li a {
+  }
+  .navigation-section li li a,
+  .navigation-section .active li a {
     color: #ffd240;
     background-color: rgb(0, 0, 0);
     border-color: rgba(206, 166, 166, 0.6);
     border-radius: 15%;
-}
-#navMainer li li:hover > a {
+  }
+  .navigation-section li li:hover > a {
     color: inherit;
     background-color: #dc8e47;
-}
-
-/*Basket icon*/
-.myBasketButton {
+  }
+  
+  /*Basket icon*/
+  .cart-icon-wrapper {
     position: relative;
     cursor: pointer;
-}
-.spanBasketButton {
+  }
+  .shopping-cart-icon {
     font-size: 2rem;
-}
-
-/*Basket number span*/
-.itemsToBasket {
+  }
+  
+  /*Basket number span*/
+  .items-in-cart-number {
     position: absolute;
     top: 0px;
     right: 10px;
@@ -170,10 +173,10 @@ nav ul {
     border-radius: 35%;
     color: white;
     display: block;
-}
-
-/*Product categories*/
-.filterbtn {
+  }
+  
+  /*Product categories*/
+  .filter-button {
     font-family: "Montserrat";
     border: 0.2px solid black;
     background-color: #cc7511;
@@ -181,9 +184,10 @@ nav ul {
     width: 100%;
     border-radius: 10px;
     line-height: normal;
-}
-
-.filterbtn:hover {
+  }
+  
+  .filter-button:hover {
     background-color: #875215;
     color: #f3b977;
-}
+  }
+  

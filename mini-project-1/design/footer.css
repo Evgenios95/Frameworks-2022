@@ -1,0 +1,142 @@
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////Footer/////////////////////////////*/
+.footer-section {
+    background-color: #24252b;
+    /*top right bottom left*/
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #c4c4c494;
+  }
+  
+  .footer-section hr {
+    border-top-color: #f7d4b394;
+    opacity: 0.8;
+  }
+  
+  .footer-section h6 {
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 6px;
+    letter-spacing: 2.6px;
+  }
+  
+  .footer-section a {
+    color: #ee9e43;
+  }
+  
+  .footer-section a:hover {
+    color: #fffffff8;
+    text-decoration: none;
+  }
+  
+  .footer-links {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .footer-links li {
+    display: block;
+  }
+  
+  .footer-links a {
+    color: #f7d4b394;
+  }
+  
+  .footer-section .social-icons {
+    text-align: right;
+  }
+  
+  .footer-section .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #f7d4b3a9;
+  }
+  
+  .copyright-text {
+    margin: 0;
+  }
+  
+  .social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  
+  .social-icons li.title {
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: #96a2b2;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  .social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+  }
+  
+  .social-icons a:hover {
+    color: #fff;
+  }
+  
+  .social-icons a.facebook:hover {
+    background-color: #165aec;
+  }
+  
+  .social-icons a.twitter:hover {
+    background-color: #4ecffd;
+  }
+  
+  .social-icons a.linkedin:hover {
+    background-color: #007bb6;
+  }
+  
+  .social-icons a.instagram:hover {
+    background-color: #ea4c89;
+  }
+  
+  @media (max-width: 991px) {
+    .site-footer [class^="col-"] {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .site-footer {
+      padding-bottom: 0;
+    }
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .social-icons li.title {
+      display: block;
+      margin-right: 0;
+      font-weight: 600;
+    }
+  }
+  

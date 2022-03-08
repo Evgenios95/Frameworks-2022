@@ -1,0 +1,43 @@
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*////////////////////////////Title and Subtitle/////////////////////*/
+.website-title {
+    font-size: 93px;
+    font-style: oblique;
+  }
+  .website-subtitle {
+    font-size: 35px;
+    font-style: oblique;
+  }
+  #dishTitle {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    color: #cc7511;
+  }
+  @keyframes fadeIn {
+    4% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+/*////////////////////////////Carousel///////////////////////////////*/
+.carousel-inner img {
+    width: inherit;
+    height: inherit;
+  }
+  #coffeenator-slider {
+    width: 55%;
+    display: block;
+    margin: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 33px 33px 33px 33px;
+    overflow: hidden; /*hide the extra corners*/
+  }
