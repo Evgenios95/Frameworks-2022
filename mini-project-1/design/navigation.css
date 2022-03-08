@@ -54,6 +54,12 @@
   max-height: 55px;
 }
 
+#navigation-link-text {
+  font-family: "Montserrat";
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
 #navigation-link-text:hover {
   color: rgb(248, 235, 211) !important;
 }
@@ -162,16 +168,17 @@ nav ul {
 /*Basket number span*/
 .items-in-cart-number {
   background-color: #cc7511;
-  padding: 0 3px;
+  font-style: italic;
+  padding: 0 5px;
   border-radius: 35%;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   display: block;
 }
 
 .filter-button-section {
   margin: 25px auto 0px;
-  width: 40%;
+  width: 680px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -182,7 +189,7 @@ nav ul {
   background-color: rgba(222, 195, 157, 0.858);
   border: 3px ridge rgb(208, 146, 89);
   height: 40px;
-  width: 120px;
+  width: 160px;
   border-radius: 25px;
   line-height: normal;
 }
