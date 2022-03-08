@@ -230,7 +230,8 @@ function renderProducts(productList) {
 
 function fetchProductCard(i) {
   return `
-  <div class="product ${productList[i].productId}" >
+  <div key="${productList[i].productId}">
+  <div class="product ${productList[i].category}" >
   <img class="product_image" src="${productList[i].productImage}">
   <h1 class="product_name">${productList[i].productName}</h1>
   <h4 class="product_price">${productList[i].price}€</h4>
@@ -238,11 +239,13 @@ function fetchProductCard(i) {
   <a href="individual-product.html" button class="btn btn-light" style="background-color: #cc7511" onclick="saveDetails('${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].description}');">Details</button></a> 
   <br><br><button class="add-to-basket">Add to basket</button>
   </div> 
+  </div>
   `;
 }
 
 function filterProductCategory(productType) {
   let prods = document.getElementsByClassName("product");
+  console.log(prods);
 
   for (var i = 0; i < prods.length; i++) {
     if (prods[i].className.indexOf(productType) > -1) {
