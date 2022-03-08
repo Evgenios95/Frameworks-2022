@@ -1,15 +1,15 @@
 /*/////////////////////Titles//////////////////////*/
 .website-title {
-    font-size: 93px;
+    font-size: 70px; /*changed from 93px*/
     font-style: oblique;
   }
   .website-subtitle {
-    font-size: 35px;
+    font-size: 30px; /*changed from 35px*/
     font-style: oblique;
   }
   #dishTitle {
-    animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;
+    animation: fadeIn ease 3s;
     color: #cc7511;
   }
   @keyframes fadeIn {
@@ -27,7 +27,7 @@
     height: inherit;
   }
   #coffeenator-slider {
-    width: 55%;
+    width: 40%; /*changed from 55%*/
     display: block;
     margin: auto;
     padding-top: 2px;
