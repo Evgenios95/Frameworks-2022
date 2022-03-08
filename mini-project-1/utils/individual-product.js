@@ -27,7 +27,7 @@ function fetchProduct(product) {
   <h1 class="product_name">${product.productName}</h1>
   <h4 class="product_price">$ ${product.price},00</h4>
   <p class="product_description" >${product.description}</p>
-  <button class="add-to-basket">Add me</button>
+  <button class="add-to-basket">Add to basket</button>
 </div>
   `;
 }
