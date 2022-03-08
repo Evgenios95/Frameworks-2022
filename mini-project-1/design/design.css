@@ -275,8 +275,8 @@ nav ul {
 }
 /* Product inner part */
 .product {
-  background-color: rgb(222, 195, 157);
-  border-radius: 1rem;
+  background-color: rgba(222, 195, 157, 0.858);
+  border-radius: 0.5rem;
   text-align: center;
   width: 360px;
   height: 480px;
