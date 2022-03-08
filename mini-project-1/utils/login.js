@@ -1,8 +1,8 @@
 function addUserName() {
   const userName = localStorage.fname;
   if (userName !== undefined) {
-    document.getElementById(
-      "loginNameMessage"
+    document.querySelector(
+      ".welcome-message"
     ).innerHTML = `Welcome back, ${userName}!`;
   }
 }
@@ -10,12 +10,11 @@ function addUserName() {
 function onLogin() {
   localStorage.clear();
   store();
-  // console.log(localStorage);
 }
 
 function store() {
-  let firstName = document.getElementById("fname");
+  let firstName = document.getElementById("first-name");
   localStorage.setItem("fname", firstName.value);
-  let lastName = document.getElementById("lname");
-  localStorage.setItem("lname", lastName.value);
+  let lastName = document.getElementById("last-name");
+  localStorage.setItem("last-name", lastName.value);
 }
