@@ -9,10 +9,6 @@ h6 {
   text-align: center;
 }
 
-
-
-/*////////////////////////////Background picture/////////////////////*/
-
 #background-image {
   padding: 0%;
   background-repeat: no-repeat;
@@ -20,10 +16,6 @@ h6 {
   margin: 0%;
   background-attachment: fixed;
   background-position: center center;
-  background-image: linear-gradient(to bottom, #D09259, #562A0E);
-  min-height: 70vh;
+  background-image: url(../assets/61eaff49671425.58bb77365b112.jpg);
+  height: 100%;
 }
-
-
-
-

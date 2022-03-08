@@ -4,15 +4,67 @@ const footerSelector = document.querySelector(".footer-section");
 
 const appendNavigationAndFooter = () => {
   const loginAndLogoSection = `
-    <p class="welcome-message">Log in to get started</p>
+      <nav class="navbar navbar-expand-lg container-fluid" id="navigation-bar" role="navigation">
+      <div class="container">
+          <a class="navbar-brand" href="#"><img class="coffeenator-logo" src="../assets/logo.png"></img></a>
+          <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+              &#9776;
+          </button>
+          <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+              <ul class="nav navbar-nav " style='background-color:transparent'>
+                  <li class="nav-item " ><a href="home-page.html" class="nav-link text-dark" id="navigation-link-text">Homepage</a></li>
+                  <li class="nav-item"><a href="products.html" class="nav-link text-dark" id="navigation-link-text">Products</a></li>
+                  <li class="nav-item"><a href="cart.html" class="nav-link text-dark" id="navigation-link-text">Cart</a></li>
+                  <li style="align-self: center">
+                      <span class="items-in-cart-number">
+                          0
+                      </span>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+              <li class="dropdown order-1">
+                      <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle text-white">Login <span class="caret"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-right mt-2">
+                        <li class="px-3 py-2">
+                            <form class="form" role="form">
+                                  <div class="form-group">
+                                      <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="" style="width:200px">
+                                  </div>
+                                  <div class="form-group">
+                                      <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="" style="width:200px">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                  </div>
+                                  <div class="form-group text-center">
+                                      <small><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot password?</a></small>
+                                  </div>
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
 
-    <img src="../assets/logo.png" alt="Logo" class="coffeenator-logo" />
-
-    <form class="login">
-        <input type="text" placeholder="first name" class="user-input"  id="first-name" />
-        <input type="text" placeholder="last name" class="user-input"  id="last-name" />
-        <button class="login-button" onclick="onLogin()">&rarr;</button>
-    </form>`;
+    <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3>Forgot password</h3>
+                  <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <p>Reset your password..</p>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                  <button class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+      </div>
+    </div>`;
 
   const navigationSection = `
     <ul>
@@ -23,20 +75,10 @@ const appendNavigationAndFooter = () => {
           <li><button class="filter-button" onclick="filterProductCategory('Dark roast')">Dark Roast</button></li>
           <li><button class="filter-button" onclick="filterProductCategory('Medium roast')">Medium Roast</button></li>
           <li><button class="filter-button" onclick="filterProductCategory('Light roast')">Light Roast</button></li>
+          <li><button class="filter-button">All products</button></li>
         </ul>
       </li>
-      <li>
-        <a href="cart.html">
-            <div class="cart-icon-wrapper">
-                <span class="shopping-cart-icon">
-                    <i class="fas fa-shopping-basket"></i>
-                </span>
-                <div class="items-in-cart-number">
-                    0
-                </div>
-            </div>
-        </a>
-      </li>
+      
     </ul>`;
 
   let footerSection = `    
@@ -92,6 +134,6 @@ const appendNavigationAndFooter = () => {
     </div>`;
 
   loginSectionSelector.innerHTML = loginAndLogoSection;
-  navigationSelector.innerHTML = navigationSection;
+  // navigationSelector.innerHTML = navigationSection;
   footerSelector.innerHTML = footerSection;
 };

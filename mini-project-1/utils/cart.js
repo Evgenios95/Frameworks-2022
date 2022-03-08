@@ -20,12 +20,10 @@ function cartQty(product) {
 
   if (productQty) {
     localStorage.setItem("cartQty", productQty + 1);
-
     document.querySelector(".items-in-cart-number").textContent =
       productQty + 1;
   } else {
     localStorage.setItem("cartQty", 1);
-
     document.querySelector(".items-in-cart-number").textContent = 1;
   }
   setItems(product);
@@ -36,17 +34,17 @@ function setItems(product) {
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
-    if (cartItems[product.productID] == undefined) {
+    if (cartItems[product.productId] == undefined) {
       cartItems = {
         ...cartItems,
-        [product.productID]: product,
+        [product.productId]: product,
       };
     }
-    cartItems[product.productID].isInCart += 1;
+    cartItems[product.productId].isInCart += 1;
   } else {
     product.isInCart = 1;
     cartItems = {
-      [product.productID]: product,
+      [product.productId]: product,
     };
   }
 

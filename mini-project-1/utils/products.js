@@ -230,14 +230,16 @@ function renderProducts(productList) {
 
 function fetchProductCard(i) {
   return `
-  <div class="product ${productList[i].productId}" >
+  <div key="${productList[i].productId}">
+  <div class="product ${productList[i].category}" >
   <img class="product_image" src="${productList[i].productImage}">
   <h1 class="product_name">${productList[i].productName}</h1>
   <h4 class="product_price">${productList[i].price}€</h4>
   <h5 class="product_weight">${productList[i].weight}</h5>
-  <a href="individual-product.html" button class="btn btn-light" style="background-color: #cc7511" onclick="saveDetails('${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].description}');">Details</button></a> 
+  <a href="individual-product.html" button class="btn btn-light" style="background-color: #cc7511" onclick="saveDetails('${productList[i].productId}', '${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].description}');">Details</button></a> 
   <br><br><button class="add-to-basket">Add to basket</button>
   </div> 
+  </div>
   `;
 }
 

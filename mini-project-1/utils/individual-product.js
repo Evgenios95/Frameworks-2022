@@ -1,10 +1,10 @@
-function saveDetails(productImage, productName, price, description, productId) {
+function saveDetails(productId, productImage, productName, price, description) {
   const product = {
+    productId: productId,
     productImage: productImage,
     productName: productName,
     price: price,
     description: description,
-    productId: productId,
   };
 
   localStorage.removeItem("Product");
@@ -22,12 +22,12 @@ function renderProduct() {
 
 function fetchProduct(product) {
   return `
-  <div class="product" id="${product.productId}">
+  <div class="product" key="${product.productId}">
   <a href="individual-product.html"><img class="product_image" src="${product.productImage}"></a>
   <h1 class="product_name">${product.productName}</h1>
   <h4 class="product_price">$ ${product.price},00</h4>
   <p class="product_description" >${product.description}</p>
   <button class="add-to-basket">Add to basket</button>
-</div>
+  </div>
   `;
 }
