@@ -221,10 +221,9 @@ const productList = [
 ];
 
 function renderProducts(productList) {
-  var div = $('<div class="products-wrapper">');
   for (let i = 0; i < productList.length; i++) {
-    div.append(fetchProductCard(i));
-    $(".products-section").append(div);
+    $(".products-wrapper").append(fetchProductCard(i));
+
   }
 }
 

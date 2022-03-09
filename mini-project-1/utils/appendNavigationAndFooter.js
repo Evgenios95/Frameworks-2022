@@ -6,7 +6,7 @@ const appendNavigationAndFooter = () => {
   const loginAndLogoSection = `
       <nav class="navbar navbar-expand-lg container-fluid" id="navigation-bar" role="navigation">
       <div class="container">
-          <a class="navbar-brand" href="#"><img class="coffeenator-logo" src="../assets/logo.png"></img></a>
+          <a class="navbar-brand" href="home-page.html"><img class="coffeenator-logo" src="../assets/logo.png"></img></a>
           <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
               &#9776;
           </button>
@@ -21,17 +21,18 @@ const appendNavigationAndFooter = () => {
                       </span>
                 </li>
               </ul>
-              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+              <div id="loggedInElement"></div>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto" id="loginElement">
               <li class="dropdown order-1">
                       <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle text-white">Login <span class="caret"></span></button>
                       <ul class="dropdown-menu dropdown-menu-right mt-2">
                         <li class="px-3 py-2">
-                            <form class="form" role="form">
+                            <form class="form" role="form" onsubmit="login()">
                                   <div class="form-group">
-                                      <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="" style="width:200px">
+                                      <input id="name" placeholder="Email" class="form-control form-control-sm" type="text" required="" style="width:200px">
                                   </div>
                                   <div class="form-group">
-                                      <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="" style="width:200px">
+                                      <input id="password" placeholder="Password" class="form-control form-control-sm" type="password   " required="" style="width:200px">
                                   </div>
                                   <div class="form-group">
                                       <button type="submit" class="btn btn-primary btn-block">Login</button>
@@ -134,4 +135,28 @@ const appendNavigationAndFooter = () => {
   loginSectionSelector.innerHTML = loginAndLogoSection;
   // navigationSelector.innerHTML = navigationSection;
   footerSelector.innerHTML = footerSection;
+  checkLogin();
 };
+
+
+function checkLogin(){
+  if(localStorage.getItem('user') === null){
+    localStorage.setItem('user','')
+  }
+  if(localStorage.getItem('user') !== ''){
+    swapLoginElements();
+    return;
+  }
+}
+
+function swapLoginElements(){
+  $("#loginElement").remove();
+  $("#exCollapsingNavbar").append(`
+    <div class="ml-auto loggedinMessage" >
+      <h3>
+      Welcome ` + localStorage.getItem('user') + `
+      </h3>
+      </div>
+      <div onclick="logout()" class="logoutButton">Logout</div>
+    `)
+}
