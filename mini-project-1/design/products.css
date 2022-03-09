@@ -43,15 +43,15 @@
   font-size: 0.8rem;
 }
 
-.add-to-basket {
+.add-to-basket, .individual_add_to_basket {
   display: contents;
 }
 
-.add-to-basket img {
+.add-to-basket img, .individual_add_to_basket  img {
   width: 175px;
 }
 
-.add-to-basket img:hover {
+.add-to-basket img:hover, .individual_add_to_basket img:hover {
   width: 193px;
 }
 
@@ -70,6 +70,7 @@
   font-family: Montserrat;
   display: grid;
   padding: 15px 100px 15px 100px;
+  min-height: 70vh;
 }
 
 .cart-products-wrapper > div {

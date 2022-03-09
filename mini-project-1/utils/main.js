@@ -19,7 +19,6 @@ function triggerLogoutButton() {
 function login() {
   name = document.getElementById("name").value;
   password = document.getElementById("password").value;
-
   localStorage.setItem("user", name);
 }
 

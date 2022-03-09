@@ -32,7 +32,6 @@ function cartQty(product) {
 function setItems(product) {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-
   if (cartItems != null) {
     if (cartItems[product.productId] == undefined) {
       cartItems = {
