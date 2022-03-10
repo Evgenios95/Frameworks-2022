@@ -13,3 +13,12 @@
     border: 1px solid white;
     margin-left: 10px;
 }
+
+@media screen and (max-width: 992px) {
+    #loginElement {
+        margin-left: 0 !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+
+}
