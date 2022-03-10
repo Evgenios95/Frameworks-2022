@@ -45,8 +45,9 @@
 }
 
 .btn.btn-outline-light {
-  color: #24252b;
+  color: #78380C;
   border-color: transparent;
+  font-weight: bold;
 }
 
 .add-to-basket, .individual_add_to_basket {
@@ -69,8 +70,6 @@
   background-color: #875215;
   color: #e4ceaf;
 }
-
-
 
 .add-to-basket img, .individual_add_to_basket  img {
   width: 175px;

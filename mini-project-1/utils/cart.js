@@ -78,7 +78,7 @@ function displayCart() {
     priceContainer.innerHTML = "";
 
     Object.values(cartItems).map((item) => {
-      const priceElement = item.discount === "no" ?  `<h3> €${item.price},00 </h3>`:`<h3> €${item.price},00 <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${item.price + 10}€</span></h3>`;
+      const priceElement = item.discount === "no" ?  `<h3> DKK ${item.price},00 </h3>`:`<h3> DKK ${item.price},00 <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${item.price + 10} DKK</span></h3>`;
       productContainer.innerHTML += `
             <div class="child-1" key="${item.productId}">
                 <img src="${item.productImage}">
@@ -87,7 +87,7 @@ function displayCart() {
             <div>
                 <h2> ${item.productName} </h2>`
           + priceElement +
-          ` <h4 class ="total">Total item cost:  €${
+          ` <h4 class ="total">Total item cost:  DKK ${
                   item.isInCart * item.price
                 },00</h4>
                 </div>
@@ -101,7 +101,7 @@ function displayCart() {
         </h4>
         <hr>
         <h4 class ="cart-total-cost">
-            € ${cartTotalCost},00
+            DKK ${cartTotalCost},00
         </h4>`;
   }
 }
