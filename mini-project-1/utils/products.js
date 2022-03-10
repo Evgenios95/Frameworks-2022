@@ -195,7 +195,7 @@ const productList = [
     description:
       "The coffee is balanced and aromatic with notes of chocolate - intensity 5/10.",
     category: "Light roast",
-    productImage: "../assets/product_images/Ccoffee17.png",
+    productImage: "../assets/product_images/Coffee17.png",
     isInCart: 0,
     discount: "no",
   },
