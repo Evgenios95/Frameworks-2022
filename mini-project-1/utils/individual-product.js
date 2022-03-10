@@ -17,6 +17,7 @@ function renderProduct() {
   oldDetails.innerHTML = "";
   var product = JSON.parse(localStorage.getItem("Product"));
   var div = $('<div class="products-wrapper">');
+  console.log(product);
   div.append(fetchProduct(product));
   $(".individual-product").append(div);
 }
