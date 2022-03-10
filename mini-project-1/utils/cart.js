@@ -90,6 +90,7 @@ function displayCart() {
           ` <h4 class ="total">Total item cost:  DKK ${
                   item.isInCart * item.price
                 },00</h4>
+                <h4>Quantity: ${item.isInCart}</h4>
                 </div>
                 <button class="removeItem" onclick="removeFromBasket('${item.productName}')">Remove</button>
             </div>
