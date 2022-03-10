@@ -184,6 +184,19 @@ nav ul {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 992px) {
+  .filter-button-section {
+    width: inherit;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-button-section>button{
+    margin: 5px 0;
+  }
+}
+
+
 .filter-button {
   font-family: "Montserrat";
   background-color: rgba(228, 206, 175, 0.598);
