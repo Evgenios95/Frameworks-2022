@@ -67,21 +67,6 @@ const appendNavigationAndFooter = () => {
       </div>
     </div>`;
 
-  const navigationSection = `
-    <ul>
-      <li><a href="home-page.html">Home</a></li>
-      <li><a href="products.html" class="allProd">All Products</a></li>
-      <li><a class="drop" href="#">Categories</a>
-        <ul>
-          <li><button class="filter-button" onclick="filterProductCategory('Dark roast')">Dark Roast</button></li>
-          <li><button class="filter-button" onclick="filterProductCategory('Medium roast')">Medium Roast</button></li>
-          <li><button class="filter-button" onclick="filterProductCategory('Light roast')">Light Roast</button></li>
-          <li><button class="filter-button">All products</button></li>
-        </ul>
-      </li>
-      
-    </ul>`;
-
   let footerSection = `    
     <div class="container">
       <div class="row">
@@ -138,25 +123,28 @@ const appendNavigationAndFooter = () => {
   checkLogin();
 };
 
-
-function checkLogin(){
-  if(localStorage.getItem('user') === null){
-    localStorage.setItem('user','')
+function checkLogin() {
+  if (localStorage.getItem("user") === null) {
+    localStorage.setItem("user", "");
   }
-  if(localStorage.getItem('user') !== ''){
+  if (localStorage.getItem("user") !== "") {
     swapLoginElements();
     return;
   }
 }
 
-function swapLoginElements(){
+function swapLoginElements() {
   $("#loginElement").remove();
-  $("#exCollapsingNavbar").append(`
+  $("#exCollapsingNavbar").append(
+    `
     <div class="ml-auto loggedinMessage" >
       <h3>
-      Welcome ` + localStorage.getItem('user') + `
+      Welcome ` +
+      localStorage.getItem("user") +
+      `
       </h3>
       </div>
       <div onclick="logout()" class="logoutButton">Logout</div>
-    `)
+    `
+  );
 }

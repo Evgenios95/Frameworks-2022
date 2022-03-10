@@ -1,4 +1,11 @@
-function saveDetails(productId, productImage, productName, price, weight, description) {
+function saveDetails(
+  productId,
+  productImage,
+  productName,
+  price,
+  weight,
+  description
+) {
   const product = {
     productId: productId,
     productImage: productImage,
@@ -35,7 +42,7 @@ function fetchProduct(product) {
   `;
 }
 
-function addToBasket(productId){
+function addToBasket(productId) {
   cartQty(productList[productId - 1]);
   totalCost(productList[productId - 1]);
 }

@@ -66,9 +66,9 @@ function displayCart() {
 
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-  if(cartItems == null){
+  if (cartItems == null) {
     noCartItem();
-    return
+    return;
   }
   let productContainer = document.querySelector(".cart-products-wrapper");
   let priceContainer = document.querySelector(".cart-total-wrapper");
@@ -106,15 +106,15 @@ function displayCart() {
   }
 }
 
-function noCartItem(){
+function noCartItem() {
   $(".cart-total-wrapper").remove();
-  $('.cart-products-wrapper').css('display','flex');
+  $(".cart-products-wrapper").css("display", "flex");
   $(".cartProducts-grid-container").css("padding", 0);
-  $(".cart-products-wrapper").append('<h3 id="noItemsMsg">You have no items in the cart, please add items to view products in your basket.</h3>');
+  $(".cart-products-wrapper").append(
+    '<h3 id="noItemsMsg">You have no items in the cart, please add items to view products in your basket.</h3>'
+  );
 }
 
 onLoadCartNumbers();
 //run whenever the page loads
 displayCart();
-
-
