@@ -14,7 +14,7 @@ const appendNavigationAndFooter = () => {
               <ul class="nav navbar-nav " style='background-color:transparent'>
                   <li class="nav-item " ><a href="home-page.html" class="nav-link text-dark" id="navigation-link-text">Homepage</a></li>
                   <li class="nav-item"><a href="products.html" class="nav-link text-dark" id="navigation-link-text">Products</a></li>
-                  <li class="nav-item"><a href="cart.html" class="nav-link text-dark" id="navigation-link-text">Cart</a></li>
+                  <li class="nav-item"><a href="cart.html" class="nav-link text-dark" id="navigation-link-text">Basket <i style="font-size:18px" class="fa">&#xf291;</i></a></li>
                   <li style="align-self: center">
                       <span class="items-in-cart-number">
                           0

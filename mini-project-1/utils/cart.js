@@ -110,7 +110,7 @@ function noCartItem(){
   $(".cart-total-wrapper").remove();
   $('.cart-products-wrapper').css('display','flex');
   $(".cartProducts-grid-container").css("padding", 0);
-  $(".cart-products-wrapper").append('<h3 id="noItemsMsg">You have no items in the cart, please add items to view products in your basket.</h3>');
+  $(".cart-products-wrapper").append('<h3 id="noItemsMsg">You have no items in the shopping basket, please add items to view products in your basket.</h3>');
 }
 
 onLoadCartNumbers();
