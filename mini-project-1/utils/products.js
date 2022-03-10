@@ -235,8 +235,8 @@ function fetchProductCard(i) {
   <h1 class="product_name">${productList[i].productName}</h1>
   <h4 class="product_price">${productList[i].price}€</h4>
   <h5 class="product_weight">${productList[i].weight}</h5>
-  <a href="individual-product.html" button class="btn btn-light" style="background-color: #cc7511" onclick="saveDetails('${productList[i].productId}', '${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].description}');">Details</button></a> 
-  <br><br><button class="add-to-basket">Add to basket</button>
+  <a href="individual-product.html" button class="btn btn-outline-light" onclick="saveDetails('${productList[i].productId}', '${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].weight}', '${productList[i].description}');">Details</button></a> 
+  <br><button class="add-to-basket">Add to basket</button>
   </div> 
   </div>
   `;

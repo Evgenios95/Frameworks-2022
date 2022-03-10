@@ -1,9 +1,10 @@
-function saveDetails(productId, productImage, productName, price, description) {
+function saveDetails(productId, productImage, productName, price, weight, description) {
   const product = {
     productId: productId,
     productImage: productImage,
     productName: productName,
     price: price,
+    weight: weight,
     description: description,
   };
 
@@ -25,7 +26,8 @@ function fetchProduct(product) {
   <div class="product" key="${product.productId}">
   <a href="individual-product.html"><img class="product_image" src="${product.productImage}"></a>
   <h1 class="product_name">${product.productName}</h1>
-  <h4 class="product_price">$ ${product.price},00</h4>
+  <h4 class="product_price">$ ${product.price}</h4>
+  <h5 class="product_weight">${product.weight}</h5>
   <p class="product_description" >${product.description}</p>
   <button class="individual_add_to_basket" onclick="addToBasket(${product.productId})">Add to basket</button>
   </div>
