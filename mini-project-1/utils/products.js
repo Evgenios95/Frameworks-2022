@@ -247,7 +247,7 @@ function renderProducts(productList) {
 }
 
 function fetchProductCard(i) {
-  const priceElement = productList[i].discount == "no" ? `<h4 class="product_price">${productList[i].price}€</h4>` : `<h4 class="product_price">${productList[i].price}€ <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${productList[i].price + 10}€</span></h4>`;
+  const priceElement = productList[i].discount == "no" ? `<h4 class="product_price">${productList[i].price} DKK</h4>` : `<h4 class="product_price">${productList[i].price}DKK <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${productList[i].price + 10} DKK</span></h4>`;
 
   return `
   <div key="${productList[i].productId}">
