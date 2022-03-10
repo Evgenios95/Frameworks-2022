@@ -66,7 +66,7 @@ function displayCart() {
 
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-  if (cartItems == null) {
+  if (cartItems == null || jQuery.isEmptyObject(cartItems)) {
     noCartItem();
     return;
   }
@@ -91,6 +91,7 @@ function displayCart() {
                   item.isInCart * item.price
                 },00</h4>
                 </div>
+                <button class="removeItem" onclick="removeFromBasket('${item.productName}')">Remove</button>
             </div>
             `;
     });
@@ -118,3 +119,28 @@ function noCartItem() {
 onLoadCartNumbers();
 //run whenever the page loads
 displayCart();
+
+function removeFromBasket(productName){
+  if (localStorage.getItem('productsInCart') == null) return;
+
+  var itemsInCart = JSON.parse(localStorage.getItem('productsInCart'))
+  var itemsInNewCart = {}
+  for (var id in itemsInCart) {
+    if (itemsInCart.hasOwnProperty(id)) {
+      if(itemsInCart[id].productName === productName){
+          //lower cart amount
+        const currentCartQty = localStorage.getItem('cartQty')
+        const newCartQty = parseInt(currentCartQty) - itemsInCart[id].isInCart
+        localStorage.setItem("cartQty", newCartQty.toString())
+      }else{
+        itemsInNewCart[id] = itemsInCart[id];
+      }
+    }
+  }
+  localStorage.setItem("productsInCart", JSON.stringify(itemsInNewCart));
+  console.log(localStorage.getItem('productsInCart'))
+  //reset cart number
+
+  location.reload();
+}
+
