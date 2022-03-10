@@ -186,8 +186,8 @@ nav ul {
 
 .filter-button {
   font-family: "Montserrat";
-  background-color: rgba(222, 195, 157, 0.858);
-  border: 3px ridge rgb(208, 146, 89);
+  background-color: rgba(228, 206, 175, 0.598);
+  border: 2px ridge rgb(204, 117, 17);
   height: 40px;
   width: 160px;
   border-radius: 25px;
@@ -196,7 +196,7 @@ nav ul {
 
 .filter-button:hover {
   background-color: #875215;
-  color: #f3b977;
+  color: #e4ceaf;
 }
 
 .filter-button:active {
