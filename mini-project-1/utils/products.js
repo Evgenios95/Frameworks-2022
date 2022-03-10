@@ -148,7 +148,7 @@ const productList = [
     description:
       "Original Luigi Lavazza blend with intense aroma of coffee. Full-bodied, soft and aromatic.",
     category: "Medium roast",
-    productImage: "../assets/product_images/coffee13.png",
+    productImage: "../assets/product_images/Coffee13.png",
     isInCart: 0,
     discount: "no",
   },
@@ -159,7 +159,7 @@ const productList = [
     price: 99,
     description: "Full-bodied and intense - intensity 7/10.",
     category: "Dark roast",
-    productImage: "../assets/product_images/coffee14.png",
+    productImage: "../assets/product_images/Coffee14.png",
     isInCart: 0,
     discount: "no",
   },
@@ -171,7 +171,7 @@ const productList = [
     description:
       "Full-bodied and well-balanced espresso with notes of honey and roasted nuts.",
     category: "Dark roast",
-    productImage: "../assets/product_images/coffee15.png",
+    productImage: "../assets/product_images/Coffee15.png",
     isInCart: 0,
     discount: "no",
   },
@@ -183,7 +183,7 @@ const productList = [
     description:
       "The coffee is pleasant and full-bodied with an intense aroma and a taste of chocolate.",
     category: "Medium roast",
-    productImage: "../assets/product_images/coffee16.png",
+    productImage: "../assets/product_images/Coffee16.png",
     isInCart: 0,
     discount: "no",
   },
@@ -195,7 +195,7 @@ const productList = [
     description:
       "The coffee is balanced and aromatic with notes of chocolate - intensity 5/10.",
     category: "Light roast",
-    productImage: "../assets/product_images/coffee17.png",
+    productImage: "../assets/product_images/Ccoffee17.png",
     isInCart: 0,
     discount: "no",
   },
@@ -219,7 +219,7 @@ const productList = [
     description:
       "The coffee is round and balanced with fine floral and fruity undertones.",
     category: "Dark roast",
-    productImage: "../assets/product_images/coffee19.png",
+    productImage: "../assets/product_images/Coffee19.png",
     isInCart: 0,
     discount: "no",
   },
@@ -244,8 +244,15 @@ function renderProducts(productList) {
 }
 
 function fetchProductCard(i) {
-  const priceElement = productList[i].discount == "no" ? `<h4 class="product_price">${productList[i].price} DKK</h4>` : `<h4 class="product_price">${productList[i].price}DKK <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${productList[i].price + 10} DKK</span></h4>`;
- 
+  const priceElement =
+    productList[i].discount == "no"
+      ? `<h4 class="product_price">${productList[i].price} DKK</h4>`
+      : `<h4 class="product_price">${
+          productList[i].price
+        }DKK <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${
+          productList[i].price + 10
+        } DKK</span></h4>`;
+
   return (
     `
   <div key="${productList[i].productId}">
