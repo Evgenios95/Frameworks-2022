@@ -13,13 +13,14 @@
 
 /* Product inner part */
 .product {
-  background-color: rgba(222, 195, 157, 0.858);
+  background-color: rgba(128, 95, 95, 0.481);
   border-radius: 0.5rem;
   text-align: center;
   width: 360px;
   height: 480px;
-  border: 3px ridge rgb(208, 146, 89);
+  border: 2px ridge rgb(204, 117, 17);
   margin: 20px;
+  position: relative;
 }
 
 .product_image {
@@ -43,9 +44,33 @@
   font-size: 0.8rem;
 }
 
-.add-to-basket, .individual_add_to_basket {
-  display: contents;
+.btn.btn-outline-light {
+  color: #24252b;
+  border-color: transparent;
 }
+
+.add-to-basket, .individual_add_to_basket {
+  margin-top: 5px;
+  padding: 0px;
+  border: 0px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #cc7511;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 30px;
+  color: #fff;
+}
+
+.add-to-basket:hover, .individual_add_to_basket:hover {
+  font-family: "Montserrat";
+  background-color: #875215;
+  color: #e4ceaf;
+}
+
+
 
 .add-to-basket img, .individual_add_to_basket  img {
   width: 175px;
@@ -93,11 +118,11 @@
 .cart-products-wrapper > .child-1 {
   vertical-align: middle;
   border-radius: 35px 0 0 35px;
-  background-color: rgba(162, 145, 46, 0.809);
+  background-color: rgba(128, 95, 95, 0.481);
 }
 
 .cart-products-wrapper > .child-2 {
-  background-color: rgba(193, 171, 43, 0.809);
+  background-color:rgba(228, 206, 175, 0.809);
   border-radius: 0 35px 35px 0;
 }
 
