@@ -60,9 +60,32 @@
         >
           Light Roast
         </button>
-        <a href="products.html"
-          ><button class="filter-button">Reset filters</button></a
+      </div>
+
+      <div class="filter-button-section">
+        <button
+          class="filter-button filter-button-brand"
+          onclick="filterProductCategory('Depresso')"
         >
+          Depresso
+        </button>
+        <button
+          class="filter-button filter-button-brand"
+          onclick="filterProductCategory('Lavazza')"
+        >
+          Lavazza
+        </button>
+        <button
+          class="filter-button filter-button-brand"
+          onclick="filterProductCategory('Starbucks')"
+        >
+          Starbucks
+        </button>
+      </div>
+      <div class="filter-button-section" style="justify-content: center">
+        <a href="products.html">
+          <button class="filter-button">Reset filters</button>
+        </a>
       </div>
       <div class="products-section">
         <div class="products-wrapper"></div>

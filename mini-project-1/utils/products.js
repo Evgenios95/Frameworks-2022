@@ -8,7 +8,7 @@ const productList = [
     category: "Dark roast",
     productImage: "../assets/product_images/coffee1.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 2,
@@ -20,7 +20,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee2.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 3,
@@ -32,7 +32,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee3.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 4,
@@ -44,7 +44,7 @@ const productList = [
     category: "Light roast",
     productImage: "../assets/product_images/coffee4.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 5,
@@ -56,7 +56,7 @@ const productList = [
     category: "Light roast",
     productImage: "../assets/product_images/coffee5.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 6,
@@ -68,7 +68,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee6.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 7,
@@ -79,7 +79,7 @@ const productList = [
       "Full-bodied with a smooth mouthfeel, lingering notes of dried herbs and fresh earth.",
     category: "Dark roast",
     productImage: "../assets/product_images/coffee7.png",
-    discount: "10"
+    discount: "10",
   },
   {
     productId: 8,
@@ -91,7 +91,7 @@ const productList = [
     category: "Dark roast",
     productImage: "../assets/product_images/coffee8.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 9,
@@ -103,7 +103,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee9.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 10,
@@ -115,19 +115,18 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee10.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 11,
     productName: "Depresso Reboot",
     weight: "500gr",
     price: 139,
-    description:
-      "Fruity with notes of nuts and chocolate.",
+    description: "Fruity with notes of nuts and chocolate.",
     category: "Medium roast",
     productImage: "../assets/product_images/coffee11.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 12,
@@ -139,7 +138,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee12.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 13,
@@ -151,19 +150,18 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee13.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 14,
     productName: "Lavazza !Tierra! For Africa",
     weight: "500gr",
     price: 99,
-    description:
-      "Full-bodied and intense - intensity 7/10.",
+    description: "Full-bodied and intense - intensity 7/10.",
     category: "Dark roast",
     productImage: "../assets/product_images/coffee14.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 15,
@@ -175,7 +173,7 @@ const productList = [
     category: "Dark roast",
     productImage: "../assets/product_images/coffee15.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 16,
@@ -187,7 +185,7 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee16.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 17,
@@ -199,7 +197,7 @@ const productList = [
     category: "Light roast",
     productImage: "../assets/product_images/coffee17.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 18,
@@ -211,7 +209,7 @@ const productList = [
     category: "Dark roast",
     productImage: "../assets/product_images/coffee18.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 19,
@@ -223,7 +221,7 @@ const productList = [
     category: "Dark roast",
     productImage: "../assets/product_images/coffee19.png",
     isInCart: 0,
-    discount: "no"
+    discount: "no",
   },
   {
     productId: 20,
@@ -235,32 +233,35 @@ const productList = [
     category: "Medium roast",
     productImage: "../assets/product_images/coffee20.png",
     isInCart: 0,
-    discount: "10"
+    discount: "10",
   },
 ];
 
 function renderProducts(productList) {
   for (let i = 0; i < productList.length; i++) {
     $(".products-wrapper").append(fetchProductCard(i));
-
   }
 }
 
 function fetchProductCard(i) {
   const priceElement = productList[i].discount == "no" ? `<h4 class="product_price">${productList[i].price} DKK</h4>` : `<h4 class="product_price">${productList[i].price}DKK <span style="text-decoration: line-through; color: rgb(255, 0, 0);">${productList[i].price + 10} DKK</span></h4>`;
-
-  return `
+ 
+  return (
+    `
   <div key="${productList[i].productId}">
-  <div class="product ${productList[i].category}" >
+  <div class="product ${productList[i].category} ${
+      productList[i].productName.split(" ")[0]
+    }" >
   <img class="product_image" src="${productList[i].productImage}">
-  <h1 class="product_name">${productList[i].productName}</h1>`
-  + priceElement +
-  `<h5 class="product_weight">${productList[i].weight}</h5>
+  <h1 class="product_name">${productList[i].productName}</h1>` +
+    priceElement +
+    `<h5 class="product_weight">${productList[i].weight}</h5>
   <a href="individual-product.html" button class="btn btn-outline-light" onclick="saveDetails('${productList[i].productId}', '${productList[i].productImage}', '${productList[i].productName}', '${productList[i].price}', '${productList[i].weight}', '${productList[i].description}');">Details</button></a> 
   <br><button class="add-to-basket">Add to basket</button>
   </div> 
   </div>
-  `;
+  `
+  );
 }
 
 function filterProductCategory(productType) {

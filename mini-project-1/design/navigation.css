@@ -178,7 +178,7 @@ nav ul {
 
 .filter-button-section {
   margin: 25px auto 0px;
-  width: 680px;
+  width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -191,11 +191,10 @@ nav ul {
     align-items: center;
   }
 
-  .filter-button-section>button{
+  .filter-button-section > button {
     margin: 5px 0;
   }
 }
-
 
 .filter-button {
   font-family: "Montserrat";
@@ -214,4 +213,9 @@ nav ul {
 
 .filter-button:active {
   transform: translateY(2px);
+}
+
+.filter-button-brand {
+  background-color: rgba(255, 198, 117, 0.598);
+  border: 2px ridge rgb(177, 100, 11);
 }
