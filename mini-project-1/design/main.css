@@ -22,3 +22,8 @@
     }
 
 }
+
+#noItemsMsg{
+    width: 100vw;
+    margin-top: 40px;
+}
