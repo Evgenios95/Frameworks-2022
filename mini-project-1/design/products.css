@@ -13,7 +13,7 @@
 
 /* Product inner part */
 .product {
-  background-color: rgba(128, 95, 95, 0.481);
+  background-color: #e4ceaf;
   border-radius: 0.5rem;
   text-align: center;
   width: 360px;
@@ -81,7 +81,8 @@
 }
 
 .product .product_price {
-  color: rgb(255, 255, 255);
+  color: #c8691c;
+  font-weight: bold;
 }
 
 .product > .product_name {
@@ -125,7 +126,7 @@
 .cart-products-wrapper > .child-1 {
   vertical-align: middle;
   border-radius: 35px 0 0 35px;
-  background-color: rgba(128, 95, 95, 0.481);
+  background-color:  #D09259;
 }
 
 .cart-products-wrapper > .child-2 {
@@ -148,7 +149,7 @@
 }
 
 .cart-total-wrapper {
-  background-color: #9dbb31e9;
+  background-color: #cc7511;
   border-radius: 35px;
   margin-top: 10px;
 }
