@@ -123,9 +123,9 @@ displayCart();
 function removeFromBasket(productName){
   if (localStorage.getItem('productsInCart') == null) return;
 
-  var itemsInCart = JSON.parse(localStorage.getItem('productsInCart'))
-  var itemsInNewCart = {}
-  for (var id in itemsInCart) {
+  const itemsInCart = JSON.parse(localStorage.getItem('productsInCart'))
+  const itemsInNewCart = {}
+  for (const id in itemsInCart) {
     if (itemsInCart.hasOwnProperty(id)) {
       if(itemsInCart[id].productName === productName){
           //lower cart amount
@@ -138,9 +138,6 @@ function removeFromBasket(productName){
     }
   }
   localStorage.setItem("productsInCart", JSON.stringify(itemsInNewCart));
-  console.log(localStorage.getItem('productsInCart'))
-  //reset cart number
-
   location.reload();
 }
 
