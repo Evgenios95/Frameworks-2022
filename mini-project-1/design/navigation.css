@@ -68,7 +68,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #805f5f71;
+  background-color: #E4CEAF;
 }
 
 /*///////////////////////////Hr in navigation///////////////////////*/
@@ -91,7 +91,7 @@
 
 nav ul {
   text-align: center;
-  background-color: #805f5f5b;
+  background-color: #D09259;
 }
 .navigation-section ul {
   text-transform: uppercase;
