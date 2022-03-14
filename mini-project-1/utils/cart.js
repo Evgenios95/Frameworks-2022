@@ -129,15 +129,20 @@ function removeFromBasket(productName){
   for (const id in itemsInCart) {
     if (itemsInCart.hasOwnProperty(id)) {
       if(itemsInCart[id].productName === productName){
-          //lower cart amount
+        // lower cart amount
         const currentCartQty = localStorage.getItem('cartQty')
         const newCartQty = parseInt(currentCartQty) - itemsInCart[id].isInCart
         localStorage.setItem("cartQty", newCartQty.toString())
+        // lower basket price
+        const currentBasketPrice = localStorage.getItem('totalCost');
+        const newBasketPrice = parseInt(currentBasketPrice) - itemsInCart[id].isInCart * itemsInCart[id].price;
+        localStorage.setItem('totalCost', newBasketPrice);
       }else{
         itemsInNewCart[id] = itemsInCart[id];
       }
     }
   }
+
   localStorage.setItem("productsInCart", JSON.stringify(itemsInNewCart));
   location.reload();
 }
