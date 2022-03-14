@@ -1,0 +1,21 @@
+/*////////////////////////////Font-related////////////////////////////*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+#background-image {
+  padding: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
+  background-attachment: fixed;
+  background-position: center center;
+  background-image: url(../assets/61eaff49671425.58bb77365b112.jpg);
+  height: 100%;
+}

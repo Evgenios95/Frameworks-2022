@@ -1,0 +1,221 @@
+/*/////////////////////Top Login and Logo//////////////////////*/
+.welcome-message {
+  margin-right: 0%;
+}
+
+.login {
+  display: flex;
+}
+
+.user-input {
+  padding: 0.4rem 0rem;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 8rem;
+  border-radius: 8rem;
+  margin-right: 0.4rem;
+  background-color: #ffffff42;
+  border: 1px solid rgb(129, 75, 75);
+}
+
+.user-input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+/*Placeholder*/
+.user-input::placeholder {
+  color: rgb(173, 111, 111);
+}
+.user-input:hover::placeholder {
+  color: rgba(173, 111, 111, 0.274);
+}
+.user-input:focus::placeholder {
+  color: transparent;
+}
+
+/*arrow*/
+.login-button {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.welcome-message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-top: 15px;
+}
+
+.coffeenator-logo {
+  max-height: 55px;
+}
+
+#navigation-link-text {
+  font-family: "Montserrat";
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+#navigation-link-text:hover {
+  color: rgb(248, 235, 211) !important;
+}
+
+.login-and-logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E4CEAF;
+}
+
+/*///////////////////////////Hr in navigation///////////////////////*/
+
+#menuLine {
+  padding: 0;
+  margin: 0;
+  size: 3px;
+  height: 3px;
+  background-color: #805f5f5b;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.377),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/*////////////////////////////Navigation under Topmost///////////////////////*/
+
+nav ul {
+  text-align: center;
+  background-color: #D09259;
+}
+.navigation-section ul {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+.navigation-section ul ul {
+  position: absolute;
+  width: 180px;
+  text-transform: none;
+}
+.navigation-section li {
+  display: inline-block;
+  position: relative;
+  margin: 0 8px 0 0;
+  padding: 0;
+}
+.navigation-section li li {
+  width: 100%;
+  margin: 0;
+}
+.navigation-section li a {
+  display: block;
+  padding: 3px 0;
+}
+.navigation-section .drop {
+  padding-left: 5px;
+}
+.navigation-section li li a,
+.navigation-section li li .drop {
+  display: block;
+  margin: 0;
+  padding: 12px 9px;
+}
+/*Hide it, but drop when I hover over it*/
+.navigation-section ul ul {
+  visibility: hidden;
+  opacity: 0;
+}
+.navigation-section ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+.navigation-section li a {
+  color: inherit;
+}
+.navigation-section .active a,
+.navigation-section a:hover,
+.navigation-section li:hover > a {
+  color: #ece4dc;
+  background-color: inherit;
+}
+.navigation-section li li a,
+.navigation-section .active li a {
+  color: #ffd240;
+  background-color: rgb(0, 0, 0);
+  border-color: rgba(206, 166, 166, 0.6);
+  border-radius: 15%;
+}
+.navigation-section li li:hover > a {
+  color: inherit;
+  background-color: #dc8e47;
+}
+
+/*Basket icon*/
+.cart-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.shopping-cart-icon {
+  font-size: 2rem;
+}
+
+/*Basket number span*/
+.items-in-cart-number {
+  background-color: #cc7511;
+  font-style: italic;
+  padding: 0 5px;
+  border-radius: 35%;
+  font-size: 14px;
+  color: white;
+  display: block;
+}
+
+.filter-button-section {
+  margin: 25px auto 0px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+  .filter-button-section {
+    width: inherit;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-button-section > button {
+    margin: 5px 0;
+  }
+}
+
+.filter-button {
+  font-family: "Montserrat";
+  background-color: rgba(228, 206, 175, 0.598);
+  border: 2px ridge rgb(204, 117, 17);
+  height: 40px;
+  width: 160px;
+  border-radius: 25px;
+  line-height: normal;
+}
+
+.filter-button:hover {
+  background-color: #875215;
+  color: #e4ceaf;
+}
+
+.filter-button:active {
+  transform: translateY(2px);
+}
+
+.filter-button-brand {
+  background-color: rgba(255, 198, 117, 0.598);
+  border: 2px ridge rgb(177, 100, 11);
+}
