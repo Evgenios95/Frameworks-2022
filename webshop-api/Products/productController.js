@@ -5,6 +5,6 @@ export async function allProducts(req, res) {
         const products = await getAllProducts();
         res.json(products);
     } catch (error) {
-        res.status(500).send(error.message);
+        res.status(400).send(error.message);
     }
 }
