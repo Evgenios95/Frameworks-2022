@@ -2,4 +2,4 @@ GET http://localhost:3000;
 
 
 ###
-GET http://localhost:3000/product/all;
+GET http://localhost:3000/product/all HTTP/1.1

@@ -1,10 +1,19 @@
-import {getAllProducts} from "./productModel.js"
+import {getAllProducts, getProductById} from "./productModel.js"
 
 export async function allProducts(req, res) {
     try {
-        const products = await getAllProducts();
-        res.json(products);
+        const products = await getAllProducts()
+        res.json(products)
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(500).send(error.message)
+    }
+}
+
+export async function productById(req, res) {
+    try {
+        const product = await getProductById(req.params.id)
+        res.json(product)
+    } catch {
+        res.status(500).send("Invalid ID")
     }
 }
