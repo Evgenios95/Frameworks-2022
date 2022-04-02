@@ -1,16 +1,22 @@
-const express = require("express");
+import express from "express";
+import basketRouter from "./routes/basket.js";
+import productRouter from "./routes/product.js";
+import userRouter from "./routes/user.js";
+
 const app = express();
 const port = 3000;
 
-const basketRouter = require('./routes/basket.js')
-
+//routing for Basket
 app.use('/basket', basketRouter);
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
+//routing for Products
+app.use('/product', productRouter);
 
+//routing for User
+app.use('/user', userRouter);
+
+//Listening to requests
 app.listen(port, () => {
-    console.log(`${port}`);
+    console.log(`http://localhost:${port}`);
 });
 
