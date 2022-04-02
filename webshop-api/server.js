@@ -1,7 +1,7 @@
-import express from "express";
-import basketRouter from "./routes/basket.js";
-import productRouter from "./routes/product.js";
-import userRouter from "./routes/user.js";
+import express from "express"
+import basketRouter from "./routes/basket.js"
+import productRouter from "./routes/product.js"
+import userRouter from "./routes/user.js"
 
 const app = express();
 const port = 3000;

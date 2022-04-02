@@ -6,4 +6,4 @@ router.get('/', (req, res) => {
     res.send('userAPI')
 })
 
-module.exports = router
+export default router
