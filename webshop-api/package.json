@@ -1,6 +1,7 @@
 {
   "name": "webshop-api",
   "version": "1.0.0",
+  "type": "module",
   "description": "2nd Deliverable for Frameworks",
   "main": "server.js",
   "scripts": {
