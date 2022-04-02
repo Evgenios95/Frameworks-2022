@@ -53,8 +53,8 @@ In this activity you should implement the specified API in Node.js/Express envir
 - API Specification (MS Word or PDF document) based on the provided template.
 - Link to your Git project containing the RESTful API source code. The link should be entered\
   in the assignment submission online form in LearnIT. It could be also provided in the PDF\
-   document. Your Git project can be stored in ITU Git enterprise server (https://github.itu.dk/)\
-  or any other publicly accessible web-based Git hosting service (GitHub, GitLab, etc.)
+   document. Your Git project can be stored in ITU Git enterprise server (https://github.itu.dk/) or\
+   any other publicly accessible web-based Git hosting service (GitHub, GitLab, etc.)
 
 # APPENDIX: Template for RESTful API specification List of resources
 
