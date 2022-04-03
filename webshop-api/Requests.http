@@ -1,3 +1,23 @@
-//get All Products
-GET http://localhost:3000/product/all HTTP/1.1
 ###
+GET http://localhost:3000/product/all HTTP/1.1
+
+###
+POST http://localhost:3000/user/login HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "notMyEmail@itu.dk",
+  "password": "absolutelyNotSafePassword123"
+}
+
+###
+POST http://localhost:3000/user/register HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Michal",
+  "password": "absolutelyNotSafePassword123",
+  "email": "notMyEmail@itu.dk"
+}

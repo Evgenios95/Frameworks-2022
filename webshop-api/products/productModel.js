@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 
-const PRODUCTS_FILE = "./Products/products.json";
+const PRODUCTS_FILE = "./products/products.json";
 
 export async function getAllProducts() {
     try {
@@ -8,7 +8,6 @@ export async function getAllProducts() {
         let products = JSON.parse(productsTxt);
         return products;
     } catch (err) {
-        console.log(err)
         if (err.code === "ENOENT") {
             return [];
         } else throw err;
