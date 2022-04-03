@@ -21,7 +21,7 @@ export async function processLogin(email, password) {
 
 export async function processRegister(username, password, email) {
     const isUnique = await isUniqueEmail(email)
-    if (!isUnique) throw Error("User already exists")
+    if (!isUnique) throw Error("Email is already taken")
     return await addNewUser(username, password, email)
 
 }
