@@ -1,6 +1,12 @@
 ###
 GET http://localhost:3000/product/all HTTP/1.1
 
+### Filter products by brand
+GET http://localhost:3000/product/filtered?category=lavazza HTTP/1.1
+
+### Filter products by roast
+GET http://localhost:3000/product/filtered?category=darkroast HTTP/1.1
+
 ###
 GET http://localhost:3000/product/1 HTTP/1.1
 
