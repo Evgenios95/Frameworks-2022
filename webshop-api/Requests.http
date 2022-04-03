@@ -2,6 +2,9 @@
 GET http://localhost:3000/product/all HTTP/1.1
 
 ###
+GET http://localhost:3000/product/1 HTTP/1.1
+
+###
 POST http://localhost:3000/user/login HTTP/1.1
 Accept: application/json
 Content-Type: application/json
