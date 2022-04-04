@@ -19,21 +19,19 @@ export async function getProductById(id) {
 }
 
 export async function getFilteredProducts(queryCategory) {
-    try {
-        let products = await getAllProducts();
+    let products = await getAllProducts();
+    return await applyAllFilters(products, queryCategory);
+}
 
-        const filteredProducts = products.filter((product) => {
-            const filteredCategory = Object.values(product.productCategories).find(
-                (category) => category === queryCategory
-            );
+export async function applyAllFilters(products, queryCategory) {
+    //maybe loop through the different filters here and invoke the appropriate ones
+    const filteredProducts = await filterByBrandORRoast(products, queryCategory)
+    //filteredProducts = await filterByBrandAndRoast(filteredProduct, queryValue)
 
-            return filteredCategory;
-        });
+    return filteredProducts;
+}
 
-        return filteredProducts;
-    } catch (err) {
-        if (err.code === "ENOENT") {
-            return [];
-        } else throw err;
-    }
+export async function filterByBrandORRoast(products, queryCategory) {
+    // would be nice if we split it to two different functions so we just need one simple condition in the filter function
+    return products.filter((product) => product["productCategories"]["roast"] === queryCategory || product["productCategories"]["brand"] === queryCategory);
 }

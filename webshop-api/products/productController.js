@@ -23,9 +23,8 @@ export async function productById(req, res) {
 }
 
 export async function filteredProducts(req, res) {
-  const queryCategory = req.query.category;
-
   try {
+    const queryCategory = req.query.category;
     const products = await getFilteredProducts(queryCategory);
     res.json(products);
   } catch (error) {
