@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
   "email": "notMyEmail@itu.dk",
-  "password": "absolutelyNotSafePassword123"
+  "password": "absoluord123"
 }
 
 ###
@@ -29,4 +29,18 @@ Content-Type: application/json
   "username": "Michal",
   "password": "absolutelyNotSafePassword123",
   "email": "notMyEmail@itu.dk"
+}
+
+
+###
+POST http://localhost:3000/product/filters HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "filters": {
+    "brand": "all",
+    "discount": true,
+    "roast": "mediumroast"
+  }
 }

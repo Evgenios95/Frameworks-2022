@@ -1,5 +1,19 @@
 [
   {
+    "productId": 0,
+    "productName": "Starbucks Breakfast",
+    "productWeight": "340gr",
+    "productPrice": 59,
+    "description": "Notes of sweet orange and brown sugar mingle in our lightest medium roast coffee.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee20.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
     "productId": 1,
     "productName": "Starbucks Espresso",
     "productWeight": "340gr",
@@ -263,19 +277,5 @@
     "productImage": "../assets/product_images/Coffee19.png",
     "isInBasket": 0,
     "discountAmount": "no"
-  },
-  {
-    "productId": 20,
-    "productName": "Starbucks Breakfast",
-    "productWeight": "340gr",
-    "productPrice": 59,
-    "description": "Notes of sweet orange and brown sugar mingle in our lightest medium roast coffee.",
-    "productCategories": {
-      "roast": "mediumroast",
-      "brand": "starbucks"
-    },
-    "productImage": "../assets/product_images/coffee20.png",
-    "isInBasket": 0,
-    "discountAmount": "10"
   }
 ]
