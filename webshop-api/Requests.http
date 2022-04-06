@@ -16,13 +16,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-  "email": "notM1Email@itu.dk",
-  "password": "absolutelyNotSafePassword123"
-=======
   "email": "notMyEmail@itu.dk",
   "password": "absoluord123"
->>>>>>> development
 }
 
 ###
@@ -36,10 +31,6 @@ Content-Type: application/json
   "email": "notM1Email@itu.dk"
 }
 
-<<<<<<< HEAD
-###
-GET http://localhost:3000/basket/ HTTP/1.1
-=======
 
 ###
 POST http://localhost:3000/product/filters HTTP/1.1
@@ -53,4 +44,6 @@ Content-Type: application/json
     "roast": "mediumroast"
   }
 }
->>>>>>> development
+
+###
+GET http://localhost:3000/basket/user/michal HTTP/1.1
