@@ -1,5 +1,5 @@
 import express from "express"
-import basketRouter from "./basket/basket.js"
+import basketRouter from "./basket/basketRouter.js"
 import productRouter from "./products/productRouter.js"
 import userRouter from "./user/userRouter.js"
 

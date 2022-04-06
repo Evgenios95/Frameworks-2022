@@ -10,7 +10,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "notMyEmail@itu.dk",
+  "email": "notM1Email@itu.dk",
   "password": "absolutelyNotSafePassword123"
 }
 
@@ -22,5 +22,8 @@ Content-Type: application/json
 {
   "username": "Michal",
   "password": "absolutelyNotSafePassword123",
-  "email": "notMyEmail@itu.dk"
+  "email": "notM1Email@itu.dk"
 }
+
+###
+GET http://localhost:3000/basket/ HTTP/1.1
