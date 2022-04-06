@@ -1,6 +1,12 @@
 ###
 GET http://localhost:3000/product/all HTTP/1.1
 
+### Filter products by brand
+GET http://localhost:3000/product/filtered?category=lavazza HTTP/1.1
+
+### Filter products by roast
+GET http://localhost:3000/product/filtered?category=darkroast HTTP/1.1
+
 ###
 GET http://localhost:3000/product/1 HTTP/1.1
 
@@ -10,8 +16,13 @@ Accept: application/json
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
   "email": "notM1Email@itu.dk",
   "password": "absolutelyNotSafePassword123"
+=======
+  "email": "notMyEmail@itu.dk",
+  "password": "absoluord123"
+>>>>>>> development
 }
 
 ###
@@ -25,5 +36,21 @@ Content-Type: application/json
   "email": "notM1Email@itu.dk"
 }
 
+<<<<<<< HEAD
 ###
 GET http://localhost:3000/basket/ HTTP/1.1
+=======
+
+###
+POST http://localhost:3000/product/filters HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "filters": {
+    "brand": "all",
+    "discount": true,
+    "roast": "mediumroast"
+  }
+}
+>>>>>>> development
