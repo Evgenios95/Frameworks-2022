@@ -1,5 +1,5 @@
 import express from "express"
-import {create, removeFromBasket, basketForUser, addToBasket} from "./basketController.js"
+import {createBasket, deleteBasket, removeFromBasket, basketForUser, addToBasket} from "./basketController.js"
 
 const router = express.Router()
 
@@ -7,10 +7,11 @@ const router = express.Router()
 //     res.send('Basket')
 // })
 
-router.route('/user/:username').post(create)
-router.route('/user/:username').put(addToBasket)
-router.route('/user/:username').get(basketForUser)
-router.route('/user/:username/product/:id').delete(removeFromBasket)
+router.route('/user/:id').post(createBasket)
+router.route('/user/:id').delete(deleteBasket)
+router.route('/user/:id').get(basketForUser)
+router.route('/user/:id/product/:pid').delete(removeFromBasket)
+router.route('/user/:id/product/:pid').put(addToBasket)
 
 
 

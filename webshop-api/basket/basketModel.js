@@ -13,13 +13,28 @@ export async function getUsers() {
     }
 }
 
-export async function getBasketByUser(username) {
+
+
+export async function getBasketByUser(id) {
     const users = await getUsers()
     for (const user in users) {
-        if (users[user].username === username) return users[user]
-
+        if (users[user].userID === id) return users[user]
     }
-    return false
+    return false;
 }
+
+// export async function getBasketByUser(id) {
+//     let users = await getUsers();
+//     if (users) {
+//       const filteredUsers = users.filter((user) => user.userID === id);
+//       const userCart = filteredUsers[0].basket;
+//       if (!userCart) {
+//         throw new Error("This user has no cart");
+//       }
+//       return userCart;
+//     }
+//   }
+
+
 
 

@@ -35,8 +35,8 @@ export async function filteredProducts(req, res) {
 
 export async function categories(req, res) {
   try {
-    const categories = await getCategoryNames();
-    res.json(categories);
+    const productCategories = await getCategoryNames();
+    res.json({productCategories});
   } catch (error){
     res.status(500).send(error.message);
   }

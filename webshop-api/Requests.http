@@ -2,6 +2,7 @@
 GET http://localhost:3000/product/all HTTP/1.1
 
 ### Get product categories that exist.
+GET http://localhost:3000/product/categories HTTP/1.1
 
 ### Get most important information about products for a specific category
 ### Filter products by brand
@@ -20,6 +21,10 @@ GET http://localhost:3000/product/0 HTTP/1.1
 ### Remove a product from the basket for a specific user.
 
 ### Get the shopping basket content for a specific user.
+GET http://localhost:3000/basket/user/1 HTTP/1.1
+
+###
+GET http://localhost:3000/user/1 HTTP/1.1
 
 ### 
 POST http://localhost:3000/user/login HTTP/1.1
@@ -41,9 +46,6 @@ Content-Type: application/json
   "password": "absolutelyNotSafePassword123",
   "email": "notMyEmail@itu.dk"
 }
-
-###
-GET http://localhost:3000/product/categories HTTP/1.1
 
 
 ###
