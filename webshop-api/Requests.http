@@ -1,23 +1,34 @@
-###
+### Get most important information about all products that are offered
 GET http://localhost:3000/product/all HTTP/1.1
 
+### Get product categories that exist.
+
+### Get most important information about products for a specific category
 ### Filter products by brand
 GET http://localhost:3000/product/filtered?category=lavazza HTTP/1.1
 
 ### Filter products by roast
 GET http://localhost:3000/product/filtered?category=darkroast HTTP/1.1
 
-###
-GET http://localhost:3000/product/1 HTTP/1.1
+### Get all details about a specific product
+GET http://localhost:3000/product/0 HTTP/1.1
 
-###
+### Create a shopping basket for a specific user.
+
+### Put a product in the basket for a specific user.
+
+### Remove a product from the basket for a specific user.
+
+### Get the shopping basket content for a specific user.
+
+### 
 POST http://localhost:3000/user/login HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
 {
   "email": "notMyEmail@itu.dk",
-  "password": "absoluord123"
+  "password": "absolutelyNotSafePassword123"
 }
 
 ###
@@ -28,8 +39,11 @@ Content-Type: application/json
 {
   "username": "Michal",
   "password": "absolutelyNotSafePassword123",
-  "email": "notM1Email@itu.dk"
+  "email": "notMyEmail@itu.dk"
 }
+
+###
+GET http://localhost:3000/product/categories HTTP/1.1
 
 
 ###
@@ -44,6 +58,3 @@ Content-Type: application/json
     "roast": "mediumroast"
   }
 }
-
-###
-GET http://localhost:3000/basket/user/michal HTTP/1.1

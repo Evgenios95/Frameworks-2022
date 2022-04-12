@@ -29,6 +29,7 @@ export async function processRegister(username, password, email) {
 async function addNewUser(username, password, email) {
     const users = await getUsers()
     const newUser = {
+        "userID": Object.keys(users).length+1,
         "username": username,
         "password": password,
         "email": email,
@@ -62,3 +63,4 @@ async function getUserByEmail(email) {
     }
     return false
 }
+

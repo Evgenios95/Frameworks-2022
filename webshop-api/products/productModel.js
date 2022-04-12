@@ -35,3 +35,12 @@ export async function filterByBrandORRoast(products, queryCategory) {
     // would be nice if we split it to two different functions so we just need one simple condition in the filter function
     return products.filter((product) => product["productCategories"]["roast"] === queryCategory || product["productCategories"]["brand"] === queryCategory);
 }
+
+export async function getCategoryNames() {
+   let product = await getProductById(1);
+   const  arrayOfCategories = Object.keys(product["productCategories"])
+   
+   return arrayOfCategories;
+
+
+}

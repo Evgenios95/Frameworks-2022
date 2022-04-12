@@ -2,6 +2,7 @@ import {
   getAllProducts,
   getFilteredProducts,
   getProductById,
+  getCategoryNames,
 } from "./productModel.js";
 
 export async function allProducts(req, res) {
@@ -30,4 +31,14 @@ export async function filteredProducts(req, res) {
   } catch (error) {
     res.status(500).send(error.message);
   }
+}
+
+export async function categories(req, res) {
+  try {
+    const categories = await getCategoryNames();
+    res.json(categories);
+  } catch (error){
+    res.status(500).send(error.message);
+  }
+
 }
