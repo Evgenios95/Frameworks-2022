@@ -32,8 +32,8 @@ async function addNewUser(username, password, email) {
         "userID": Object.keys(users).length+1,
         "username": username,
         "password": password,
-        "email": email,
-        "basket": []
+        "email": email
+        
     }
     users.push(newUser)
     await fs.writeFile(USERS_FILE, JSON.stringify(users))
@@ -63,4 +63,6 @@ async function getUserByEmail(email) {
     }
     return false
 }
+
+
 

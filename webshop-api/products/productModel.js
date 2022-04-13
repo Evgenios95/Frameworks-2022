@@ -15,7 +15,7 @@ export async function getAllProducts() {
 
 export async function getProductById(id) {
     let products = await getAllProducts();
-    return products[parseInt(id) - 1];
+    return products[parseInt(id)];
 }
 
 export async function getFilteredProducts(queryCategory) {
