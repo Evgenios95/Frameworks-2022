@@ -15,16 +15,18 @@ GET http://localhost:3000/product/filtered?category=darkroast HTTP/1.1
 GET http://localhost:3000/product/0 HTTP/1.1
 
 ### Create a shopping basket for a specific user.
+POST http://localhost:3000/basket/user/1 HTTP/1.1
+
+### Delete a shopping basket for a specific user.
+DELETE  http://localhost:3000/basket/user/1 HTTP/1.1
 
 ### Put a product in the basket for a specific user.
+
 
 ### Remove a product from the basket for a specific user.
 
 ### Get the shopping basket content for a specific user.
 GET http://localhost:3000/basket/user/1 HTTP/1.1
-
-###
-GET http://localhost:3000/user/1 HTTP/1.1
 
 ### 
 POST http://localhost:3000/user/login HTTP/1.1
