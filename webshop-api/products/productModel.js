@@ -37,10 +37,6 @@ export async function filterByBrandORRoast(products, queryCategory) {
 }
 
 export async function getCategoryNames() {
-   let product = await getProductById(1);
-   const arrayOfCategories = Object.keys(product["productCategories"])
-   
-   return arrayOfCategories;
-
-
+    let product = await getProductById(1);
+    return Object.keys(product["productCategories"]);
 }

@@ -1,18 +1,23 @@
-import {getBasket, createNewBasket, deleteAll, addProduct} from "./basketModel.js"
+import {getBasketById, createNewBasket, deleteAll, addProduct} from "./basketModel.js"
 
-export async function basketForUser(req, res) {
+export async function getBasket(req, res) {
     try {
-        const basket = await getBasket(req.params.id)
+        const userId = parseInt(req.params.userId)
+        const basket = await getBasketById(userId)
+        if (!basket) {
+            res.status(500).send("User has no basket")
+        }
+        ;
         res.json(basket)
-    } catch(error) {
+    } catch (error) {
         res.status(500).send(error.message)
     }
 }
 
 
-export async function create(req, res) {
+export async function createBasket(req, res) {
     try {
-        await createNewBasket(req.params.id)
+        await createNewBasket(parseInt(req.body.userId))
         res.json({success: "Basket created"})
     } catch (error) {
         res.status(500).send(error.message)
@@ -21,7 +26,8 @@ export async function create(req, res) {
 
 export async function deleteBasket(req, res) {
     try {
-        await deleteAll(req.params.id)
+        const userId = parseInt(req.params.userId)
+        await deleteAll(userId)
         res.json({success: "Basket deleted"})
     } catch (error) {
         res.status(500).send(error.message)
@@ -31,9 +37,9 @@ export async function deleteBasket(req, res) {
 
 export async function addToBasket(req, res) {
     try {
-        const userID = req.params.id;
-        const productID = req.params.pid;
-        const basket = await addProduct(userID,productID);
+        const userId = req.body.userId;
+        const productId = req.body.productId;
+        const basket = await addProduct(userId, productId);
         res.json(basket)
     } catch (error) {
         res.status(500).send(error.message)
@@ -41,14 +47,6 @@ export async function addToBasket(req, res) {
 }
 
 export async function removeFromBasket(req, res) {
-    try {
-        const username = req.body.username
-        const password = req.body.password
-        const email = req.body.email
-        const user = await processRegister(username, password, email)
-        res.json(user)
-    } catch (error) {
-        res.status(500).send(error.message)
-    }
+
 }
 
