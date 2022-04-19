@@ -1,4 +1,4 @@
-import {getBasket, createNewBasket, deleteAll} from "./basketModel.js"
+import {getBasket, createNewBasket, deleteAll, addProduct} from "./basketModel.js"
 
 export async function basketForUser(req, res) {
     try {
@@ -28,19 +28,19 @@ export async function deleteBasket(req, res) {
     }
 }
 
-export async function removeFromBasket(req, res) {
+
+export async function addToBasket(req, res) {
     try {
-        const username = req.body.username
-        const password = req.body.password
-        const email = req.body.email
-        const user = await processRegister(username, password, email)
-        res.json(user)
+        const userID = req.params.id;
+        const productID = req.params.pid;
+        const basket = await addProduct(userID,productID);
+        res.json(basket)
     } catch (error) {
         res.status(500).send(error.message)
     }
 }
 
-export async function addToBasket(req, res) {
+export async function removeFromBasket(req, res) {
     try {
         const username = req.body.username
         const password = req.body.password

@@ -1,1 +1,1 @@
-[{"userID":1,"username":"Michal","password":"absolutelyNotSafePassword123","email":"notMyEmail@itu.dk"}]
+[{"userID":1,"username":"Michal","password":"absolutelyNotSafePassword123","email":"notMyEmail@itu.dk","basket":{"products":["1","1","1"],"totalPrice":null}}]

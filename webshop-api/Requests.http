@@ -21,7 +21,7 @@ POST http://localhost:3000/basket/user/1 HTTP/1.1
 DELETE  http://localhost:3000/basket/user/1 HTTP/1.1
 
 ### Put a product in the basket for a specific user.
-
+PUT http://localhost:3000/basket/user/1/product/1 HTTP/1.1
 
 ### Remove a product from the basket for a specific user.
 
