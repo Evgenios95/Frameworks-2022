@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ### Delete a shopping basket for a specific user.
-DELETE  http://localhost:3000/basket/delete/3 HTTP/1.1
+DELETE  http://localhost:3000/basket/delete/2 HTTP/1.1
 
 ### Get the shopping basket content for a specific user.
 GET http://localhost:3000/basket/get/2 HTTP/1.1
@@ -41,9 +41,27 @@ Content-Type: application/json
   "productId": 3
 }
 
-### Remove a product from the basket for a specific user.
+### Remove one count of a product from the basket for a specific user.
+POST http://localhost:3000/basket/remove HTTP/1.1
+Accept: application/json
+Content-Type: application/json
 
+{
+  "userId": 2,
+  "productId": 3,
+  "all": false
+}
 
+### Remove product completely from the basket for a specific user.
+POST http://localhost:3000/basket/remove HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "productId": 3,
+  "all": true
+}
 
 ### 
 POST http://localhost:3000/user/login HTTP/1.1

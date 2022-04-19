@@ -13,7 +13,7 @@ router.route('/create').put(createBasket)
 router.route('/delete/:userId').delete(deleteBasket)
 router.route('/get/:userId').get(getBasket)
 router.route('/add').post(addToBasket)
-router.route('/user/:id/product/:pid').delete(removeFromBasket)
-router.route('/user/:id/product/:pid').put(addToBasket)
+router.route('/remove').post(removeFromBasket)
+
 
 export default router
