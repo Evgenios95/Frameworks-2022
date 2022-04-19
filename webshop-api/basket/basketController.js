@@ -4,11 +4,13 @@ export async function getBasket(req, res) {
     try {
         const userId = parseInt(req.params.userId)
         const basket = await getBasketById(userId)
-        if (!basket) {
-            res.status(500).send("User has no basket")
+        if (basket) {
+            res.json(basket).end()
+        } else {
+            res.status(500).send("User has no basket").end();
         }
-        ;
-        res.json(basket)
+
+
     } catch (error) {
         res.status(500).send(error.message)
     }
