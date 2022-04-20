@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import {filterByBrand, filterByRoast, filterForDiscountedProducts} from "./filterFunctions.js";
 
 const PRODUCTS_FILE = "./products/products.json";
 
@@ -18,23 +19,22 @@ export async function getProductById(id) {
     return products[parseInt(id)];
 }
 
-export async function getFilteredProducts(queryCategory) {
+export async function getFilteredProducts(filters) {
     let products = await getAllProducts();
-    return await applyAllFilters(products, queryCategory);
+    for (const category in filters) {
+        if (category === 'brand') {
+            products = filterByBrand(products, filters['brand'])
+        } else if (category === 'discount') {
+            products = filterForDiscountedProducts(products, filters['discount'])
+        } else if (category === 'roast') {
+            products = filterByRoast(products, filters['roast'])
+        } else {
+            throw Error("Invalid filter")
+        }
+    }
+    return products
 }
 
-export async function applyAllFilters(products, queryCategory) {
-    //maybe loop through the different filters here and invoke the appropriate ones
-    const filteredProducts = await filterByBrandORRoast(products, queryCategory)
-    //filteredProducts = await filterByBrandAndRoast(filteredProduct, queryValue)
-
-    return filteredProducts;
-}
-
-export async function filterByBrandORRoast(products, queryCategory) {
-    // would be nice if we split it to two different functions so we just need one simple condition in the filter function
-    return products.filter((product) => product["productCategories"]["roast"] === queryCategory || product["productCategories"]["brand"] === queryCategory);
-}
 
 export async function getCategoryNames() {
     let product = await getProductById(1);

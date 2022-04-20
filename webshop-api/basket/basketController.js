@@ -14,7 +14,6 @@ export async function getBasket(req, res) {
     }
 }
 
-
 export async function createBasket(req, res) {
     try {
         await createNewBasket(parseInt(req.body.userId))

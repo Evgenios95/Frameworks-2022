@@ -4,13 +4,6 @@ GET http://localhost:3000/product/all HTTP/1.1
 ### Get product categories that exist.
 GET http://localhost:3000/product/categories HTTP/1.1
 
-### Get most important information about products for a specific category
-### Filter products by brand
-GET http://localhost:3000/product/filtered?category=lavazza HTTP/1.1
-
-### Filter products by roast
-GET http://localhost:3000/product/filtered?category=darkroast HTTP/1.1
-
 ### Get all details about a specific product
 GET http://localhost:3000/product/0 HTTP/1.1
 
@@ -86,13 +79,12 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3000/product/filters HTTP/1.1
+POST http://localhost:3000/product/filter HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
 {
   "filters": {
-    "brand": "all",
     "discount": true,
     "roast": "mediumroast"
   }

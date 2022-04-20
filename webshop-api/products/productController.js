@@ -33,12 +33,22 @@ export async function filteredProducts(req, res) {
   }
 }
 
-export async function categories(req, res) {
+export async function allCategories(req, res) {
   try {
     const productCategories = await getCategoryNames();
     res.json({productCategories});
-  } catch (error){
+  } catch (error) {
     res.status(500).send(error.message);
   }
 
+}
+
+export async function filterProducts(req, res) {
+  try {
+    const filters = req.body.filters
+    const products = await getFilteredProducts(filters);
+    res.json({products});
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 }
