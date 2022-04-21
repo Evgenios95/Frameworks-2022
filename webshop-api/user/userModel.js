@@ -23,16 +23,16 @@ export async function processRegister(username, password, email) {
     const isUnique = await isUniqueEmail(email)
     if (!isUnique) throw Error("User already exists")
     return await addNewUser(username, password, email)
-
 }
 
 async function addNewUser(username, password, email) {
     const users = await getUsers()
     const newUser = {
+        "userID": Object.keys(users).length + 1,
         "username": username,
         "password": password,
-        "email": email,
-        "basket": []
+        "email": email
+
     }
     users.push(newUser)
     await fs.writeFile(USERS_FILE, JSON.stringify(users))
@@ -41,24 +41,32 @@ async function addNewUser(username, password, email) {
 
 async function isUniqueEmail(email) {
     const users = await getUsers()
-    for (const user in users) {
-        if (users[user].email === email) return false
-    }
-    return true
+    const userIndex = users.findIndex((currentUser) => currentUser.email === email)
+    return users[userIndex] === undefined;
 }
 
 async function isValidPassword(email, password) {
-    const users = await getUsers()
-    for (const user in users) {
-        if (users[user].email === email) return users[user].password === password
-    }
-    return false
+    const user = await getUserByEmail(email);
+    return user.password === password;
+
 }
 
 async function getUserByEmail(email) {
     const users = await getUsers()
-    for (const user in users) {
-        if (users[user].email === email) return users[user]
-    }
-    return false
+    const userIndex = users.findIndex((currentUser) => currentUser.email === email)
+    const currentUser = users[userIndex]
+    if (currentUser === undefined) throw Error("User does not exists");
+
+    return currentUser
 }
+
+export async function getUserById(id) {
+    const users = await getUsers();
+    const userIndex = users.findIndex((currentUser) => currentUser.userID === id)
+    const currentUser = users[userIndex]
+    if (currentUser === undefined) throw Error("User does not exists");
+    return currentUser;
+}
+
+
+
