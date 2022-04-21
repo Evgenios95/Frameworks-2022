@@ -11,8 +11,7 @@ Content-Type: application/json
 
 {
   "filters": {
-    "discount": true,
-    "roast": "mediumroast"
+    "discount": false
   }
 }
 
@@ -20,7 +19,6 @@ Content-Type: application/json
 GET http://localhost:3000/product/0 HTTP/1.1
 
 ### Create a shopping basket for a specific user.
-### POST For security if auth existed
 PUT http://localhost:3000/basket/create HTTP/1.1
 Accept: application/json
 Content-Type: application/json
@@ -49,7 +47,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 2,
+  "userId": 1,
   "productId": 3,
   "all": false
 }
@@ -60,7 +58,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "userId": 2,
+  "userId": 1,
   "productId": 3,
   "all": true
 }

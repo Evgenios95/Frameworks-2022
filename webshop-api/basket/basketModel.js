@@ -29,7 +29,7 @@ export async function deleteAll(id) {
     const currentUser = users[userIndex];
 
     if (currentUser === undefined) throw Error("User does not exists");
-    if (!currentUser.basket) throw Error("User does not have a basket basket");
+    if (!currentUser.basket) throw Error("User does not have a basket");
 
     delete currentUser.basket;
 
