@@ -1,0 +1,90 @@
+### Get most important information about all products that are offered
+GET http://localhost:3000/product/all HTTP/1.1
+
+### Get product categories that exist.
+GET http://localhost:3000/product/categories HTTP/1.1
+
+### Get most important information about products for a specific categories
+POST http://localhost:3000/product/filter HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "filters": {
+    "discount": false
+  }
+}
+
+### Get all details about a specific product
+GET http://localhost:3000/product/0 HTTP/1.1
+
+### Create a shopping basket for a specific user.
+PUT http://localhost:3000/basket/create HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 2
+}
+
+### Delete a shopping basket for a specific user.
+DELETE  http://localhost:3000/basket/delete/2 HTTP/1.1
+
+### Put a product in the basket for a specific user.
+### POST For security if auth existed
+POST http://localhost:3000/basket/add HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "productId": 3
+}
+
+### Remove one count of a product from the basket for a specific user.
+POST http://localhost:3000/basket/remove HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 3,
+  "all": false
+}
+
+### Remove product completely from the basket for a specific user.
+POST http://localhost:3000/basket/remove HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 3,
+  "all": true
+}
+
+### Get the shopping basket content for a specific user.
+GET http://localhost:3000/basket/get/2 HTTP/1.1
+
+### Authenticate user
+POST http://localhost:3000/user/login HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "emassasd2si2l2@email.com",
+  "password": "1234"
+}
+
+### Register user
+POST http://localhost:3000/user/register HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Testasd4",
+  "password": "1234",
+  "email": "emassasd2si2l2@email.com"
+}
+
+

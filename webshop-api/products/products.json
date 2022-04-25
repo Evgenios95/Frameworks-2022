@@ -1,0 +1,281 @@
+[
+  {
+    "productId": 0,
+    "productName": "Starbucks Breakfast",
+    "productWeight": "340gr",
+    "productPrice": 59,
+    "description": "Notes of sweet orange and brown sugar mingle in our lightest medium roast coffee.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee20.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 1,
+    "productName": "Starbucks Espresso",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Dark roasted beans for your delightful morning...",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee1.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 2,
+    "productName": "Starbucks Holiday",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Enjoy our special blend of balanced and sweet flavours with herbal and maple notes.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee2.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 3,
+    "productName": "Starbucks Pike Place",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Smooth with chocolate notes, Starbucks Pike Place Roast Whole Bean Coffee, ready to grind.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee3.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 4,
+    "productName": "Starbucks Veranda Blend",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Lightly roasted Latin American coffee that is mellow and flavourful with a nice softness.",
+    "productCategories": {
+      "roast": "lightroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee4.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 5,
+    "productName": "Starbucks Blonde Espresso",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Soft and balanced, it highlights the sweeter side of milk, making espresso drinks extra smooth.",
+    "productCategories": {
+      "roast": "lightroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee5.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 6,
+    "productName": "Starbucks Home Blend",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "House Blend is a medium roast with notes of cocoa and toffee.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee6.png",
+    "isInBasket": 0,
+    "discountAmount": "10"
+  },
+  {
+    "productId": 7,
+    "productName": "Starbucks Sumatra",
+    "productWeight": "340gr",
+    "productPrice": 49,
+    "description": "Full-bodied with a smooth mouthfeel, lingering notes of dried herbs and fresh earth.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "starbucks"
+    },
+    "productImage": "../assets/product_images/coffee7.png",
+    "discountAmount": "10"
+  },
+  {
+    "productId": 8,
+    "productName": "Depresso Episk",
+    "productWeight": "500gr",
+    "productPrice": 139,
+    "description": "Strong and fruity, with notes of citrus and almond and scents of caramel and chocolate.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee8.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 9,
+    "productName": "Depresso Magisk",
+    "productWeight": "500gr",
+    "productPrice": 139,
+    "description": "Deliciously creamy and smooth with well-balanced acidity. Notes of nuts and chocolate.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee9.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 10,
+    "productName": "Depresso Sympati",
+    "productWeight": "500gr",
+    "productPrice": 139,
+    "description": "Smooth and creamy Java with a hint of citrus and light note of spice.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee10.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 11,
+    "productName": "Depresso Reboot",
+    "productWeight": "500gr",
+    "productPrice": 139,
+    "description": "Fruity with notes of nuts and chocolate.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee11.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 12,
+    "productName": "Depresso QuickFix",
+    "productWeight": "500gr",
+    "productPrice": 159,
+    "description": "Formidable strong flavoured, with low-acidity and scent of caramel and fresh tobacco leaves.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee12.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 13,
+    "productName": "Oro Quality",
+    "productWeight": "1kg",
+    "productPrice": 99,
+    "description": "Original Luigi Lavazza blend with intense aroma of coffee. Full-bodied, soft and aromatic.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee13.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 14,
+    "productName": "Lavazza !Tierra! For Africa",
+    "productWeight": "500gr",
+    "productPrice": 99,
+    "description": "Full-bodied and intense - intensity 7/10.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee14.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 15,
+    "productName": "Lavazza Espresso Barista Perfetto",
+    "productWeight": "1kg",
+    "productPrice": 129,
+    "description": "Full-bodied and well-balanced espresso with notes of honey and roasted nuts.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee15.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 16,
+    "productName": "Lavazza Rossa",
+    "productWeight": "1kg",
+    "productPrice": 99,
+    "description": "The coffee is pleasant and full-bodied with an intense aroma and a taste of chocolate.",
+    "productCategories": {
+      "roast": "mediumroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee16.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 17,
+    "productName": "Lavazza !Tierra! For Amazonia",
+    "productWeight": "500gr",
+    "productPrice": 59,
+    "description": "The coffee is balanced and aromatic with notes of chocolate - intensity 5/10.",
+    "productCategories": {
+      "roast": "lightroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee17.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 18,
+    "productName": "Depresso Boost",
+    "productWeight": "500gr",
+    "productPrice": 199,
+    "description": "A hint of sweetness and low-acidity with notes of chocolate and a scent of nuts.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "depresso"
+    },
+    "productImage": "../assets/product_images/coffee18.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  },
+  {
+    "productId": 19,
+    "productName": "Lavazza Tierra Organic Coffee",
+    "productWeight": "1kg",
+    "productPrice": 99,
+    "description": "The coffee is round and balanced with fine floral and fruity undertones.",
+    "productCategories": {
+      "roast": "darkroast",
+      "brand": "lavazza"
+    },
+    "productImage": "../assets/product_images/Coffee19.png",
+    "isInBasket": 0,
+    "discountAmount": "no"
+  }
+]
