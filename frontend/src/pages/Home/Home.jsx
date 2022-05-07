@@ -23,6 +23,5 @@ export const Home = () => {
         <div className={'introWrapper'}/>
         <h1> Discounted products </h1>
         {products ? <ProductDisplay products={products}/> : <p>Loading</p>}
-
     </div>;
 };

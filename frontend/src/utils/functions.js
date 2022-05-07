@@ -38,16 +38,48 @@ export async function removeAllFromBasket(productId, user) {
 export async function fetchDiscountedProducts() {
     const filter = {
         "filters": {
-            "discount": false
+            "discount": true
+        }
+    }
+    const productsReq = await axios.post('/product/filter', filter)
+    const products = productsReq.data.products
+    return products.map(product => {
+        const productId = parseInt(product.productId)
+        product.productImage = productImages[productId]
+        return product
+    })
+}
+
+export async function fetchSimilarRoastedProducts(productId, value) {
+    const filter = {
+        "filters": {
+            "roast": value
         }
     }
     const productsReq = await axios.post('/product/filter', filter)
     var products = productsReq.data.products
+    products = products.filter(product => product.productId !== parseInt(productId));
     return products.map(product => {
         const productId = parseInt(product.productId)
-        product.productImage = productImages[productId - 1]
+        product.productImage = productImages[productId]
         return product
     })
+}
 
+export async function fetchProductInfo(id) {
+    const url = '/product/' + id;
+    const productReq = await axios.get(url)
+    var product = productReq.data
+    product.productImage = productImages[id]
+    return productReq.data
+}
 
+export async function fetchAllProducts() {
+    const productsReq = await axios.get('product/all')
+    const products = productsReq.data
+    return products.map(product => {
+        const productId = parseInt(product.productId)
+        product.productImage = productImages[productId]
+        return product
+    })
 }

@@ -7,6 +7,7 @@ import {Navbar} from "./components/Navbar";
 
 import {useEffect, useState} from "react";
 import {Footer} from "./components/Footer";
+import {ProductDescription} from "./pages/ProductDescription";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/basket"
                        element={<Basket basket={basketContent} setBasket={setBasket} user={user} setUser={setUser}/>}
                 />
+                <Route path="/product/:id" element={<ProductDescription/>}/>
             </Routes>
             <Footer/>
         </div>
