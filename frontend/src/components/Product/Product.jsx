@@ -1,8 +1,13 @@
 import "./style.css";
 import React, {useState} from "react";
+import {motion} from "framer-motion";
 
 export const Product = ({product}) => {
-    return <div className={'productWrapper'}>
+    const childAnim = {
+        hidden: {opacity: 0, y: -20},
+        show: {opacity: 1, y: 0}
+    }
+    return <motion.div className={'productWrapper'} variants={childAnim}>
         <img src={product.productImage} alt={'coffee'}/>
         <h2>{product.productName}</h2>
         <p> {product.productWeight} </p>
@@ -13,5 +18,5 @@ export const Product = ({product}) => {
             <h4 className={'discountPrice'}>{product.productPrice + parseInt(product.discountAmount)} DKK</h4>}
 
         <a href={'/product/' + product.productId}>Details</a>
-    </div>
+    </motion.div>
 };
