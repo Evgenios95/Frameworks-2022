@@ -1,11 +1,18 @@
 .productWrapper {
     display: flex;
     flex-direction: column;
-    background: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
     align-items: center;
     padding: 40px 20px;
+    text-align: center;
 }
 
 .productWrapper img {
-    width: 100%;
+    width: 70%;
+    height: 70%;
+}
+
+.productWrapper h2 {
+    min-height: 56px;
 }

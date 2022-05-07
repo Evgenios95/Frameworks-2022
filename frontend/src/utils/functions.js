@@ -1,4 +1,5 @@
 import axios from "axios";
+import {productImages} from "./productImages";
 
 export async function transformBasket(basket) {
     const productsReq = await axios.get('product/all')
@@ -32,4 +33,21 @@ export async function removeAllFromBasket(productId, user) {
     } else {
 
     }
+}
+
+export async function fetchDiscountedProducts() {
+    const filter = {
+        "filters": {
+            "discount": false
+        }
+    }
+    const productsReq = await axios.post('/product/filter', filter)
+    var products = productsReq.data.products
+    return products.map(product => {
+        const productId = parseInt(product.productId)
+        product.productImage = productImages[productId - 1]
+        return product
+    })
+
+
 }
