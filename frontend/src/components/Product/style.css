@@ -1,0 +1,11 @@
+.productWrapper {
+    display: flex;
+    flex-direction: column;
+    background: blue;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.productWrapper img {
+    width: 100%;
+}

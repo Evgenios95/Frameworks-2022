@@ -1,0 +1,30 @@
+.pageWrapper {
+    padding: 0 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.companyBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.companyBanner > h1 {
+    font-size: 100px;
+}
+
+.companyBanner > p {
+    font-size: 36px;
+}
+
+.introWrapper {
+    width: 100%;
+    height: 300px;
+    background: blue;
+}
+
