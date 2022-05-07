@@ -1,0 +1,27 @@
+.authForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.authForm > input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+}
+
+.authForm > button {
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 500ms;
+}
+
+.authForm > button:hover {
+    background: #4ecffd;
+    transition: background-color 500ms;
+}
+

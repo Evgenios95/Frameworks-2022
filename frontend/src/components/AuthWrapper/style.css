@@ -1,0 +1,75 @@
+
+.navbarUserWrapper {
+    height: 100%;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.navbarUserWrapper > button {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 500ms;
+}
+
+.navbarUserWrapper > button:hover {
+    background: #4ecffd;
+    transition: background-color 500ms;
+}
+
+.modalWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 50vw;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    background: white;
+    border: 1px solid black;
+    position: relative;
+}
+
+.closeModal {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.closeModal > img {
+    width: 100%;
+    height: 100%;
+}
+
+.formError {
+    color: red;
+}
+
+@media only screen and (max-width: 750px) {
+    .modalWrapper {
+        padding: 0;
+    }
+
+    .modal {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+    }
+}

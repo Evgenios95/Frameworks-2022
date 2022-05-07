@@ -5,7 +5,7 @@ import userRouter from "./user/userRouter.js"
 
 const app = express();
 app.use(express.json());
-const port = 3000;
+const port = 4000;
 
 //routing for Basket
 app.use('/basket', basketRouter)
