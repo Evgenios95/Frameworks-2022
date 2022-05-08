@@ -7,11 +7,17 @@ export const Footer = () => {
   return <footer id={"footer"}>
     <div className={"footerWrapper"}>
       <div className={"footerCategories"}>
-        <h3>Categories</h3>
-        <Link to="catalog?roast=lightroast">test</Link>
+        <h3>Roasts</h3>
         <Link to="catalog?roast=lightroast">Lightly roasted selection</Link>
         <Link to="catalog?roast=mediumroast">Medium roasted selection</Link>
         <Link to="catalog?roast=darkroast">Dark roasted selection</Link>
+        <Link to="">On sale</Link>
+      </div>
+      <div className={"footerCategories"}>
+        <h3>Brands</h3>
+        <Link to="catalog?brand=starbucks">Starbucks</Link>
+        <Link to="catalog?brand=lavazza">Lavazza</Link>
+        <Link to="catalog?brand=depresso">Depresso</Link>
         <Link to="">On sale</Link>
       </div>
       <div className={"footerLinks"}>
@@ -30,10 +36,10 @@ export const Footer = () => {
       <p>Copyright 2022 Coffeenator</p>
       <p>CVR: 99 99 99 99</p>
       <div className={"socials"}>
-        <Link className={"socialIcon"}><img src={Logo} alt={"facebook"} /></Link>
-        <Link className={"socialIcon"}><img src={Logo} alt={"instagram"} /></Link>
-        <Link className={"socialIcon"}><img src={Logo} alt={"linkedin"} /></Link>
-        <Link className={"socialIcon"}><img src={Logo} alt={"twitter"} /></Link>
+        <Link to={"/"} className={"socialIcon"}><img src={Logo} alt={"facebook"} /></Link>
+        <Link to={"/"} className={"socialIcon"}><img src={Logo} alt={"instagram"} /></Link>
+        <Link to={"/"} className={"socialIcon"}><img src={Logo} alt={"linkedin"} /></Link>
+        <Link to={"/"} className={"socialIcon"}><img src={Logo} alt={"twitter"} /></Link>
       </div>
     </div>
   </footer>;
