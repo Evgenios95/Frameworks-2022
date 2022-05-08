@@ -26,7 +26,7 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({
             </button>
 
             {modalType === "login" && (
-              <LoginForm closeModalFunction={setModalType} setUser={setUser} />
+              <LoginForm setModalType={setModalType} setUser={setUser} />
             )}
 
             {modalType === "register" && <RegisterForm />}
