@@ -5,7 +5,7 @@ import Logo from "../../assets/logo.png";
 import { LoginForm } from "../LoginForm";
 
 export interface AuthWrapperProps {
-  setUser: () => void;
+  setUser: (user: string | boolean) => void;
 }
 
 export const AuthWrapper: React.FC<AuthWrapperProps> = ({
