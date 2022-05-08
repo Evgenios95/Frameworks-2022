@@ -30,3 +30,9 @@
     color: red;
     text-decoration: line-through;
 }
+
+@media only screen and (max-width: 1000px) {
+    .productPageContainer {
+        flex-direction: column;
+    }
+}

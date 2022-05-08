@@ -20,3 +20,9 @@
     background: blue;
 }
 
+@media only screen and (max-width: 800px) {
+    .companyBanner > h1 {
+        font-size: 60px;
+    }
+
+}
