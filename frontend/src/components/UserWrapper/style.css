@@ -19,3 +19,13 @@
     background: red;
     transition: background-color 500ms;
 }
+
+@media only screen and (max-width: 600px) {
+    .usernameDisplay p {
+        font-size: 12px;
+    }
+
+    .logoutButton {
+        font-size: 16px;
+    }
+}

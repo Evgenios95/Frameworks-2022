@@ -1,8 +1,20 @@
 import "./style.css";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ProductDisplay} from "../../components/ProductDisplay";
+import {fetchDiscountedProducts} from "../../utils/functions";
 
 export const Home = () => {
+    const [products, setProducts] = useState(null);
+
+    useEffect(() => {
+        async function fetchDiscounted() {
+            const productsOnDiscount = await fetchDiscountedProducts();
+            setProducts(productsOnDiscount);
+        }
+
+        fetchDiscounted();
+    }, [])
+
     return <div className={"pageWrapper"}>
         <div className={'companyBanner'}>
             <h1>Coffeenator</h1>
@@ -10,6 +22,6 @@ export const Home = () => {
         </div>
         <div className={'introWrapper'}/>
         <h1> Discounted products </h1>
-        <ProductDisplay/>
+        {products ? <ProductDisplay products={products}/> : <p>Loading</p>}
     </div>;
 };

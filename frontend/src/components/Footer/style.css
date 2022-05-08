@@ -3,6 +3,7 @@
     background: darkslategray;
     min-height: 150px;
     padding: 50px 12%;
+    margin-top: 50px;
 }
 
 .footerWrapper {
@@ -63,4 +64,15 @@
 .socials img {
     height: 50px;
     width: 50px;
+}
+
+@media only screen and (max-width: 900px) {
+    .footerWrapper {
+        flex-direction: column;
+    }
+
+    .copyrightAndSomeWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 }
