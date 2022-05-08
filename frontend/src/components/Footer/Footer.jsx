@@ -1,22 +1,24 @@
 import "./style.css";
 import React from "react";
 import Logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return <footer id={"footer"}>
     <div className={"footerWrapper"}>
       <div className={"footerCategories"}>
         <h3>Categories</h3>
-        <a href="/catalog?roast=lightroast">Lightly roasted selection</a>
-        <a href="/catalog?roast=mediumroast">Medium roasted selection</a>
-        <a href="/catalog?roast=darkroast">Dark roasted selection</a>
-        <a href="/">On sale</a>
+        <Link to="catalog?roast=lightroast">test</Link>
+        <Link to="catalog?roast=lightroast">Lightly roasted selection</Link>
+        <Link to="catalog?roast=mediumroast">Medium roasted selection</Link>
+        <Link to="catalog?roast=darkroast">Dark roasted selection</Link>
+        <Link to="">On sale</Link>
       </div>
       <div className={"footerLinks"}>
         <h3>Quick links</h3>
-        <a href="/">About Us</a>
-        <a href="/">Contact Us</a>
-        <a href="/">Privacy policy</a>
+        <Link to="asd">About Us</Link>
+        <Link to="asdd">Contact Us</Link>
+        <Link to="asddd">Privacy policy</Link>
       </div>
       <div className={"footerDescription"}>
         <h3>About us</h3>
@@ -28,10 +30,10 @@ export const Footer = () => {
       <p>Copyright 2022 Coffeenator</p>
       <p>CVR: 99 99 99 99</p>
       <div className={"socials"}>
-        <a className={"socialIcon"}><img src={Logo} alt={"facebook"} /></a>
-        <a className={"socialIcon"}><img src={Logo} alt={"instagram"} /></a>
-        <a className={"socialIcon"}><img src={Logo} alt={"linkedin"} /></a>
-        <a className={"socialIcon"}><img src={Logo} alt={"twitter"} /></a>
+        <Link className={"socialIcon"}><img src={Logo} alt={"facebook"} /></Link>
+        <Link className={"socialIcon"}><img src={Logo} alt={"instagram"} /></Link>
+        <Link className={"socialIcon"}><img src={Logo} alt={"linkedin"} /></Link>
+        <Link className={"socialIcon"}><img src={Logo} alt={"twitter"} /></Link>
       </div>
     </div>
   </footer>;
