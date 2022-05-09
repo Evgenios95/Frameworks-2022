@@ -46,7 +46,7 @@ export const ProductDescription = () => {
       {product && (
         <div className={"productPageContainer"}>
           <div className={"productImageWrapper"}>
-            <img src={product.productImage} />
+            <img alt="product" src={product.productImage} />
           </div>
           <div className={"productDescriptionWrapper"}>
             <h1>{product.productName}</h1>
