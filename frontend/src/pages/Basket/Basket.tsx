@@ -9,8 +9,16 @@ interface BasketProps {
   setBasket: (basket: []) => void;
 }
 
+interface Product {
+  productId: number;
+  productName: string;
+  productWeight: string;
+  productPrice: number;
+  description: string;
+}
+
 export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
-  const [basketProducts, setBasketProducts] = useState<{} | any | []>([]);
+  const [basketProducts, setBasketProducts] = useState<Product[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
 
   useEffect(() => {
@@ -32,7 +40,7 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
   return (
     <div className={"basketPage"}>
       <div className={"basketContentWrapper"}>
-        {basketProducts.map((product: any) => (
+        {basketProducts.map((product: Product) => (
           <div className={"basketProduct"} key={product.productId}>
             <h1>{product.productName}</h1>
             <p>{product.description}</p>
