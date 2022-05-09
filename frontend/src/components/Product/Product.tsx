@@ -2,7 +2,22 @@ import "./style.css";
 import React from "react";
 import { motion } from "framer-motion";
 
-export const Product = ({ product }: any) => {
+interface ProductProps {
+  productId: number;
+  productName: string;
+  productWeight: string;
+  productPrice: number;
+  description: string;
+  productCategories: {
+    roast: string;
+    brand: string;
+  };
+  productImage: string;
+  isInBasket: number;
+  discountAmount: string;
+}
+
+export const Product = ({ product }: { product: ProductProps }) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const animationVariants = {
