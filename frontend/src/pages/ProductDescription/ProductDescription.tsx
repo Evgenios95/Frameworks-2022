@@ -6,16 +6,32 @@ import {
   fetchSimilarRoastedProducts,
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
+import { stringify } from "querystring";
+
+interface Product {
+  productName: string;
+  productWeight: string;
+  productPrice: number;
+  description: string;
+  productCategories: {
+    roast: string;
+    brand: string;
+  };
+  productImage: string;
+}
 
 export const ProductDescription = () => {
-  const [product, setProduct] = useState(null);
-  const [similarProducts, setSimilarProducts] = useState(null);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [similarProducts, setSimilarProducts] = useState<Product[] | null>(
+    null
+  );
   const { id } = useParams();
+
   useEffect(() => {
     async function getProductInfo() {
       const productInfo = await fetchProductInfo(id);
       setProduct(productInfo);
-      console.log(productInfo);
+
       const similarProductsInfo = await fetchSimilarRoastedProducts(
         id,
         productInfo.productCategories.roast
@@ -43,11 +59,13 @@ export const ProductDescription = () => {
           </div>
         </div>
       )}
+
       {!product && <p>Loading</p>}
+
       {similarProducts && (
         <>
           <h1>
-            You might also like these {product.productCategories.roast} coffees
+            You might also like these {product!.productCategories.roast} coffees
           </h1>
           <ProductDisplay products={similarProducts} />
         </>
