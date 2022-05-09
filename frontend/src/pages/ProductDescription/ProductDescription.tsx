@@ -6,7 +6,6 @@ import {
   fetchSimilarRoastedProducts,
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
-import { stringify } from "querystring";
 
 interface Product {
   productName: string;
