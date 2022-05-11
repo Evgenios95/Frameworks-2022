@@ -22,15 +22,15 @@ export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
 
       <nav className={"navbarMenuWrapper"}>
         <Link to="/" className={"navbarLink"}>
-          Home
+          <h4>Home</h4>
         </Link>
 
         <Link to="/catalog" className={"navbarLink"}>
-          Products
+          <h4>Products</h4>
         </Link>
 
         <Link to="/basket" className={"navbarLink"}>
-          Basket
+          <h4>Basket</h4>
           <div className={"basketCount"}>{basket.length}</div>
         </Link>
       </nav>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   fetchProductInfo,
-  fetchSimilarRoastedProducts,
+  fetchSimilarRoastedProducts
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
 
@@ -39,7 +39,7 @@ export const ProductDescription = () => {
     }
 
     getProductInfo();
-  }, []);
+  }, [id]);
 
   return (
     <div className={"pageWrapper"}>
@@ -63,7 +63,7 @@ export const ProductDescription = () => {
 
       {similarProducts && (
         <>
-          <h1>
+          <h1 className={"similarProductHeader"}>
             You might also like these {product!.productCategories.roast} coffees
           </h1>
           <ProductDisplay products={similarProducts} />

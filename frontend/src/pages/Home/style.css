@@ -14,10 +14,10 @@
     font-size: 36px;
 }
 
-.introWrapper {
-    width: 100%;
-    height: 300px;
-    background: blue;
+.homeDiscountHeading {
+    margin-top: 50px;
+    font-size: 72px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
