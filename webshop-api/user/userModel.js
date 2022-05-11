@@ -16,13 +16,19 @@ export async function getUsers() {
 export async function processLogin(email, password) {
   const isValid = await isValidPassword(email, password);
   if (!isValid) throw Error("Invalid email and password combination");
-  return await getUserByEmail(email);
+  const user = await getUserByEmail(email);
+  delete user.password;
+  delete user.email;
+  return user;
 }
 
 export async function processRegister(username, password, email) {
   const isUnique = await isUniqueEmail(email);
   if (!isUnique) throw Error("User already exists");
-  return await addNewUser(username, password, email);
+  const user = await addNewUser(username, password, email);
+  delete user.password;
+  delete user.email;
+  return user;
 }
 
 async function addNewUser(username, password, email) {

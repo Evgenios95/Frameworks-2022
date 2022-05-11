@@ -39,22 +39,22 @@ export async function removeFromBasket(req, res) {
 
 /*
 export async function createBasket(req, res) {
-    try {
-        await createNewBasket(parseInt(req.body.userId))
-        res.json({success: "Basket created"})
-    } catch (error) {
-        res.status(500).send(error.message)
-    }
+  try {
+    await createNewBasket(parseInt(req.body.userId));
+    res.json({ success: "Basket created" });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 }
 
 export async function deleteBasket(req, res) {
-    try {
-        const userId = parseInt(req.params.userId)
-        await deleteAll(userId)
-        res.json({success: "Basket deleted"})
-    } catch (error) {
-        res.status(500).send(error.message)
-    }
+  try {
+    const userId = parseInt(req.params.userId);
+    await deleteAll(userId);
+    res.json({ success: "Basket deleted" });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 }
 
  */

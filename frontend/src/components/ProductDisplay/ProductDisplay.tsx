@@ -3,7 +3,7 @@ import React from "react";
 import { Product } from "../Product";
 import { motion } from "framer-motion";
 
-export const ProductDisplay = ({ products }: any) => {
+export const ProductDisplay = ({ products, setBasket }: any) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const containerAnim = {
@@ -26,7 +26,11 @@ export const ProductDisplay = ({ products }: any) => {
       animate="show"
     >
       {products.map((product: any) => (
-        <Product key={product.productId} product={product} />
+        <Product
+          setBasket={setBasket}
+          key={product.productId}
+          product={product}
+        />
       ))}
 
       {products.length === 0 && <p>No results found</p>}

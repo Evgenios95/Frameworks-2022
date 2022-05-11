@@ -1,6 +1,10 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
-import { removeOneFromBasket, transformBasket } from "../../utils/functions";
+import {
+  addProductToBasket,
+  removeOneFromBasket,
+  transformBasket,
+} from "../../utils/functions";
 
 interface BasketProps {
   basket: [];
@@ -14,12 +18,24 @@ interface Product {
   productName: string;
   productWeight: string;
   productPrice: number;
+  quantity: number;
+  image: any;
   description: string;
 }
 
 export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
   const [basketProducts, setBasketProducts] = useState<Product[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
+
+  async function addProductToBasketHandler(pID: number) {
+    const newBasket = await addProductToBasket(pID);
+    setBasket(newBasket);
+  }
+
+  async function removeProductToBasketHandler(pID: number) {
+    const newBasket = await removeOneFromBasket(pID);
+    setBasket(newBasket);
+  }
 
   useEffect(() => {
     const getBasketInfo = async () => {
@@ -42,30 +58,30 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
       <div className={"basketContentWrapper"}>
         {basketProducts.map((product: Product) => (
           <div className={"basketProduct"} key={product.productId}>
-            <h1>{product.productName}</h1>
-            <p>{product.description}</p>
-            <p>{product.productWeight}</p>
-            <h3>{product.productPrice} DKK</h3>
-            <button
-              className={"removeItem"}
-              onClick={async () => {
-                const newBasket = await removeOneFromBasket(
-                  product.productId,
-                  user
-                );
-                if (user) {
-                  setUser((user: { basket: any }) => {
-                    user.basket = newBasket;
-                    return user;
-                  });
-                } else {
-                  setBasket(newBasket);
-                }
-                console.log(basket);
-              }}
-            >
-              -
-            </button>
+            <div className={"basketImageWrapper"}>
+              <img src={product.image} />
+            </div>
+            <div className={"basketMeta"}>
+              <h1>{product.productName}</h1>
+              <p>{product.description}</p>
+              <p>{product.productWeight}</p>
+              <h3>{product.productPrice} DKK</h3>
+              <p>Qty: {product.quantity}</p>
+              <div className={"editQtyInBasket"}>
+                <button
+                  onClick={() => addProductToBasketHandler(product.productId)}
+                >
+                  +
+                </button>
+                <button
+                  onClick={() =>
+                    removeProductToBasketHandler(product.productId)
+                  }
+                >
+                  -
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>

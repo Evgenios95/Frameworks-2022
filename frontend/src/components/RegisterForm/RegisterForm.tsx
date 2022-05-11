@@ -35,7 +35,7 @@ export const RegisterForm = () => {
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
   ) => {
     setTimeout(() => {
-      axios.post("/user/register", values).then(function (response) {
+      axios.post("/register", values).then(function (response) {
         console.log(response);
       });
       setSubmitting(false);

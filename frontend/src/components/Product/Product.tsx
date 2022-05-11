@@ -1,6 +1,7 @@
 import "./style.css";
 import React from "react";
 import { motion } from "framer-motion";
+import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
 
 interface ProductProps {
@@ -18,13 +19,18 @@ interface ProductProps {
   discountAmount: string;
 }
 
-export const Product = ({ product }: { product: ProductProps }) => {
+export const Product = ({ product, setBasket }: any) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const animationVariants = {
     hidden: { opacity: 0, y: -20 },
-    show: { opacity: 1, y: 0 }
+    show: { opacity: 1, y: 0 },
   };
+
+  async function addProductToBasketHandler(pID: number) {
+    const newBasket = await addProductToBasket(pID);
+    setBasket(newBasket);
+  }
 
   const productUrl = "/product/" + product.productId;
 
@@ -46,7 +52,10 @@ export const Product = ({ product }: { product: ProductProps }) => {
       )}
 
       <Link to={productUrl}>Details</Link>
+
+      <button onClick={() => addProductToBasketHandler(product.productId)}>
+        Add me
+      </button>
     </motion.div>
-  )
-    ;
+  );
 };
