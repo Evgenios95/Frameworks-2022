@@ -1,0 +1,12 @@
+.catalogHeader {
+    font-size: 48px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .catalogHeader {
+        font-size: 24px;
+        text-align: center;
+    }
+}

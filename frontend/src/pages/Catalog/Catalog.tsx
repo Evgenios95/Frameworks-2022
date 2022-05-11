@@ -21,7 +21,7 @@ export const Catalog = () => {
 
   return (
     <div className={"pageWrapper"}>
-      <h1>Best coffee selection in Denmark</h1>
+      <h1 className={"catalogHeader"}>The best coffee selection in Denmark</h1>
       <Filters />
       {shownProducts && <ProductDisplay products={shownProducts} />}
     </div>
