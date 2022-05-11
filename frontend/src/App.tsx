@@ -52,7 +52,10 @@ function App() {
             />
           }
         />
-        <Route path="/product/:id" element={<ProductDescription />} />
+        <Route
+          path="/product/:id"
+          element={<ProductDescription setBasket={setBasket} />}
+        />
       </Routes>
       <Footer />
     </div>
