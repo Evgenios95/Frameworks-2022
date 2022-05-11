@@ -2,32 +2,53 @@ import axios from "axios";
 import { productImages } from "./productImages";
 
 export async function transformBasket(basket) {
-  const productsReq = await axios.get("product");
-  const products = productsReq.data;
+  //get basket into {ID: quantity} form
   const basketCounts = basket.reduce(
     (acc, e) => acc.set(e, (acc.get(e) || 0) + 1),
     new Map()
   );
+
+  //fetch All Products
+  const productsReq = await axios.get("/product");
+  const products = productsReq.data.products;
+
+  //add meta data of products to products in the basket
   const productInfo = [];
   for (const productId of basketCounts.keys()) {
     const productIndex = products.findIndex(
       (product) => product.productId === productId
     );
     products[productIndex]["quantity"] = basketCounts.get(productId);
+    products[productIndex]["image"] = productImages[productId];
     productInfo.push(products[productIndex]);
   }
   return productInfo;
 }
 
 export async function removeOneFromBasket(productId, user) {
-  if (user) {
-    const basketReq = await axios.delete("/basket/remove", {
-      userId: user.userID,
+  const suser = localStorage.getItem("user") || null;
+  if (suser) {
+    //loggedIn
+    const userObject = JSON.parse(suser);
+    const productData = {
+      userId: userObject.userID,
       productId: productId,
       all: false,
-    });
-    return basketReq.data.newBasket;
+    };
+
+    const productReq = await axios.delete("/basket", { data: productData });
+
+    return productReq.data.newBasket;
   } else {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    for (var i = 0; i < basket.length; i++) {
+      if (basket[i] === productId) {
+        basket.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("basket", JSON.stringify(basket));
+    return basket;
   }
 }
 
@@ -41,13 +62,11 @@ export async function addProductToBasket(productId) {
       productId: productId,
     };
 
-    const stringifiedData = JSON.stringify(productData);
-
     const options = {
       headers: { "content-type": "application/json" },
     };
 
-    const productReq = await axios.put("/basket", stringifiedData, options);
+    const productReq = await axios.put("/basket", productData, options);
 
     return productReq.data.newBasket;
   } else {
