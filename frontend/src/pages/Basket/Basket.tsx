@@ -1,8 +1,11 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
+import NoResultImg from "./../../assets/coffee.gif";
+
 import {
   addProductToBasket,
   removeOneFromBasket,
+  removeAllFromBasket,
   transformBasket,
 } from "../../utils/functions";
 
@@ -27,13 +30,18 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
   const [basketProducts, setBasketProducts] = useState<Product[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
 
-  async function addProductToBasketHandler(pID: number) {
-    const newBasket = await addProductToBasket(pID);
+  async function addProductToBasketHandler(pId: number) {
+    const newBasket = await addProductToBasket(pId);
     setBasket(newBasket);
   }
 
-  async function removeProductToBasketHandler(pID: number) {
-    const newBasket = await removeOneFromBasket(pID);
+  async function removeProductFromBasketHandler(pId: number) {
+    const newBasket = await removeOneFromBasket(pId);
+    setBasket(newBasket);
+  }
+
+  async function removeAllProducts(pId: number) {
+    const newBasket = await removeAllFromBasket(pId);
     setBasket(newBasket);
   }
 
@@ -56,6 +64,12 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
   return (
     <div className={"basketPage"}>
       <div className={"basketContentWrapper"}>
+        {basketProducts.length === 0 && (
+          <div className={"noBasketMessage"}>
+            <p>There is nothing in your basket.</p>
+            <img src={NoResultImg} alt={"No basket content"} />
+          </div>
+        )}
         {basketProducts.map((product: Product) => (
           <div className={"basketProduct"} key={product.productId}>
             <div className={"basketImageWrapper"}>
@@ -75,13 +89,19 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
                 </button>
                 <button
                   onClick={() =>
-                    removeProductToBasketHandler(product.productId)
+                    removeProductFromBasketHandler(product.productId)
                   }
                 >
                   -
                 </button>
               </div>
             </div>
+            <button
+              className={"removeAllFromBasket"}
+              onClick={() => removeAllProducts(product.productId)}
+            >
+              X
+            </button>
           </div>
         ))}
       </div>

@@ -2,11 +2,14 @@
     width: 100vw;
     padding: 0 12%;
     position: relative;
+
 }
 
 .basketContentWrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
+    min-height: calc(100vh - 550px);
 }
 
 .basketContentWrapper > div {
@@ -16,7 +19,7 @@
 .basketProduct {
     background: lightblue;
     display: flex;
-
+    position: relative;
 }
 
 .basketImageWrapper {
@@ -65,4 +68,31 @@
 
 .editQtyInBasket > button {
     padding: 30px;
+}
+
+.removeAllFromBasket {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    right: 30px
+}
+
+.noBasketMessage {
+
+    font-size: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.noBasketMessage img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.noBasketMessage p {
+    margin-top: 100px
 }

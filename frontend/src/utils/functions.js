@@ -77,9 +77,22 @@ export async function addProductToBasket(productId) {
   }
 }
 
-export async function removeAllFromBasket(productId, user) {
-  if (user) {
+export async function removeAllFromBasket(productId) {
+  const suser = localStorage.getItem("user") || null;
+  if (suser) {
+    const userObject = JSON.parse(suser);
+    const productData = {
+      userId: userObject.userID,
+      productId: productId,
+      all: true,
+    };
+    const productReq = await axios.delete("/basket", { data: productData });
+    return productReq.data.newBasket;
   } else {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    basket = basket.filter((product) => product !== productId);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    return basket;
   }
 }
 
