@@ -1,6 +1,7 @@
 import "./style.css";
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface ProductProps {
   productId: number;
@@ -22,18 +23,20 @@ export const Product = ({ product }: { product: ProductProps }) => {
   // https://www.framer.com/docs/animation/
   const animationVariants = {
     hidden: { opacity: 0, y: -20 },
-    show: { opacity: 1, y: 0 },
+    show: { opacity: 1, y: 0 }
   };
+
+  const productUrl = "/product/" + product.productId;
 
   return (
     <motion.div className={"productWrapper"} variants={animationVariants}>
       {product.discountAmount !== "no" && <p className={"saleTag"}>ON SALE</p>}
 
       <img src={product.productImage} alt={"coffee"} />
+      <h4>{product.productCategories.brand}</h4>
       <h2>{product.productName}</h2>
       <p> {product.productWeight}</p>
       <h4>{product.productCategories.roast}</h4>
-      <h4>{product.productCategories.brand}</h4>
       <h3>{product.productPrice} DKK</h3>
 
       {product.discountAmount !== "no" && (
@@ -42,7 +45,8 @@ export const Product = ({ product }: { product: ProductProps }) => {
         </h4>
       )}
 
-      <a href={"/product/" + product.productId}>Details</a>
+      <Link to={productUrl}>Details</Link>
     </motion.div>
-  );
+  )
+    ;
 };

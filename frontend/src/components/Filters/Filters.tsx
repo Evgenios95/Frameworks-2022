@@ -8,96 +8,82 @@ export const Filters = () => {
     Object.fromEntries([...filter])
   );
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     setFilterInput(Object.fromEntries([...filter]));
   }, [filter]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const url = "/catalog?" + new URLSearchParams(filterInput).toString();
     navigate(url);
   }, [filterInput]);
 
+  function toggleDiscount() {
+    if (!filterInput.discount)
+      setFilterInput((currFilter) => {
+        const newFilter = { ...currFilter };
+        newFilter.discount = "true";
+        return newFilter;
+      });
+    else if (filterInput.discount) {
+      setFilterInput((currFilter) => {
+        const newFilter = { ...currFilter };
+        delete newFilter.discount;
+        return newFilter;
+      });
+    }
+  }
+
   return (
     <div className={"filtersWrapper"}>
-      Brand
-      <select
-        name="brand"
-        id="brand"
-        onChange={(e) => {
-          setFilterInput({ ...filterInput, brand: e.target.value });
-        }}
-      >
-        <option
-          value=""
-          selected={filterInput.brand === "" || filterInput.brand === undefined}
+      <div className={"filterInputContainer"}>
+        <label htmlFor="brand">
+          <p>Brand</p>
+        </label>
+        <select
+          name="brand"
+          id="brand"
+          value={filterInput.brand || ""}
+          onChange={(e) => {
+            setFilterInput({ ...filterInput, brand: e.target.value });
+          }}
         >
-          All
-        </option>
+          <option value="">All</option>
+          <option value="starbucks">Starbucks</option>
+          <option value="lavazza">Lavazza</option>
+          <option value="depresso">Depresso</option>
+        </select>
+      </div>
 
-        <option
-          value="starbucks"
-          selected={
-            filterInput.brand !== undefined && filterInput.brand === "starbucks"
-          }
+      <div className={"filterInputContainer"}>
+        <label htmlFor="brand">
+          <p>Roast</p>
+        </label>
+        <select
+          name="roast"
+          id="roast"
+          value={filterInput.roast || ""}
+          onChange={(e) => {
+            setFilterInput({ ...filterInput, roast: e.target.value });
+          }}
         >
-          Starbucks
-        </option>
+          <option value="">All</option>
+          <option value="lightroast">Light</option>
+          <option value="darkroast">Dark</option>
+          <option value="mediumroast">Medium</option>
+        </select>
+      </div>
 
-        <option
-          value="lavazza"
-          selected={
-            filterInput.brand !== undefined && filterInput.brand === "lavazza"
-          }
-        >
-          Lavazza
-        </option>
-
-        <option
-          value="depresso"
-          selected={
-            filterInput.brand !== undefined && filterInput.brand === "depresso"
-          }
-        >
-          Depresso
-        </option>
-      </select>
-      Roast
-      <select
-        name="roast"
-        id="roast"
-        onChange={(e) => {
-          setFilterInput({ ...filterInput, roast: e.target.value });
-        }}
-      >
-        <option
-          value=""
-          selected={
-            filterInput.roast === "starbucks" || filterInput.roast === undefined
-          }
-        >
-          All
-        </option>
-
-        <option
-          value="lightroast"
-          selected={filterInput.roast === "lightroast"}
-        >
-          Light
-        </option>
-
-        <option value="darkroast" selected={filterInput.roast === "darkroast"}>
-          Dark
-        </option>
-
-        <option
-          value="mediumroast"
-          selected={filterInput.roast === "mediumroast"}
-        >
-          Medium
-        </option>
-      </select>
+      <div className={"filterInputContainer"}>
+        <input
+          type="checkbox"
+          value="true"
+          name="discount"
+          checked={filterInput.discount === "true"}
+          onChange={() => toggleDiscount()}
+        />
+        On Sale
+      </div>
     </div>
   );
 };

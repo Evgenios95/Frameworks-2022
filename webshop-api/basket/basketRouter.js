@@ -1,19 +1,19 @@
-import express from "express"
+import express from "express";
 import {
-    createBasket,
-    deleteBasket,
-    removeFromBasket,
-    addToBasket,
-    getBasket
-} from "./basketController.js"
+  removeFromBasket,
+  addToBasket,
+  getBasket,
+} from "./basketController.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.route('/create').put(createBasket)
+router.route("/:userId").get(getBasket);
+router.route("/").put(addToBasket);
+router.route("/").delete(removeFromBasket);
+
+/*
 router.route('/delete/:userId').delete(deleteBasket)
-router.route('/get/:userId').get(getBasket)
-router.route('/add').post(addToBasket)
-router.route('/remove').post(removeFromBasket)
+router.route("/create").put(createBasket);
+ */
 
-
-export default router
+export default router;

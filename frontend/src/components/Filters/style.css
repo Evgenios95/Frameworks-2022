@@ -1,3 +1,50 @@
 .filtersWrapper {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.filterInputContainer {
+    font-size: 20px;
+    display: flex;
+    margin-right: 100px;
+    align-items: center;
+}
+
+.filterInputContainer > label {
+    margin-right: 30px;
+}
+
+.filterInputContainer > select {
+    font-size: 18px;
+}
+
+.filtersWrapper > .filterInputContainer:last-child {
+    margin-right: 0;
+}
+
+.filtersWrapper > .filterInputContainer:last-child > input {
+    margin-right: 10px
+}
+
+@media only screen and (max-width: 850px) {
+    .filtersWrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filtersWrapper > div {
+        margin-bottom: 20px
+    }
+
+    .filterInputContainer {
+        margin-right: 0;
+        font-size: 14px;
+    }
+
+    .filterInputContainer > select {
+        font-size: 12px;
+    }
 }
