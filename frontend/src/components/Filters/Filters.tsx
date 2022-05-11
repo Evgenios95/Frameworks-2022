@@ -79,7 +79,7 @@ export const Filters = () => {
           type="checkbox"
           value="true"
           name="discount"
-          defaultChecked={filterInput.discount === "true"}
+          checked={filterInput.discount === "true"}
           onChange={() => toggleDiscount()}
         />
         On Sale
