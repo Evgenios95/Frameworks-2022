@@ -36,7 +36,7 @@ export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
         }}
         onSubmit={(values: FormValues, { setSubmitting }) => {
           axios
-            .post("/user/login", values)
+            .post("/login", values)
             .then((user) => {
               localStorage.setItem("user", JSON.stringify(user.data));
               setUser(user.data);
