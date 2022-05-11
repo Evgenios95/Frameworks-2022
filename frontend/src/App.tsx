@@ -16,8 +16,7 @@ function App() {
   const [basketContent, setBasket] = useState(initialBasket);
 
   useEffect(() => {
-    const newBasket = user ? user.basket : [];
-    setBasket(newBasket);
+    setBasket(initialBasket);
   }, [user]);
 
   return (
@@ -25,7 +24,7 @@ function App() {
       <Navbar setUser={setUser} user={user} basket={basketContent} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Catalog setBasket={setBasket} />} />
         <Route
           path="/basket"
           element={

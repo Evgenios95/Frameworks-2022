@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { Filters } from "../../components/Filters";
 import { fetchFilteredProducts } from "../../utils/functions";
 
-export const Catalog = () => {
+export const Catalog = ({ setBasket }: any) => {
   const [shownProducts, setShownProducts] = useState(null);
   const [filter] = useSearchParams();
 
@@ -23,7 +23,9 @@ export const Catalog = () => {
     <div className={"pageWrapper"}>
       <h1 className={"catalogHeader"}>The best coffee selection in Denmark</h1>
       <Filters />
-      {shownProducts && <ProductDisplay products={shownProducts} />}
+      {shownProducts && (
+        <ProductDisplay setBasket={setBasket} products={shownProducts} />
+      )}
     </div>
   );
 };

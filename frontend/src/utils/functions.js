@@ -31,6 +31,27 @@ export async function removeOneFromBasket(productId, user) {
   }
 }
 
+export async function addProductToBasket(productId, setBasket) {
+  const suser = localStorage.getItem("user");
+  const userObject = JSON.parse(suser);
+
+  const productData = {
+    userId: userObject.userID,
+    productId: productId,
+  };
+
+  const stringifiedData = JSON.stringify(productData);
+
+  const options = {
+    headers: { "content-type": "application/json" },
+  };
+
+  const productReq = await axios.post("/basket/add", stringifiedData, options);
+
+  setBasket(productReq.data.newBasket);
+  return productReq.data.newBasket;
+}
+
 export async function removeAllFromBasket(productId, user) {
   if (user) {
   } else {
@@ -39,6 +60,7 @@ export async function removeAllFromBasket(productId, user) {
 
 export async function fetchDiscountedProducts() {
   const productsReq = await axios.get("/product?discount=true");
+
   const products = productsReq.data.products;
   return products.map((product) => {
     const productId = parseInt(product.productId);
@@ -87,6 +109,7 @@ export async function fetchAllProducts() {
 export async function fetchFilteredProducts(filter) {
   const url = "/product?" + new URLSearchParams(filter).toString();
   const productsReq = await axios.get(url);
+
   return productsReq.data.products.map((product) => {
     const productId = parseInt(product.productId);
     product.productImage = productImages[productId];
