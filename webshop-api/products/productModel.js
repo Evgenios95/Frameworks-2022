@@ -1,5 +1,9 @@
 import fs from "fs/promises";
-import { filterByBrand, filterByRoast, filterForDiscountedProducts } from "./filterFunctions.js";
+import {
+  filterByBrand,
+  filterByRoast,
+  filterForDiscountedProducts,
+} from "./filterFunctions.js";
 
 const PRODUCTS_FILE = "./products/products.json";
 
@@ -32,7 +36,6 @@ export async function getFilteredProducts(filters) {
   }
   return products;
 }
-
 
 export async function getCategoryNames() {
   let product = await getProductById(1);

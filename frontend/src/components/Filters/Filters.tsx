@@ -14,7 +14,6 @@ export const Filters = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(filterInput);
     const url = "/catalog?" + new URLSearchParams(filterInput).toString();
     navigate(url);
   }, [filterInput]);
