@@ -21,7 +21,7 @@ export async function transformBasket(basket) {
 
 export async function removeOneFromBasket(productId, user) {
   if (user) {
-    const basketReq = await axios.post("/basket/remove", {
+    const basketReq = await axios.delete("/basket/remove", {
       userId: user.userID,
       productId: productId,
       all: false,
@@ -46,7 +46,7 @@ export async function addProductToBasket(productId, setBasket) {
     headers: { "content-type": "application/json" },
   };
 
-  const productReq = await axios.post("/basket/add", stringifiedData, options);
+  const productReq = await axios.put("/basket", stringifiedData, options);
 
   setBasket(productReq.data.newBasket);
   return productReq.data.newBasket;

@@ -12,7 +12,9 @@ import React from "react";
 function App() {
   const loggedIn = JSON.parse(localStorage.getItem("user")!) || false;
   const [user, setUser] = useState(loggedIn);
-  const initialBasket = user ? user.basket : [];
+  const initialBasket = user
+    ? user.basket
+    : localStorage.getItem("basket") || [];
   const [basketContent, setBasket] = useState(initialBasket);
 
   useEffect(() => {
