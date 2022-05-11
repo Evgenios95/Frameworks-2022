@@ -31,25 +31,31 @@ export async function removeOneFromBasket(productId, user) {
   }
 }
 
-export async function addProductToBasket(productId, setBasket) {
-  const suser = localStorage.getItem("user");
-  const userObject = JSON.parse(suser);
+export async function addProductToBasket(productId) {
+  const suser = localStorage.getItem("user") || null;
+  if (suser) {
+    //loggedIn
+    const userObject = JSON.parse(suser);
+    const productData = {
+      userId: userObject.userID,
+      productId: productId,
+    };
 
-  const productData = {
-    userId: userObject.userID,
-    productId: productId,
-  };
+    const stringifiedData = JSON.stringify(productData);
 
-  const stringifiedData = JSON.stringify(productData);
+    const options = {
+      headers: { "content-type": "application/json" },
+    };
 
-  const options = {
-    headers: { "content-type": "application/json" },
-  };
+    const productReq = await axios.put("/basket", stringifiedData, options);
 
-  const productReq = await axios.put("/basket", stringifiedData, options);
-
-  setBasket(productReq.data.newBasket);
-  return productReq.data.newBasket;
+    return productReq.data.newBasket;
+  } else {
+    const basket = JSON.parse(localStorage.getItem("basket")) || [];
+    basket.push(productId);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    return basket;
+  }
 }
 
 export async function removeAllFromBasket(productId, user) {

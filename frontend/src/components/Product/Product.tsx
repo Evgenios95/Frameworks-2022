@@ -27,6 +27,11 @@ export const Product = ({ product, setBasket }: any) => {
     show: { opacity: 1, y: 0 },
   };
 
+  async function addProductToBasketHandler(pID: number) {
+    const newBasket = await addProductToBasket(pID);
+    setBasket(newBasket);
+  }
+
   const productUrl = "/product/" + product.productId;
 
   return (
@@ -48,7 +53,7 @@ export const Product = ({ product, setBasket }: any) => {
 
       <Link to={productUrl}>Details</Link>
 
-      <button onClick={() => addProductToBasket(product.productId, setBasket)}>
+      <button onClick={() => addProductToBasketHandler(product.productId)}>
         Add me
       </button>
     </motion.div>
