@@ -96,3 +96,18 @@
 .noBasketMessage p {
     margin-top: 100px
 }
+
+
+@media only screen and (max-width: 900px) {
+    .basketProduct {
+        flex-direction: column;
+    }
+
+    .basketImageWrapper {
+        width: 100%;
+    }
+
+    .basketMeta {
+        padding: 30px;
+    }
+}
