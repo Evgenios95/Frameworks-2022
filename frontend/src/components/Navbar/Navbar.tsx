@@ -1,17 +1,16 @@
 import "./style.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import { AuthWrapper } from "../AuthWrapper";
 import { UserWrapper } from "../UserWrapper";
+import { AnimatePresence } from "framer-motion";
+import { useBasket, useUser } from "../../UserProvider";
 
-interface NavbarProps {
-  user: string | boolean;
-  setUser: (user: string | boolean) => void;
-  basket: [];
-}
-
-export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
+export const Navbar = () => {
+  const basket: any = useBasket();
+  // @ts-ignore
+  const user: any = useUser();
   return (
     <div className={"navbarWrapper"}>
       <Link to="/">
@@ -34,12 +33,9 @@ export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
           <div className={"basketCount"}>{basket.length}</div>
         </Link>
       </nav>
-
-      {user ? (
-        <UserWrapper user={user} setUser={setUser} />
-      ) : (
-        <AuthWrapper setUser={setUser} />
-      )}
+      <AnimatePresence>
+        {user ? <UserWrapper key={"loginFormModal"} /> : <AuthWrapper />}
+      </AnimatePresence>
     </div>
   );
 };

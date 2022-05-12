@@ -2,9 +2,9 @@ import "./style.css";
 import React from "react";
 import { Formik, Form, Field, ErrorMessage, FormikErrors } from "formik";
 import axios from "axios";
+import { useUserUpdate } from "../../UserProvider";
 
 interface LoginFormProps {
-  setUser: (arg: any) => void;
   setModalType: (modalType: string | null) => void;
 }
 
@@ -13,7 +13,9 @@ interface FormValues {
   password: string;
 }
 
-export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
+export const LoginForm = ({ setModalType }: LoginFormProps) => {
+  const setUser = useUserUpdate();
+
   return (
     <>
       <h1>Login</h1>

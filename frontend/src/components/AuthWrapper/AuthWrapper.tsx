@@ -4,13 +4,7 @@ import { RegisterForm } from "../RegisterForm";
 import Logo from "../../assets/logo.png";
 import { LoginForm } from "../LoginForm";
 
-export interface AuthWrapperProps {
-  setUser: (user: string | boolean) => void;
-}
-
-export const AuthWrapper: React.FC<AuthWrapperProps> = ({
-  setUser,
-}: AuthWrapperProps) => {
+export const AuthWrapper = () => {
   const [modalType, setModalType] = useState<string | null>(null);
 
   return (
@@ -25,11 +19,11 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({
               <img src={Logo} alt={"Logo"} />
             </button>
 
-            {modalType === "login" && (
-              <LoginForm setModalType={setModalType} setUser={setUser} />
-            )}
+            {modalType === "login" && <LoginForm setModalType={setModalType} />}
 
-            {modalType === "register" && <RegisterForm />}
+            {modalType === "register" && (
+              <RegisterForm setModalType={setModalType} />
+            )}
           </div>
         </div>
       )}

@@ -8,13 +8,7 @@ import {
   removeAllFromBasket,
   transformBasket,
 } from "../../utils/functions";
-
-interface BasketProps {
-  basket: [];
-  user: string | boolean;
-  setUser: (user: any) => void;
-  setBasket: (basket: []) => void;
-}
+import { useBasket, useBasketUpdate } from "../../UserProvider";
 
 interface Product {
   productId: number;
@@ -26,22 +20,28 @@ interface Product {
   description: string;
 }
 
-export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
+export const Basket = () => {
+  const basket = useBasket();
+  const setBasket = useBasketUpdate();
+
   const [basketProducts, setBasketProducts] = useState<Product[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
 
   async function addProductToBasketHandler(pId: number) {
     const newBasket = await addProductToBasket(pId);
+    // @ts-ignore
     setBasket(newBasket);
   }
 
   async function removeProductFromBasketHandler(pId: number) {
     const newBasket = await removeOneFromBasket(pId);
+    // @ts-ignore
     setBasket(newBasket);
   }
 
   async function removeAllProducts(pId: number) {
     const newBasket = await removeAllFromBasket(pId);
+    // @ts-ignore
     setBasket(newBasket);
   }
 

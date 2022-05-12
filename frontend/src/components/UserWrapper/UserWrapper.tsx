@@ -1,19 +1,22 @@
 import "./style.css";
 import React from "react";
+import { motion } from "framer-motion";
+import { useUser, useUserUpdate } from "../../UserProvider";
 
-interface UserWrapperProps {
-  user: string | boolean | any;
-  setUser: (user: string | boolean | any) => void;
-}
-
-export const UserWrapper = ({ user, setUser }: UserWrapperProps) => {
+export const UserWrapper = () => {
+  const user = useUser();
+  const setUser = useUserUpdate();
   return (
-    <div className={"userInfo"}>
+    <motion.div
+      className={"userInfo"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className={"usernameDisplay"}>
         <p>Currently logged in as</p>
         <h1>{user.username}</h1>
       </div>
-
       <button
         className={"logoutButton"}
         onClick={() => {
@@ -23,6 +26,6 @@ export const UserWrapper = ({ user, setUser }: UserWrapperProps) => {
       >
         Log out
       </button>
-    </div>
+    </motion.div>
   );
 };

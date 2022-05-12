@@ -4,7 +4,7 @@ import { Product } from "../Product";
 import { motion } from "framer-motion";
 import NoResultImg from "../../assets/coffee.gif";
 
-export const ProductDisplay = ({ products, setBasket }: any) => {
+export const ProductDisplay = ({ products }: any) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const containerAnim = {
@@ -28,11 +28,7 @@ export const ProductDisplay = ({ products, setBasket }: any) => {
         animate="show"
       >
         {products.map((product: any) => (
-          <Product
-            setBasket={setBasket}
-            key={product.productId}
-            product={product}
-          />
+          <Product key={product.productId} product={product} />
         ))}
       </motion.div>
 

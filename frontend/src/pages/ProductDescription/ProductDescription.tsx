@@ -5,9 +5,9 @@ import {
   addProductToBasket,
   fetchProductInfo,
   fetchSimilarRoastedProducts,
-  removeOneFromBasket,
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
+import { useBasketUpdate } from "../../UserProvider";
 
 interface Product {
   productName: string;
@@ -22,12 +22,14 @@ interface Product {
   productImage: string;
 }
 
-export const ProductDescription = ({ setBasket }: any) => {
+export const ProductDescription = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [similarProducts, setSimilarProducts] = useState<Product[] | null>(
     null
   );
   const { id } = useParams();
+
+  const setBasket = useBasketUpdate();
 
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
@@ -80,7 +82,7 @@ export const ProductDescription = ({ setBasket }: any) => {
           <h1 className={"similarProductHeader"}>
             You might also like these {product!.productCategories.roast} coffees
           </h1>
-          <ProductDisplay products={similarProducts} setBasket={setBasket} />
+          <ProductDisplay products={similarProducts} />
         </>
       )}
     </div>

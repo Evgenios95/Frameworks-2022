@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
+import { useBasketUpdate } from "../../UserProvider";
 
 interface ProductProps {
   productId: number;
@@ -19,9 +20,11 @@ interface ProductProps {
   discountAmount: string;
 }
 
-export const Product = ({ product, setBasket }: any) => {
+export const Product = ({ product }: any) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
+  const setBasket = useBasketUpdate();
+
   const animationVariants = {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0 },
