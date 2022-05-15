@@ -16,7 +16,7 @@ interface FormValues {
 export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
   return (
     <>
-      <h1>Login</h1>
+      <div className="login-header">Login</div>
 
       <Formik
         initialValues={{ email: "", password: "" }}
@@ -70,7 +70,11 @@ export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
               className={"formError"}
             />
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className="product-button login-button"
+              type="submit"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </Form>

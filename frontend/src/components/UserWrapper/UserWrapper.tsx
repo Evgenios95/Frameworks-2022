@@ -1,5 +1,7 @@
 import "./style.css";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 interface UserWrapperProps {
   user: string | boolean | any;
@@ -9,20 +11,21 @@ interface UserWrapperProps {
 export const UserWrapper = ({ user, setUser }: UserWrapperProps) => {
   return (
     <div className={"userInfo"}>
-      <div className={"usernameDisplay"}>
-        <p>Currently logged in as</p>
-        <h1>{user.username}</h1>
+      <div className="logout-button-wrapper">
+        <button
+          className={"product-button user-action-button"}
+          onClick={() => {
+            localStorage.removeItem("user");
+            setUser(false);
+          }}
+        >
+          Log out
+        </button>
       </div>
-
-      <button
-        className={"logoutButton"}
-        onClick={() => {
-          localStorage.removeItem("user");
-          setUser(false);
-        }}
-      >
-        Log out
-      </button>
+      <div className={"usernameDisplay"}>
+        <FontAwesomeIcon className="user-icon" icon={faUserCircle} />
+        <div>{user.username}</div>
+      </div>
     </div>
   );
 };

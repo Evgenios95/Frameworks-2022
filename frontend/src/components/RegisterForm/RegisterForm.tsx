@@ -83,7 +83,11 @@ export const RegisterForm = () => {
               className={"formError"}
             />
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className="product-button login-button"
+              type="submit"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </Form>
