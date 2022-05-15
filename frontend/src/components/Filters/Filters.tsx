@@ -1,6 +1,11 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 export const Filters = () => {
   const [filter] = useSearchParams();
@@ -37,41 +42,45 @@ export const Filters = () => {
   return (
     <div className={"filtersWrapper"}>
       <div className={"filterInputContainer"}>
-        <label htmlFor="brand">
-          <p>Brand</p>
-        </label>
-        <select
-          name="brand"
-          id="brand"
-          value={filterInput.brand || ""}
-          onChange={(e) => {
-            setFilterInput({ ...filterInput, brand: e.target.value });
-          }}
-        >
-          <option value="">All</option>
-          <option value="starbucks">Starbucks</option>
-          <option value="lavazza">Lavazza</option>
-          <option value="depresso">Depresso</option>
-        </select>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="brand-selection">Brand</InputLabel>
+            <Select
+              labelId="brand-selection"
+              value={filterInput.brand || ""}
+              label="Brand"
+              onChange={(e) => {
+                setFilterInput({ ...filterInput, brand: e.target.value });
+              }}
+            >
+              <MenuItem value="">All</MenuItem>
+              <MenuItem value="starbucks">Starbucks</MenuItem>
+              <MenuItem value="lavazza">Lavazza</MenuItem>
+              <MenuItem value="depresso">Depresso</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
 
       <div className={"filterInputContainer"}>
-        <label htmlFor="brand">
-          <p>Roast</p>
-        </label>
-        <select
-          name="roast"
-          id="roast"
-          value={filterInput.roast || ""}
-          onChange={(e) => {
-            setFilterInput({ ...filterInput, roast: e.target.value });
-          }}
-        >
-          <option value="">All</option>
-          <option value="lightroast">Light</option>
-          <option value="darkroast">Dark</option>
-          <option value="mediumroast">Medium</option>
-        </select>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="roast-selection">Roast</InputLabel>
+            <Select
+              labelId="roast-selection"
+              value={filterInput.roast || ""}
+              label="Roast"
+              onChange={(e) => {
+                setFilterInput({ ...filterInput, roast: e.target.value });
+              }}
+            >
+              <MenuItem value="">All</MenuItem>
+              <MenuItem value="lightroast">Light</MenuItem>
+              <MenuItem value="darkroast">Dark</MenuItem>
+              <MenuItem value="mediumroast">Medium</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </div>
 
       <div className={"filterInputContainer"}>
