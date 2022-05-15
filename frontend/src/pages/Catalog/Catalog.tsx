@@ -24,8 +24,8 @@ export const Catalog = ({ setBasket }: CatalogProps) => {
   }, [filter]);
 
   return (
-    <div className={"pageWrapper"}>
-      <h1 className={"catalogHeader"}>The best coffee selection in Denmark</h1>
+    <div className={"page-wrapper"}>
+      <h1 className={"catalog-header"}>The best coffee selection in Denmark</h1>
       <Filters />
       {shownProducts && (
         <ProductDisplay setBasket={setBasket} products={shownProducts} />

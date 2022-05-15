@@ -68,9 +68,9 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
 
   return (
     <div className={"basket-page"}>
-      <div className={"basketContentWrapper"}>
+      <div className={"basket-content-wrapper"}>
         {basketProducts.length === 0 && (
-          <div className={"noBasketMessage"}>
+          <div className={"empty-basket-message"}>
             <p>There is nothing in your basket.</p>
             <img src={NoResultImg} alt="No basket content" />
           </div>
@@ -81,7 +81,7 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
               <img src={product.image} alt="Product pic" />
             </div>
 
-            <div className={"basketMeta"}>
+            <div className={"basket-meta"}>
               <div className="basket-name-brand-wrapper">
                 <div className="product-name basket-product-name">
                   {product.productName}
@@ -132,7 +132,7 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
             </div>
 
             <button
-              className={"closeModal"}
+              className={"close-modal"}
               onClick={() => removeAllProducts(product.productId)}
             >
               <FontAwesomeIcon icon={faClose} />
@@ -141,7 +141,7 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
         ))}
       </div>
 
-      <div className={"basketSummary"}>
+      <div className={"basket-summary"}>
         <div>Total: {basketTotal} DKK</div>
         <button className={"product-button checkout-button"}>Check out</button>
       </div>

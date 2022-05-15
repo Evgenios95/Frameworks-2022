@@ -1,4 +1,4 @@
-.productWrapper {
+.product-wrapper {
   color: #1f2131;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.productWrapper img {
+.product-wrapper img {
   width: 60%;
   height: 50%;
 }
@@ -58,7 +58,7 @@
   text-decoration: line-through;
 }
 
-.saleTag {
+.sale-tag {
   background: rgb(255, 188, 31);
   color: white;
   padding: 5px 10px;

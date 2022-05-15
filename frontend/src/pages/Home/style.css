@@ -1,28 +1,7 @@
-.companyBanner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px 0;
-}
-
-.companyBanner > h1 {
-  font-size: 100px;
-}
-
-.companyBanner > p {
-  font-size: 36px;
-}
-
-.homeDiscountHeading {
+.home-discount-heading {
   margin-top: 27px;
   font-family: "Koulen";
   font-size: 60px;
   text-align: center;
   color: #1f2131;
-}
-
-@media only screen and (max-width: 800px) {
-  .companyBanner > h1 {
-    font-size: 50px;
-  }
 }

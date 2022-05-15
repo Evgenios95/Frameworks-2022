@@ -1,4 +1,4 @@
-.navbarWrapper {
+.navbar-wrapper {
   width: 100vw;
   height: 100px;
   display: flex;
@@ -19,23 +19,23 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .navbarWrapper {
+  .navbar-wrapper {
     padding-bottom: 10px;
   }
 }
 
-.navbarLogo {
+.navbar-logo {
   width: 100px;
   height: 100px;
   position: relative;
 }
 
-.navbarLogo > img {
+.navbar-logo > img {
   width: 70%;
   height: 100%;
 }
 
-.navbarMenuWrapper {
+.navbar-menu-wrapper {
   padding-left: 50px;
   display: flex;
   flex: 1;
@@ -43,7 +43,7 @@
   column-gap: 60px;
 }
 
-.navbarLink {
+.navbar-link {
   font-weight: 600;
   color: #1f2131;
   font-family: "Work Sans", sans-serif;
@@ -51,7 +51,7 @@
   position: relative;
 }
 
-.basketCount {
+.basket-count {
   position: absolute;
   top: -15px;
   left: 75px;
@@ -68,28 +68,28 @@
 }
 
 @media only screen and (max-width: 1050px) {
-  .navbarWrapper {
+  .navbar-wrapper {
     flex-direction: column;
     height: inherit;
   }
 
-  .navbarMenuWrapper {
+  .navbar-menu-wrapper {
     column-gap: 35px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .navbarLink {
+  .navbar-link {
     font-size: 16px;
   }
 
-  .basketCount {
+  .basket-count {
     left: 57px;
     width: 21px;
     height: 21px;
   }
 
-  .navbarMenuWrapper {
+  .navbar-menu-wrapper {
     padding-left: 0;
     column-gap: 20px;
   }

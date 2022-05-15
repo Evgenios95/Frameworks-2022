@@ -49,8 +49,8 @@ export const Product = ({
   const productUrl = "/product/" + product.productId;
 
   return (
-    <motion.div className={"productWrapper"} variants={animationVariants}>
-      {product.discountAmount !== "no" && <p className={"saleTag"}>ON SALE</p>}
+    <motion.div className={"product-wrapper"} variants={animationVariants}>
+      {product.discountAmount !== "no" && <p className={"sale-tag"}>ON SALE</p>}
 
       <img src={product.productImage} alt={"coffee"} />
 

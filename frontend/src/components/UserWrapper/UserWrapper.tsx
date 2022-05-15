@@ -10,7 +10,7 @@ interface UserWrapperProps {
 
 export const UserWrapper = ({ user, setUser }: UserWrapperProps) => {
   return (
-    <div className={"userInfo"}>
+    <div className={"user-info"}>
       <div className="logout-button-wrapper">
         <button
           className={"product-button user-action-button"}
@@ -22,7 +22,7 @@ export const UserWrapper = ({ user, setUser }: UserWrapperProps) => {
           Log out
         </button>
       </div>
-      <div className={"usernameDisplay"}>
+      <div className="username-display">
         <FontAwesomeIcon className="user-icon" icon={faUserCircle} />
         <div>{user.username}</div>
       </div>

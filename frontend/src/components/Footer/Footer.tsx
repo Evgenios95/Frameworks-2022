@@ -12,29 +12,29 @@ import {
 export const Footer = () => {
   return (
     <footer id={"footer"}>
-      <div className={"footerWrapper"}>
-        <div className={"footerCategories"}>
+      <div className={"footer-wrapper"}>
+        <div className={"footer-categories"}>
           <h3>Roasts</h3>
           <Link to="/catalog?roast=lightroast">Light</Link>
           <Link to="/catalog?roast=mediumroast">Medium</Link>
           <Link to="/catalog?roast=darkroast">Dark</Link>
         </div>
 
-        <div className={"footerCategories"}>
+        <div className={"footer-categories"}>
           <h3>Brands</h3>
           <Link to="/catalog?brand=starbucks">Starbucks</Link>
           <Link to="/catalog?brand=lavazza">Lavazza</Link>
           <Link to="/catalog?brand=depresso">Depresso</Link>
         </div>
 
-        <div className={"footerLinks"}>
+        <div className={"footer-links"}>
           <h3>Extras</h3>
           <Link to="/">About Us</Link>
           <Link to="/">Contact Us</Link>
           <Link to="/">Privacy policy</Link>
         </div>
 
-        <div className={"footerDescription"}>
+        <div className={"footer-description"}>
           <h3>About us</h3>
           <p>
             Coffeenator was created to give you a one-stop to buy quality coffee
@@ -44,7 +44,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className={"copyrightAndSomeWrapper"}>
+      <div className={"footer-mostbot-wrapper"}>
         <p>Copyright 2022 Coffeenator</p>
 
         <p>CVR: 99 99 99 99</p>

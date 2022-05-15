@@ -40,8 +40,8 @@ export const Filters = () => {
   }
 
   return (
-    <div className={"filtersWrapper"}>
-      <div className={"filterInputContainer"}>
+    <div className={"filters-wrapper"}>
+      <div className={"filter-input-container"}>
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <InputLabel id="brand-selection">Brand</InputLabel>
@@ -62,7 +62,7 @@ export const Filters = () => {
         </Box>
       </div>
 
-      <div className={"filterInputContainer"}>
+      <div className={"filter-input-container"}>
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
             <InputLabel id="roast-selection">Roast</InputLabel>
@@ -83,7 +83,7 @@ export const Filters = () => {
         </Box>
       </div>
 
-      <div className={"filterInputContainer"}>
+      <div className={"filter-input-container"}>
         <input
           type="checkbox"
           value="true"

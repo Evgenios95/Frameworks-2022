@@ -32,7 +32,7 @@ export const ProductDisplay = ({
     <>
       <motion.div
         variants={containerAnim}
-        className="productDisplay"
+        className="product-display"
         initial="hidden"
         animate="show"
       >
@@ -46,7 +46,7 @@ export const ProductDisplay = ({
       </motion.div>
 
       {products.length === 0 && (
-        <div className={"noProductsMessage"}>
+        <div className={"no-products-message"}>
           <p>No results found</p>
           <img src={NoResultImg} alt={"No basket content"} />
         </div>

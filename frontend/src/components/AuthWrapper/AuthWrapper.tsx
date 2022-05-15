@@ -16,7 +16,7 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({
   const [modalType, setModalType] = useState<string | null>(null);
 
   return (
-    <div className="navbarUserWrapper">
+    <div className="navbar-user-wrapper">
       <button
         className="product-button user-action-button"
         onClick={() => setModalType("login")}
@@ -31,9 +31,9 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({
       </button>
 
       {modalType && (
-        <div className="modalWrapper">
+        <div className="modal-wrapper">
           <div className="modal">
-            <button className="closeModal" onClick={() => setModalType(null)}>
+            <button className="close-modal" onClick={() => setModalType(null)}>
               <FontAwesomeIcon icon={faClose} />
             </button>
 

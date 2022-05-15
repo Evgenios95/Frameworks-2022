@@ -57,7 +57,7 @@ export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
             <ErrorMessage
               name="email"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"password"}>Password</label>
@@ -67,7 +67,7 @@ export const LoginForm = ({ setUser, setModalType }: LoginFormProps) => {
             <ErrorMessage
               name="password"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <button

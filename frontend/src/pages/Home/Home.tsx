@@ -24,8 +24,8 @@ export const Home = ({ setBasket }: HomeProps) => {
   return (
     <>
       <Carousel />
-      <div className={"pageWrapper"}>
-        <h1 className={"homeDiscountHeading"}>LIMITED OFFERS</h1>
+      <div className={"page-wrapper"}>
+        <h1 className={"home-discount-heading"}>LIMITED OFFERS</h1>
         <Link to={"/catalog?discount=true"}>See all offers</Link>
         {products ? (
           <ProductDisplay products={products} setBasket={setBasket} />

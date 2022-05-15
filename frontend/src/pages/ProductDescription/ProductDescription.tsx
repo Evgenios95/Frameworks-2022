@@ -46,10 +46,10 @@ export const ProductDescription = ({ setBasket }: ProductDescriptionProps) => {
   }, [id]);
 
   return (
-    <div className={"pageWrapper"}>
+    <div className={"page-wrapper"}>
       {product && (
-        <div className={"productPageContainer"}>
-          <div className={"productImageWrapper"}>
+        <div className={"product-page-container"}>
+          <div className={"product-image-wrapper"}>
             <img alt="product" src={product.productImage} />
           </div>
           <div className={"product-description-wrapper"}>

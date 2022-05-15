@@ -13,26 +13,26 @@ interface NavbarProps {
 
 export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
   return (
-    <div className={"navbarWrapper"}>
+    <div className={"navbar-wrapper"}>
       <div className="logo-links-wrapper">
         <Link to="/">
-          <div className={"navbarLogo"}>
+          <div className={"navbar-logo"}>
             <img src={Logo} alt={"Logo"} />
           </div>
         </Link>
 
-        <nav className={"navbarMenuWrapper"}>
-          <Link to="/" className={"navbarLink"}>
+        <nav className={"navbar-menu-wrapper"}>
+          <Link to="/" className={"navbar-link"}>
             Home
           </Link>
 
-          <Link to="/catalog" className={"navbarLink"}>
+          <Link to="/catalog" className={"navbar-link"}>
             Products
           </Link>
 
-          <Link to="/basket" className={"navbarLink"}>
+          <Link to="/basket" className={"navbar-link"}>
             Basket
-            <div className={"basketCount"}>{basket.length}</div>
+            <div className={"basket-count"}>{basket.length}</div>
           </Link>
         </nav>
       </div>

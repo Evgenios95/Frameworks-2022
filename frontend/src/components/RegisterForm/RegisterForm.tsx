@@ -60,7 +60,7 @@ export const RegisterForm = () => {
             <ErrorMessage
               name="email"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"username"}>Name</label>
@@ -70,7 +70,7 @@ export const RegisterForm = () => {
             <ErrorMessage
               name="username"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"password"}>Password</label>
@@ -80,7 +80,7 @@ export const RegisterForm = () => {
             <ErrorMessage
               name="password"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <button
