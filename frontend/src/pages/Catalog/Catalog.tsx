@@ -5,7 +5,11 @@ import { useSearchParams } from "react-router-dom";
 import { Filters } from "../../components/Filters";
 import { fetchFilteredProducts } from "../../utils/functions";
 
-export const Catalog = ({ setBasket }: any) => {
+interface CatalogProps {
+  setBasket: (basket: number[]) => void;
+}
+
+export const Catalog = ({ setBasket }: CatalogProps) => {
   const [shownProducts, setShownProducts] = useState(null);
   const [filter] = useSearchParams();
 
