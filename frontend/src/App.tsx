@@ -3,7 +3,6 @@ import { Home } from "./pages/Home";
 import { Catalog } from "./pages/Catalog";
 import { Basket } from "./pages/Basket";
 import { Navbar } from "./components/Navbar";
-
 import { useEffect, useState } from "react";
 import { Footer } from "./components/Footer";
 import { ProductDescription } from "./pages/ProductDescription";
@@ -43,14 +42,7 @@ function App() {
         <Route path="/catalog" element={<Catalog setBasket={setBasket} />} />
         <Route
           path="/basket"
-          element={
-            <Basket
-              basket={basketContent}
-              setBasket={setBasket}
-              user={user}
-              setUser={setUser}
-            />
-          }
+          element={<Basket basket={basketContent} setBasket={setBasket} />}
         />
         <Route
           path="/product/:id"
