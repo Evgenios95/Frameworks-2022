@@ -8,27 +8,37 @@ import {
   removeAllFromBasket,
   transformBasket,
 } from "../../utils/functions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { capitalizeFirstLetter } from "../../components/Product/Product";
 
 interface BasketProps {
   basket: [];
-  user: string | boolean;
-  setUser: (user: any) => void;
   setBasket: (basket: []) => void;
 }
 
-interface Product {
+interface BasketProduct {
   productId: number;
   productName: string;
   productWeight: string;
   productPrice: number;
   quantity: number;
-  image: any;
+  productCategories: {
+    roast: string;
+    brand: string;
+  };
+  image: string;
   description: string;
 }
 
-export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
-  const [basketProducts, setBasketProducts] = useState<Product[]>([]);
+export const Basket = ({ basket, setBasket }: BasketProps) => {
+  const [basketProducts, setBasketProducts] = useState<BasketProduct[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
+
+  async function removeAllProducts(pId: number) {
+    const newBasket = await removeAllFromBasket(pId);
+    setBasket(newBasket);
+  }
 
   async function addProductToBasketHandler(pId: number) {
     const newBasket = await addProductToBasket(pId);
@@ -37,11 +47,6 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
 
   async function removeProductFromBasketHandler(pId: number) {
     const newBasket = await removeOneFromBasket(pId);
-    setBasket(newBasket);
-  }
-
-  async function removeAllProducts(pId: number) {
-    const newBasket = await removeAllFromBasket(pId);
     setBasket(newBasket);
   }
 
@@ -62,53 +67,83 @@ export const Basket = ({ basket, user, setUser, setBasket }: BasketProps) => {
   }, [basket]);
 
   return (
-    <div className={"basketPage"}>
-      <div className={"basketContentWrapper"}>
+    <div className={"basket-page"}>
+      <div className={"basket-content-wrapper"}>
         {basketProducts.length === 0 && (
-          <div className={"noBasketMessage"}>
+          <div className={"empty-basket-message"}>
             <p>There is nothing in your basket.</p>
-            <img src={NoResultImg} alt={"No basket content"} />
+            <img src={NoResultImg} alt="No basket content" />
           </div>
         )}
-        {basketProducts.map((product: Product) => (
-          <div className={"basketProduct"} key={product.productId}>
-            <div className={"basketImageWrapper"}>
-              <img src={product.image} />
+        {basketProducts.map((product: BasketProduct) => (
+          <div className={"basket-product"} key={product.productId}>
+            <div className={"basket-image-wrapper"}>
+              <img src={product.image} alt="Product pic" />
             </div>
-            <div className={"basketMeta"}>
-              <h1>{product.productName}</h1>
-              <p>{product.description}</p>
-              <p>{product.productWeight}</p>
-              <h3>{product.productPrice} DKK</h3>
-              <p>Qty: {product.quantity}</p>
-              <div className={"editQtyInBasket"}>
+
+            <div className={"basket-meta"}>
+              <div className="basket-name-brand-wrapper">
+                <div className="product-name basket-product-name">
+                  {product.productName}
+                </div>
+                <div className="product-brand basket-product-brand">
+                  {capitalizeFirstLetter(product.productCategories.brand)}
+                </div>
+              </div>
+
+              <div>
+                <div className="basket-product-price">
+                  {product.productPrice}kr
+                </div>{" "}
+                / {product.productWeight}
+              </div>
+
+              <div className="basket-product-description">
+                {product.description}
+              </div>
+            </div>
+
+            <div className="basket-price-qty">
+              <div className="quantity-input">
                 <button
-                  onClick={() => addProductToBasketHandler(product.productId)}
-                >
-                  +
-                </button>
-                <button
+                  className="quantity-input__modifier quantity-input__modifier--left"
                   onClick={() =>
                     removeProductFromBasketHandler(product.productId)
                   }
                 >
-                  -
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <input
+                  className="quantity-input__screen"
+                  type="text"
+                  value={product.quantity}
+                  readOnly
+                />
+                <button
+                  className="quantity-input__modifier quantity-input__modifier--right"
+                  onClick={() => addProductToBasketHandler(product.productId)}
+                >
+                  <FontAwesomeIcon icon={faAdd} />
                 </button>
               </div>
+              <div className="basket-product-total-price">
+                Item total: {product.productPrice * product.quantity}kr
+              </div>
             </div>
+
             <button
-              className={"removeAllFromBasket"}
+              className={"close-modal"}
               onClick={() => removeAllProducts(product.productId)}
             >
-              X
+              <FontAwesomeIcon icon={faClose} />
             </button>
           </div>
         ))}
       </div>
 
-      <div className={"basketSummary"}>
-        <h1>Total: {basketTotal} DKK</h1>
-        <button className={"checkoutButton"}>Check out</button>
+      <div className={"basket-summary"}>
+        <div>Total: {basketTotal} DKK</div>
+        <button className={"product-button checkout-button"}>Check out</button>
       </div>
     </div>
   );

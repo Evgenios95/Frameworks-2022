@@ -3,8 +3,17 @@ import React from "react";
 import { Product } from "../Product";
 import { motion } from "framer-motion";
 import NoResultImg from "../../assets/coffee.gif";
+import { ProductProps } from "../Product/Product";
 
-export const ProductDisplay = ({ products, setBasket }: any) => {
+interface ProductDisplayProps {
+  products: ProductProps[];
+  setBasket: (basket: number[]) => void;
+}
+
+export const ProductDisplay = ({
+  products,
+  setBasket,
+}: ProductDisplayProps) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const containerAnim = {
@@ -23,11 +32,11 @@ export const ProductDisplay = ({ products, setBasket }: any) => {
     <>
       <motion.div
         variants={containerAnim}
-        className="productDisplay"
+        className="product-display"
         initial="hidden"
         animate="show"
       >
-        {products.map((product: any) => (
+        {products.map((product: ProductProps) => (
           <Product
             setBasket={setBasket}
             key={product.productId}
@@ -37,7 +46,7 @@ export const ProductDisplay = ({ products, setBasket }: any) => {
       </motion.div>
 
       {products.length === 0 && (
-        <div className={"noProductsMessage"}>
+        <div className={"no-products-message"}>
           <p>No results found</p>
           <img src={NoResultImg} alt={"No basket content"} />
         </div>

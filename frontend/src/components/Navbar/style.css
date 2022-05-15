@@ -1,75 +1,96 @@
-.navbarWrapper {
-    width: 100vw;
-    height: 150px;
-    display: flex;
-    padding: 0 12%;
-    align-items: center;
-
+.navbar-wrapper {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  padding: 0 12%;
+  background-color: #f2eee5aa;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px -25px 24px 16px rgba(0, 0, 0, 0.52);
+  justify-content: space-between;
 }
 
-.navbarLogo {
-    width: 100px;
-    height: 100px;
-    position: relative;
+.logo-links-wrapper {
+  display: flex;
+  align-items: center;
 }
-
-.navbarLogo > img {
-    width: 100%;
-    height: 100%;
-}
-
-.navbarMenuWrapper {
-    padding-left: 50px;
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-}
-
-.navbarLink {
-    margin: 0 5px;
-    padding-right: 30px;
-    color: black;
-    font-size: 24px;
-    position: relative;
-}
-
-.basketCount {
-    position: absolute;
-    top: -15px;
-    right: 0;
-    background: lightblue;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    border-radius: 50%;
-}
-
 
 @media only screen and (max-width: 1000px) {
-    .navbarMenuWrapper {
-        margin-top: 30px;
-    }
+  .navbar-wrapper {
+    padding-bottom: 10px;
+  }
+}
 
-    .navbarWrapper {
-        flex-direction: column;
-        height: inherit;
-        margin-top: 30px;
-    }
+.navbar-logo {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
 
-    .navbarWrapper > div {
-        margin: 30px 0;
-    }
+.navbar-logo > img {
+  width: 70%;
+  height: 100%;
+}
+
+.navbar-menu-wrapper {
+  padding-left: 50px;
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  column-gap: 60px;
+}
+
+.navbar-link {
+  font-weight: 600;
+  color: #1f2131;
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  position: relative;
+}
+
+.basket-count {
+  position: absolute;
+  top: -15px;
+  left: 75px;
+  background: #1f2131;
+  color: #fff;
+  width: 30px;
+  font-family: "Work Sans";
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .navbar-wrapper {
+    flex-direction: column;
+    height: inherit;
+  }
+
+  .navbar-menu-wrapper {
+    column-gap: 35px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .navbarLink {
-        font-size: 14px;
-    }
+  .navbar-link {
+    font-size: 16px;
+  }
 
-    .navbarMenuWrapper {
-        padding-left: 0;
-    }
+  .basket-count {
+    left: 57px;
+    width: 21px;
+    height: 21px;
+  }
+
+  .navbar-menu-wrapper {
+    padding-left: 0;
+    column-gap: 20px;
+  }
 }

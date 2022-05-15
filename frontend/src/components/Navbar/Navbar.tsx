@@ -1,7 +1,7 @@
 import "./style.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/coffeenator.svg";
 import { AuthWrapper } from "../AuthWrapper";
 import { UserWrapper } from "../UserWrapper";
 
@@ -13,27 +13,29 @@ interface NavbarProps {
 
 export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
   return (
-    <div className={"navbarWrapper"}>
-      <Link to="/">
-        <div className={"navbarLogo"}>
-          <img src={Logo} alt={"Logo"} />
-        </div>
-      </Link>
-
-      <nav className={"navbarMenuWrapper"}>
-        <Link to="/" className={"navbarLink"}>
-          <h4>Home</h4>
+    <div className={"navbar-wrapper"}>
+      <div className="logo-links-wrapper">
+        <Link to="/">
+          <div className={"navbar-logo"}>
+            <img src={Logo} alt={"Logo"} />
+          </div>
         </Link>
 
-        <Link to="/catalog" className={"navbarLink"}>
-          <h4>Products</h4>
-        </Link>
+        <nav className={"navbar-menu-wrapper"}>
+          <Link to="/" className={"navbar-link"}>
+            Home
+          </Link>
 
-        <Link to="/basket" className={"navbarLink"}>
-          <h4>Basket</h4>
-          <div className={"basketCount"}>{basket.length}</div>
-        </Link>
-      </nav>
+          <Link to="/catalog" className={"navbar-link"}>
+            Products
+          </Link>
+
+          <Link to="/basket" className={"navbar-link"}>
+            Basket
+            <div className={"basket-count"}>{basket.length}</div>
+          </Link>
+        </nav>
+      </div>
 
       {user ? (
         <UserWrapper user={user} setUser={setUser} />

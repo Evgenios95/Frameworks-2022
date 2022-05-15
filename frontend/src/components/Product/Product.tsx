@@ -3,8 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
-interface ProductProps {
+export interface ProductProps {
   productId: number;
   productName: string;
   productWeight: string;
@@ -19,7 +21,18 @@ interface ProductProps {
   discountAmount: string;
 }
 
-export const Product = ({ product, setBasket }: any) => {
+export function capitalizeFirstLetter(str: string) {
+  const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+  return capitalized;
+}
+
+export const Product = ({
+  product,
+  setBasket,
+}: {
+  product: ProductProps;
+  setBasket: (newBasket: number[]) => void;
+}) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const animationVariants = {
@@ -29,33 +42,49 @@ export const Product = ({ product, setBasket }: any) => {
 
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
+    console.log(newBasket);
     setBasket(newBasket);
   }
 
   const productUrl = "/product/" + product.productId;
 
   return (
-    <motion.div className={"productWrapper"} variants={animationVariants}>
-      {product.discountAmount !== "no" && <p className={"saleTag"}>ON SALE</p>}
+    <motion.div className={"product-wrapper"} variants={animationVariants}>
+      {product.discountAmount !== "no" && <p className={"sale-tag"}>ON SALE</p>}
 
       <img src={product.productImage} alt={"coffee"} />
-      <h4>{product.productCategories.brand}</h4>
-      <h2>{product.productName}</h2>
-      <p> {product.productWeight}</p>
-      <h4>{product.productCategories.roast}</h4>
-      <h3>{product.productPrice} DKK</h3>
 
-      {product.discountAmount !== "no" && (
-        <h4 className={"discountPrice"}>
-          {product.productPrice + parseInt(product.discountAmount)} DKK
-        </h4>
-      )}
+      <p className="product-name">{product.productName}</p>
 
-      <Link to={productUrl}>Details</Link>
+      <div className="product-specifics product-categories">
+        <div className="product-brand">
+          {capitalizeFirstLetter(product.productCategories.brand)}
+        </div>
+        <div>{product.productCategories.roast}</div>
+        <div> {product.productWeight}</div>
+      </div>
 
-      <button onClick={() => addProductToBasketHandler(product.productId)}>
-        Add me
+      <div className="product-specifics product-price">
+        <div>{product.productPrice} DKK</div>
+
+        {product.discountAmount !== "no" && (
+          <div className={"discount-price"}>
+            {product.productPrice + parseInt(product.discountAmount)} DKK
+          </div>
+        )}
+      </div>
+
+      <button
+        className="product-button"
+        onClick={() => addProductToBasketHandler(product.productId)}
+      >
+        Add to Basket{" "}
+        <FontAwesomeIcon className="shopping-basket" icon={faShoppingBasket} />
       </button>
+
+      <Link className="product-link" to={productUrl}>
+        Details
+      </Link>
     </motion.div>
   );
 };

@@ -1,12 +1,21 @@
-.catalogHeader {
-    font-size: 48px;
-    text-align: center;
+.catalog-header {
+  font-family: "Koulen";
+  font-size: 60px;
+  text-align: center;
+  color: #1f2131;
+  line-height: 1;
+  margin-top: 130px;
+  padding-top: 45px;
 }
 
+@media only screen and (max-width: 1050px) {
+  .catalog-header {
+    margin-top: 170px;
+  }
+}
 
 @media only screen and (max-width: 800px) {
-    .catalogHeader {
-        font-size: 24px;
-        text-align: center;
-    }
+  .catalog-header {
+    font-size: 38px;
+  }
 }
