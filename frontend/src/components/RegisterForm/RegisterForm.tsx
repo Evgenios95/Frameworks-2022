@@ -44,7 +44,7 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <h1>Register</h1>
+      <div className="login-header">Register</div>
 
       <Formik
         initialValues={{ email: "", password: "", username: "" }}
