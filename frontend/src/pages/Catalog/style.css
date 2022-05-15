@@ -4,19 +4,18 @@
   text-align: center;
   color: #1f2131;
   line-height: 1;
-  margin-top: 100px;
+  margin-top: 130px;
   padding-top: 45px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
   .catalogHeader {
-    margin-top: 125px;
+    margin-top: 170px;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .catalogHeader {
     font-size: 38px;
-    margin-top: 117px;
   }
 }

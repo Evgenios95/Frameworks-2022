@@ -14,26 +14,28 @@ interface NavbarProps {
 export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
   return (
     <div className={"navbarWrapper"}>
-      <Link to="/">
-        <div className={"navbarLogo"}>
-          <img src={Logo} alt={"Logo"} />
-        </div>
-      </Link>
-
-      <nav className={"navbarMenuWrapper"}>
-        <Link to="/" className={"navbarLink"}>
-          Home
+      <div className="logo-links-wrapper">
+        <Link to="/">
+          <div className={"navbarLogo"}>
+            <img src={Logo} alt={"Logo"} />
+          </div>
         </Link>
 
-        <Link to="/catalog" className={"navbarLink"}>
-          Products
-        </Link>
+        <nav className={"navbarMenuWrapper"}>
+          <Link to="/" className={"navbarLink"}>
+            Home
+          </Link>
 
-        <Link to="/basket" className={"navbarLink"}>
-          Basket
-          <div className={"basketCount"}>{basket.length}</div>
-        </Link>
-      </nav>
+          <Link to="/catalog" className={"navbarLink"}>
+            Products
+          </Link>
+
+          <Link to="/basket" className={"navbarLink"}>
+            Basket
+            <div className={"basketCount"}>{basket.length}</div>
+          </Link>
+        </nav>
+      </div>
 
       {user ? (
         <UserWrapper user={user} setUser={setUser} />

@@ -5,9 +5,9 @@
   overflow: hidden;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
   .carouselWrapper {
-    margin-top: 134px;
+    margin-top: 170px;
   }
 }
 

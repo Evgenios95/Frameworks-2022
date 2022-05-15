@@ -2,7 +2,7 @@
   width: 100vw;
   padding: 0 12%;
   position: relative;
-  margin-top: 130px;
+  margin-top: 140px;
 }
 
 .basketMeta {
@@ -174,7 +174,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .basketProduct {
+  .basket-product {
     flex-direction: column;
   }
 
@@ -187,9 +187,9 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .basketPage {
-    margin-top: 134px;
+@media only screen and (max-width: 1050px) {
+  .basket-page {
+    margin-top: 200px;
   }
 }
 
