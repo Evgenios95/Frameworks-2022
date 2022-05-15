@@ -1,7 +1,13 @@
 import "./style.css";
 import React from "react";
-import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 export const Footer = () => {
   return (
@@ -43,21 +49,21 @@ export const Footer = () => {
 
         <p>CVR: 99 99 99 99</p>
 
-        <div className={"socials"}>
-          <Link to={"/"} className={"socialIcon"}>
-            <img src={Logo} alt={"facebook"} />
+        <div className={"socials social-icons"}>
+          <Link to={"/"} className={"facebook"}>
+            <FontAwesomeIcon icon={faFacebook} />
           </Link>
 
-          <Link to={"/"} className={"socialIcon"}>
-            <img src={Logo} alt={"instagram"} />
+          <Link to={"/"} className={"instagram"}>
+            <FontAwesomeIcon icon={faInstagram} />
           </Link>
 
-          <Link to={"/"} className={"socialIcon"}>
-            <img src={Logo} alt={"linkedin"} />
+          <Link to={"/"} className={"linkedin"}>
+            <FontAwesomeIcon icon={faLinkedin} />
           </Link>
 
-          <Link to={"/"} className={"socialIcon"}>
-            <img src={Logo} alt={"twitter"} />
+          <Link to={"/"} className={"twitter"}>
+            <FontAwesomeIcon icon={faTwitter} />
           </Link>
         </div>
       </div>

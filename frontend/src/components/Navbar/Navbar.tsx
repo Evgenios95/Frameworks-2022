@@ -1,7 +1,7 @@
 import "./style.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/coffeenator.svg";
 import { AuthWrapper } from "../AuthWrapper";
 import { UserWrapper } from "../UserWrapper";
 
@@ -22,15 +22,15 @@ export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
 
       <nav className={"navbarMenuWrapper"}>
         <Link to="/" className={"navbarLink"}>
-          <h4>Home</h4>
+          Home
         </Link>
 
         <Link to="/catalog" className={"navbarLink"}>
-          <h4>Products</h4>
+          Products
         </Link>
 
         <Link to="/basket" className={"navbarLink"}>
-          <h4>Basket</h4>
+          Basket
           <div className={"basketCount"}>{basket.length}</div>
         </Link>
       </nav>
