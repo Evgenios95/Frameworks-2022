@@ -1,9 +1,5 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import NoResultImg from "./../../assets/coffee.gif";
 
 import {
@@ -13,30 +9,13 @@ import {
   transformBasket,
 } from "../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAdd,
-  faClose,
-  faMinus,
-  faRemove,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { capitalizeFirstLetter } from "../../components/Product/Product";
 
 interface BasketProps {
   basket: [];
   setBasket: (basket: []) => void;
 }
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 600,
-  bgcolor: " #f2eee5",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 
 interface BasketProduct {
   productId: number;
@@ -56,6 +35,11 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
   const [basketProducts, setBasketProducts] = useState<BasketProduct[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
 
+  async function removeAllProducts(pId: number) {
+    const newBasket = await removeAllFromBasket(pId);
+    setBasket(newBasket);
+  }
+
   async function addProductToBasketHandler(pId: number) {
     const newBasket = await addProductToBasket(pId);
     setBasket(newBasket);
@@ -65,15 +49,6 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
     const newBasket = await removeOneFromBasket(pId);
     setBasket(newBasket);
   }
-
-  async function removeAllProducts(pId: number) {
-    const newBasket = await removeAllFromBasket(pId);
-    setBasket(newBasket);
-  }
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     const getBasketInfo = async () => {
@@ -156,47 +131,10 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
               </div>
             </div>
 
-            <div>
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={style}>
-                  <Typography
-                    id="modal-modal-title"
-                    variant="h6"
-                    component="h2"
-                  >
-                    Are you sure you would like to remove all{" "}
-                    <span className="modal-product-name">
-                      {product.productName}
-                    </span>{" "}
-                    from your basket?
-                  </Typography>
-                  <div className="modal-button-wrapper">
-                    <button
-                      className="product-button modal-button"
-                      onClick={() => {
-                        removeAllProducts(product.productId);
-                        handleClose();
-                      }}
-                    >
-                      Remove
-                    </button>
-                    <button
-                      className="product-button modal-button"
-                      onClick={handleClose}
-                    >
-                      Keep
-                    </button>
-                  </div>
-                </Box>
-              </Modal>
-            </div>
-
-            <button className={"closeModal"} onClick={handleOpen}>
+            <button
+              className={"closeModal"}
+              onClick={() => removeAllProducts(product.productId)}
+            >
               <FontAwesomeIcon icon={faClose} />
             </button>
           </div>
