@@ -2,7 +2,11 @@ import "./style.css";
 import React from "react";
 import { Formik, Form, Field, ErrorMessage, FormikErrors } from "formik";
 import axios from "axios";
-import { useUserUpdate } from "../../UserProvider";
+import { LoggedInUserProps, useUserUpdate } from "../../UserProvider";
+
+interface RegisterFormProps {
+  setModalType: (modalType: string | null) => void;
+}
 
 interface FormValues {
   email: string;
@@ -10,10 +14,9 @@ interface FormValues {
   username: string;
 }
 
-export const RegisterForm = ({ setModalType }: any) => {
+export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
   // Form validation, error messages
-  // @ts-ignore
-  const setUser = useUserUpdate();
+  const setUser: (user: LoggedInUserProps) => void = useUserUpdate();
   const validateRegisterValues = (values: FormValues) => {
     const errors: FormikErrors<FormValues> = {};
     if (!values.email) {
@@ -49,7 +52,7 @@ export const RegisterForm = ({ setModalType }: any) => {
 
   return (
     <>
-      <h1>Register</h1>
+      <div className="login-header">Register</div>
 
       <Formik
         initialValues={{ email: "", password: "", username: "" }}
@@ -65,7 +68,7 @@ export const RegisterForm = ({ setModalType }: any) => {
             <ErrorMessage
               name="email"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"username"}>Name</label>
@@ -75,7 +78,7 @@ export const RegisterForm = ({ setModalType }: any) => {
             <ErrorMessage
               name="username"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"password"}>Password</label>
@@ -85,10 +88,14 @@ export const RegisterForm = ({ setModalType }: any) => {
             <ErrorMessage
               name="password"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className="product-button login-button"
+              type="submit"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </Form>

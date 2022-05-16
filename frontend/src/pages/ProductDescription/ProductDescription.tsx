@@ -8,28 +8,22 @@ import {
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
 import { useBasketUpdate } from "../../UserProvider";
-
-interface Product {
-  productName: string;
-  productWeight: string;
-  productPrice: number;
-  description: string;
-  productId: number;
-  productCategories: {
-    roast: string;
-    brand: string;
-  };
-  productImage: string;
-}
+import {
+  capitalizeFirstLetter,
+  ProductProps,
+} from "../../components/Product/Product";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 export const ProductDescription = () => {
-  const [product, setProduct] = useState<Product | null>(null);
-  const [similarProducts, setSimilarProducts] = useState<Product[] | null>(
+  const [product, setProduct] = useState<ProductProps | null>(null);
+  const [similarProducts, setSimilarProducts] = useState<ProductProps[] | null>(
     null
   );
+
   const { id } = useParams();
 
-  const setBasket = useBasketUpdate();
+  const setBasket: (basket: number[]) => void = useBasketUpdate();
 
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
@@ -52,24 +46,51 @@ export const ProductDescription = () => {
   }, [id]);
 
   return (
-    <div className={"pageWrapper"}>
+    <div className={"page-wrapper"}>
       {product && (
-        <div className={"productPageContainer"}>
-          <div className={"productImageWrapper"}>
+        <div className={"product-page-container"}>
+          <div className={"product-image-wrapper"}>
             <img alt="product" src={product.productImage} />
           </div>
-          <div className={"productDescriptionWrapper"}>
-            <h1>{product.productName}</h1>
-            <h2>{product.productCategories.roast}</h2>
-            <h2>{product.productCategories.brand}</h2>
-            <p> {product.productWeight} </p>
-            <h3 className={"productPrice"}>{product.productPrice} DKK</h3>
-            <p>{product.description}</p>
+          <div className={"product-description-wrapper"}>
+            <p className="individual-product-name">{product.productName}</p>
+
+            <div className="individual-product-categories">
+              <div className="">
+                <b>Brand: </b>
+                {capitalizeFirstLetter(product.productCategories.brand)}
+              </div>
+              <div>
+                <b>Roast:</b> {product.productCategories.roast}
+              </div>
+              <div>
+                <b>Weight:</b> {product.productWeight}
+              </div>
+            </div>
+
+            <div className="individual-product-description">
+              {product.description}
+            </div>
+
+            <div className="individual-product-price">
+              <div>{product.productPrice} DKK</div>
+
+              {product.discountAmount !== "no" && (
+                <div className={"discount-price"}>
+                  {product.productPrice + parseInt(product.discountAmount)} DKK
+                </div>
+              )}
+            </div>
+
             <button
+              className="product-button individual-product-button"
               onClick={() => addProductToBasketHandler(product.productId)}
-              style={{ padding: "100px" }}
             >
-              +
+              Add to Basket{" "}
+              <FontAwesomeIcon
+                className="shopping-basket"
+                icon={faShoppingBasket}
+              />
             </button>
           </div>
         </div>
@@ -79,8 +100,9 @@ export const ProductDescription = () => {
 
       {similarProducts && (
         <>
-          <h1 className={"similarProductHeader"}>
-            You might also like these {product!.productCategories.roast} coffees
+          <h1 className={"similar-product-header "}>
+            You might also like these {product!.productCategories.roast}{" "}
+            coffees...
           </h1>
           <ProductDisplay products={similarProducts} />
         </>

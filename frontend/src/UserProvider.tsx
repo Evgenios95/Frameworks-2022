@@ -1,10 +1,27 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, ReactNode } from "react";
 import axios from "axios";
 
-const UserContext = React.createContext();
-const UserUpdateContext = React.createContext();
-const BasketContext = React.createContext();
-const BasketUpdateContext = React.createContext();
+export interface LoggedInUserProps {
+  userID: number;
+  username: string;
+  basket: number[];
+}
+
+interface UserProviderProps {
+  children?: ReactNode;
+}
+
+const UserContext = React.createContext<LoggedInUserProps>(
+  JSON.parse(localStorage.getItem("user")!) || false
+);
+
+//@ts-ignore
+const UserUpdateContext = React.createContext<(val) => void>();
+
+const BasketContext = React.createContext<number[]>([]);
+
+//@ts-ignore
+const BasketUpdateContext = React.createContext<(val) => void>();
 
 export function useUser() {
   return useContext(UserContext);
@@ -22,7 +39,7 @@ export function useBasketUpdate() {
   return useContext(BasketUpdateContext);
 }
 
-export const UserProvider = ({ children }: any) => {
+export const UserProvider = ({ children }: UserProviderProps) => {
   const loggedIn = JSON.parse(localStorage.getItem("user")!) || false;
   const [user, setUser] = useState(loggedIn);
   const initialBasket = user
@@ -30,12 +47,13 @@ export const UserProvider = ({ children }: any) => {
     : JSON.parse(localStorage.getItem("basket")!) || [];
   const [basketContent, setBasket] = useState(initialBasket);
 
+  console.log(user);
   useEffect(() => {
     setBasket(initialBasket);
   }, [user]);
 
   useEffect(() => {
-    async function fetchUser(uid: any) {
+    async function fetchUser(uid: number) {
       if (user) {
         const url = "/basket/" + uid;
         const userBasketReq = await axios.get(url);

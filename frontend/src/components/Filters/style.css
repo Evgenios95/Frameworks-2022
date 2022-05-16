@@ -1,50 +1,46 @@
-.filtersWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
+.filters-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-.filterInputContainer {
-    font-size: 20px;
-    display: flex;
-    margin-right: 100px;
-    align-items: center;
+.filter-input-container {
+  font-size: 20px;
+  margin-right: 50px;
 }
 
-.filterInputContainer > label {
-    margin-right: 30px;
+.filter-input-container > label {
+  margin-right: 30px;
 }
 
-.filterInputContainer > select {
-    font-size: 18px;
+.filter-input-container > select {
+  font-size: 18px;
 }
 
-.filtersWrapper > .filterInputContainer:last-child {
-    margin-right: 0;
+.filters-wrapper > .filter-input-container:last-child {
+  display: flex;
+  margin-right: 0;
+  align-items: center;
 }
 
-.filtersWrapper > .filterInputContainer:last-child > input {
-    margin-right: 10px
+.filters-wrapper > .filter-input-container:last-child > input {
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 850px) {
-    .filtersWrapper {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .filters-wrapper {
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .filtersWrapper > div {
-        margin-bottom: 20px
-    }
+  .filter-input-container {
+    margin-right: unset;
+    font-size: 16px;
+  }
 
-    .filterInputContainer {
-        margin-right: 0;
-        font-size: 14px;
-    }
-
-    .filterInputContainer > select {
-        font-size: 12px;
-    }
+  .filter-input-container > select {
+    font-size: 12px;
+  }
 }

@@ -14,11 +14,11 @@ interface FormValues {
 }
 
 export const LoginForm = ({ setModalType }: LoginFormProps) => {
-  const setUser = useUserUpdate();
+  const setUser: React.Dispatch<undefined | any> = useUserUpdate();
 
   return (
     <>
-      <h1>Login</h1>
+      <div className="login-header">Login</div>
 
       <Formik
         initialValues={{ email: "", password: "" }}
@@ -59,7 +59,7 @@ export const LoginForm = ({ setModalType }: LoginFormProps) => {
             <ErrorMessage
               name="email"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
             <label htmlFor={"password"}>Password</label>
@@ -69,10 +69,14 @@ export const LoginForm = ({ setModalType }: LoginFormProps) => {
             <ErrorMessage
               name="password"
               component="div"
-              className={"formError"}
+              className={"form-error"}
             />
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className="product-button login-button"
+              type="submit"
+              disabled={isSubmitting}
+            >
               Submit
             </button>
           </Form>

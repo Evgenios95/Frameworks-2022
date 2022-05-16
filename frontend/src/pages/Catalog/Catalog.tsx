@@ -10,7 +10,7 @@ export const Catalog = () => {
   const [filter] = useSearchParams();
 
   useEffect(() => {
-    async function getFilteredProducts(filters: any) {
+    async function getFilteredProducts(filters: { [k: string]: string }) {
       const products = await fetchFilteredProducts(filters);
       setShownProducts(products);
     }
@@ -20,8 +20,8 @@ export const Catalog = () => {
   }, [filter]);
 
   return (
-    <div className={"pageWrapper"}>
-      <h1 className={"catalogHeader"}>The best coffee selection in Denmark</h1>
+    <div className="page-wrapper">
+      <h1 className="catalog-header">The best coffee selection in Denmark</h1>
       <Filters />
       {shownProducts && <ProductDisplay products={shownProducts} />}
     </div>
