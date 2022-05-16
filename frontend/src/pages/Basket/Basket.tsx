@@ -8,14 +8,10 @@ import {
   removeAllFromBasket,
   transformBasket,
 } from "../../utils/functions";
+import { useBasket, useBasketUpdate } from "../../UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { capitalizeFirstLetter } from "../../components/Product/Product";
-
-interface BasketProps {
-  basket: [];
-  setBasket: (basket: []) => void;
-}
 
 interface BasketProduct {
   productId: number;
@@ -31,14 +27,12 @@ interface BasketProduct {
   description: string;
 }
 
-export const Basket = ({ basket, setBasket }: BasketProps) => {
+export const Basket = () => {
+  const basket: number[] = useBasket();
+  const setBasket: (basket: number[]) => void = useBasketUpdate();
+
   const [basketProducts, setBasketProducts] = useState<BasketProduct[]>([]);
   const [basketTotal, setBasketTotal] = useState(0);
-
-  async function removeAllProducts(pId: number) {
-    const newBasket = await removeAllFromBasket(pId);
-    setBasket(newBasket);
-  }
 
   async function addProductToBasketHandler(pId: number) {
     const newBasket = await addProductToBasket(pId);
@@ -47,6 +41,11 @@ export const Basket = ({ basket, setBasket }: BasketProps) => {
 
   async function removeProductFromBasketHandler(pId: number) {
     const newBasket = await removeOneFromBasket(pId);
+    setBasket(newBasket);
+  }
+
+  async function removeAllProducts(pId: number) {
+    const newBasket = await removeAllFromBasket(pId);
     setBasket(newBasket);
   }
 

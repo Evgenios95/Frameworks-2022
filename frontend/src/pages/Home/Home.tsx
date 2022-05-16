@@ -5,11 +5,7 @@ import { Carousel } from "../../components/Carousel";
 import { fetchDiscountedProducts } from "../../utils/functions";
 import { Link } from "react-router-dom";
 
-interface HomeProps {
-  setBasket: (basket: number[]) => void;
-}
-
-export const Home = ({ setBasket }: HomeProps) => {
+export const Home = () => {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -27,11 +23,7 @@ export const Home = ({ setBasket }: HomeProps) => {
       <div className={"page-wrapper"}>
         <h1 className={"home-discount-heading"}>LIMITED OFFERS</h1>
         <Link to={"/catalog?discount=true"}>See all offers</Link>
-        {products ? (
-          <ProductDisplay products={products} setBasket={setBasket} />
-        ) : (
-          <p>Loading</p>
-        )}
+        {products ? <ProductDisplay products={products} /> : <p>Loading</p>}
       </div>
     </>
   );

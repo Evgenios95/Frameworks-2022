@@ -6,13 +6,7 @@ import { LoginForm } from "../LoginForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-export interface AuthWrapperProps {
-  setUser: (user: string | boolean) => void;
-}
-
-export const AuthWrapper: React.FC<AuthWrapperProps> = ({
-  setUser,
-}: AuthWrapperProps) => {
+export const AuthWrapper = () => {
   const [modalType, setModalType] = useState<string | null>(null);
 
   return (
@@ -37,11 +31,11 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({
               <FontAwesomeIcon icon={faClose} />
             </button>
 
-            {modalType === "login" && (
-              <LoginForm setModalType={setModalType} setUser={setUser} />
-            )}
+            {modalType === "login" && <LoginForm setModalType={setModalType} />}
 
-            {modalType === "register" && <RegisterForm />}
+            {modalType === "register" && (
+              <RegisterForm setModalType={setModalType} />
+            )}
           </div>
         </div>
       )}

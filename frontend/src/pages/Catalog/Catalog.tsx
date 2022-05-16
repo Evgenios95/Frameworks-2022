@@ -5,16 +5,12 @@ import { useSearchParams } from "react-router-dom";
 import { Filters } from "../../components/Filters";
 import { fetchFilteredProducts } from "../../utils/functions";
 
-interface CatalogProps {
-  setBasket: (basket: number[]) => void;
-}
-
-export const Catalog = ({ setBasket }: CatalogProps) => {
+export const Catalog = () => {
   const [shownProducts, setShownProducts] = useState(null);
   const [filter] = useSearchParams();
 
   useEffect(() => {
-    async function getFilteredProducts(filters: any) {
+    async function getFilteredProducts(filters: { [k: string]: string }) {
       const products = await fetchFilteredProducts(filters);
       setShownProducts(products);
     }
@@ -24,12 +20,10 @@ export const Catalog = ({ setBasket }: CatalogProps) => {
   }, [filter]);
 
   return (
-    <div className={"page-wrapper"}>
-      <h1 className={"catalog-header"}>The best coffee selection in Denmark</h1>
+    <div className="page-wrapper">
+      <h1 className="catalog-header">The best coffee selection in Denmark</h1>
       <Filters />
-      {shownProducts && (
-        <ProductDisplay setBasket={setBasket} products={shownProducts} />
-      )}
+      {shownProducts && <ProductDisplay products={shownProducts} />}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import {
   fetchSimilarRoastedProducts,
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
+import { useBasketUpdate } from "../../UserProvider";
 import {
   capitalizeFirstLetter,
   ProductProps,
@@ -14,16 +15,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
-interface ProductDescriptionProps {
-  setBasket: (basket: number[]) => void;
-}
-
-export const ProductDescription = ({ setBasket }: ProductDescriptionProps) => {
+export const ProductDescription = () => {
   const [product, setProduct] = useState<ProductProps | null>(null);
   const [similarProducts, setSimilarProducts] = useState<ProductProps[] | null>(
     null
   );
+
   const { id } = useParams();
+
+  const setBasket: (basket: number[]) => void = useBasketUpdate();
 
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
@@ -104,7 +104,7 @@ export const ProductDescription = ({ setBasket }: ProductDescriptionProps) => {
             You might also like these {product!.productCategories.roast}{" "}
             coffees...
           </h1>
-          <ProductDisplay products={similarProducts} setBasket={setBasket} />
+          <ProductDisplay products={similarProducts} />
         </>
       )}
     </div>

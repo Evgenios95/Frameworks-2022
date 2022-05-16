@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
+import { useBasketUpdate } from "../../UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,13 +27,9 @@ export function capitalizeFirstLetter(str: string) {
   return capitalized;
 }
 
-export const Product = ({
-  product,
-  setBasket,
-}: {
-  product: ProductProps;
-  setBasket: (newBasket: number[]) => void;
-}) => {
+export const Product = ({ product }: { product: ProductProps }) => {
+  const setBasket: (basket: number[]) => void = useBasketUpdate();
+
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const animationVariants = {
@@ -42,17 +39,16 @@ export const Product = ({
 
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
-    console.log(newBasket);
     setBasket(newBasket);
   }
 
   const productUrl = "/product/" + product.productId;
 
   return (
-    <motion.div className={"product-wrapper"} variants={animationVariants}>
+    <motion.div className="product-wrapper" variants={animationVariants}>
       {product.discountAmount !== "no" && <p className={"sale-tag"}>ON SALE</p>}
 
-      <img src={product.productImage} alt={"coffee"} />
+      <img src={product.productImage} alt="coffee" />
 
       <p className="product-name">{product.productName}</p>
 
@@ -68,7 +64,7 @@ export const Product = ({
         <div>{product.productPrice} DKK</div>
 
         {product.discountAmount !== "no" && (
-          <div className={"discount-price"}>
+          <div className="discount-price">
             {product.productPrice + parseInt(product.discountAmount)} DKK
           </div>
         )}

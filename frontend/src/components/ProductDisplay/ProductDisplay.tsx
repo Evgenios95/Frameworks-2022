@@ -7,13 +7,9 @@ import { ProductProps } from "../Product/Product";
 
 interface ProductDisplayProps {
   products: ProductProps[];
-  setBasket: (basket: number[]) => void;
 }
 
-export const ProductDisplay = ({
-  products,
-  setBasket,
-}: ProductDisplayProps) => {
+export const ProductDisplay = ({ products }: ProductDisplayProps) => {
   // Check more information about framer-motion
   // https://www.framer.com/docs/animation/
   const containerAnim = {
@@ -37,11 +33,7 @@ export const ProductDisplay = ({
         animate="show"
       >
         {products.map((product: ProductProps) => (
-          <Product
-            setBasket={setBasket}
-            key={product.productId}
-            product={product}
-          />
+          <Product key={product.productId} product={product} />
         ))}
       </motion.div>
 

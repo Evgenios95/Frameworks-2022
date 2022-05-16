@@ -1,19 +1,18 @@
 import "./style.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/coffeenator.svg";
 import { AuthWrapper } from "../AuthWrapper";
 import { UserWrapper } from "../UserWrapper";
+import { AnimatePresence } from "framer-motion";
+import { LoggedInUserProps, useBasket, useUser } from "../../UserProvider";
 
-interface NavbarProps {
-  user: string | boolean;
-  setUser: (user: string | boolean) => void;
-  basket: [];
-}
+export const Navbar = () => {
+  const basket: number[] = useBasket();
+  const user: LoggedInUserProps | boolean = useUser();
 
-export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
   return (
-    <div className={"navbar-wrapper"}>
+    <div className="navbar-wrapper">
       <div className="logo-links-wrapper">
         <Link to="/">
           <div className={"navbar-logo"}>
@@ -30,18 +29,16 @@ export const Navbar = ({ user, setUser, basket }: NavbarProps) => {
             Products
           </Link>
 
-          <Link to="/basket" className={"navbar-link"}>
+          <Link to="/basket" className="navbar-link">
             Basket
-            <div className={"basket-count"}>{basket.length}</div>
+            <div className="basket-count">{basket.length}</div>
           </Link>
         </nav>
       </div>
 
-      {user ? (
-        <UserWrapper user={user} setUser={setUser} />
-      ) : (
-        <AuthWrapper setUser={setUser} />
-      )}
+      <AnimatePresence>
+        {user ? <UserWrapper key={"loginFormModal"} /> : <AuthWrapper />}
+      </AnimatePresence>
     </div>
   );
 };
