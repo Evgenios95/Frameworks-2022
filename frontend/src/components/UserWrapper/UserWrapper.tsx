@@ -7,6 +7,7 @@ import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 export const UserWrapper = () => {
   const user: LoggedInUserProps | boolean = useUser();
+
   const setUser: (user: boolean) => void = useUserUpdate();
 
   return (
