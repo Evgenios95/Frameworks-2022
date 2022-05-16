@@ -2,7 +2,7 @@ import "./style.css";
 import React from "react";
 import { Formik, Form, Field, ErrorMessage, FormikErrors } from "formik";
 import axios from "axios";
-import { useUserUpdate } from "../../UserProvider";
+import { useUserUpdate } from "../../utils/providers/UserProvider";
 
 interface LoginFormProps {
   setModalType: (modalType: string | null) => void;

@@ -1,7 +1,6 @@
 import "./style.css";
 import React, { useState } from "react";
 import { RegisterForm } from "../RegisterForm";
-import Logo from "../../assets/logo.png";
 import { LoginForm } from "../LoginForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";

@@ -7,7 +7,7 @@ import {
   fetchSimilarRoastedProducts,
 } from "../../utils/functions";
 import { ProductDisplay } from "../../components/ProductDisplay";
-import { useBasketUpdate } from "../../UserProvider";
+import { useBasketUpdate } from "../../utils/providers/UserProvider";
 import {
   capitalizeFirstLetter,
   ProductProps,

@@ -3,7 +3,7 @@ import { Home } from "./pages/Home";
 import { Catalog } from "./pages/Catalog";
 import { Basket } from "./pages/Basket";
 import { Navbar } from "./components/Navbar";
-import { UserProvider } from "./UserProvider";
+import { UserProvider } from "./utils/providers/UserProvider";
 import { Footer } from "./components/Footer";
 import { ProductDescription } from "./pages/ProductDescription";
 import React from "react";

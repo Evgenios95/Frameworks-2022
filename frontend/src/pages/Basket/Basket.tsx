@@ -8,7 +8,7 @@ import {
   removeAllFromBasket,
   transformBasket,
 } from "../../utils/functions";
-import { useBasket, useBasketUpdate } from "../../UserProvider";
+import { useBasket, useBasketUpdate } from "../../utils/providers/UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { capitalizeFirstLetter } from "../../components/Product/Product";

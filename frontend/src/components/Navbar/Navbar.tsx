@@ -5,7 +5,11 @@ import Logo from "../../assets/coffeenator.svg";
 import { AuthWrapper } from "../AuthWrapper";
 import { UserWrapper } from "../UserWrapper";
 import { AnimatePresence } from "framer-motion";
-import { LoggedInUserProps, useBasket, useUser } from "../../UserProvider";
+import {
+  LoggedInUserProps,
+  useBasket,
+  useUser,
+} from "../../utils/providers/UserProvider";
 
 export const Navbar = () => {
   const basket: number[] = useBasket();

@@ -1,7 +1,11 @@
 import "./style.css";
 import React from "react";
 import { motion } from "framer-motion";
-import { LoggedInUserProps, useUser, useUserUpdate } from "../../UserProvider";
+import {
+  LoggedInUserProps,
+  useUser,
+  useUserUpdate,
+} from "../../utils/providers/UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 

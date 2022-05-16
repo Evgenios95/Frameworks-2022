@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
-import { useBasketUpdate } from "../../UserProvider";
+import { useBasketUpdate } from "../../utils/providers/UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
