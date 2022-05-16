@@ -47,7 +47,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
     : JSON.parse(localStorage.getItem("basket")!) || [];
   const [basketContent, setBasket] = useState(initialBasket);
 
-  console.log(user);
   useEffect(() => {
     setBasket(initialBasket);
   }, [user]);
