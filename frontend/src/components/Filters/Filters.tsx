@@ -19,7 +19,7 @@ export const Filters = () => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    const url = "/catalog?" + new URLSearchParams(filterInput).toString();
+    const url = "/products?" + new URLSearchParams(filterInput).toString();
     navigate(url);
   }, [filterInput]);
 

@@ -29,7 +29,7 @@ export const Navbar = () => {
             Home
           </Link>
 
-          <Link to="/catalog" className={"navbar-link"}>
+          <Link to="/products" className={"navbar-link"}>
             Products
           </Link>
 

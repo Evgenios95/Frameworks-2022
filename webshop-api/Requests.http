@@ -1,5 +1,5 @@
 ### Get most important information about all products that are offered
-GET http://localhost:4000/product HTTP/1.1
+GET http://localhost:4000/products HTTP/1.1
 Accept: application/json
 
 ### Get product categories that exist.
@@ -7,11 +7,11 @@ GET http://localhost:4000/categories HTTP/1.1
 Accept: application/json
 
 ### Get most important information about products for a specific categories
-GET http://localhost:4000/product?brand=starbucks&roast=mediumroast&discount=true HTTP/1.1
+GET http://localhost:4000/products?brand=starbucks&roast=mediumroast&discount=true HTTP/1.1
 Accept: application/json
 
 ### Get all details about a specific product
-GET http://localhost:4000/product/0 HTTP/1.1
+GET http://localhost:4000/products/0 HTTP/1.1
 Accept: application/json
 
 ### Get the shopping basket content for a specific user.

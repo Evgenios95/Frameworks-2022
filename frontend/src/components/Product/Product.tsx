@@ -42,7 +42,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
     setBasket(newBasket);
   }
 
-  const productUrl = "/product/" + product.productId;
+  const productUrl = "/products/" + product.productId;
 
   return (
     <motion.div className="product-wrapper" variants={animationVariants}>

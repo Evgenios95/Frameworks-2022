@@ -22,7 +22,7 @@ export const Home = () => {
       <Carousel />
       <div className={"page-wrapper"}>
         <h1 className={"home-discount-heading"}>LIMITED OFFERS</h1>
-        <Link to={"/catalog?discount=true"}>See all offers</Link>
+        <Link to={"/products?discount=true"}>See all offers</Link>
         {products ? <ProductDisplay products={products} /> : <p>Loading</p>}
       </div>
     </>

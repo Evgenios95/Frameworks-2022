@@ -12,7 +12,7 @@ const port = 4000;
 app.use("/basket", basketRouter);
 
 //routing for Products
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 app.route("/categories").get(allCategories);
 
 //routing for User

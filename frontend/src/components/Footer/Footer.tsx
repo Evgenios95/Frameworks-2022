@@ -15,16 +15,16 @@ export const Footer = () => {
       <div className={"footer-wrapper"}>
         <div className={"footer-categories"}>
           <h3>Roasts</h3>
-          <Link to="/catalog?roast=lightroast">Light</Link>
-          <Link to="/catalog?roast=mediumroast">Medium</Link>
-          <Link to="/catalog?roast=darkroast">Dark</Link>
+          <Link to="/products?roast=lightroast">Light</Link>
+          <Link to="/products?roast=mediumroast">Medium</Link>
+          <Link to="/products?roast=darkroast">Dark</Link>
         </div>
 
         <div className={"footer-categories"}>
           <h3>Brands</h3>
-          <Link to="/catalog?brand=starbucks">Starbucks</Link>
-          <Link to="/catalog?brand=lavazza">Lavazza</Link>
-          <Link to="/catalog?brand=depresso">Depresso</Link>
+          <Link to="/products?brand=starbucks">Starbucks</Link>
+          <Link to="/products?brand=lavazza">Lavazza</Link>
+          <Link to="/products?brand=depresso">Depresso</Link>
         </div>
 
         <div className={"footer-links"}>

@@ -9,7 +9,7 @@ export async function transformBasket(basket) {
   );
 
   //fetch All Products
-  const productsReq = await axios.get("/product");
+  const productsReq = await axios.get("/products");
   const products = productsReq.data.products;
 
   //add meta data of products to products in the basket
@@ -97,7 +97,7 @@ export async function removeAllFromBasket(productId) {
 }
 
 export async function fetchDiscountedProducts() {
-  const productsReq = await axios.get("/product?discount=true");
+  const productsReq = await axios.get("/products?discount=true");
 
   const products = productsReq.data.products;
   return products.map((product) => {
@@ -113,7 +113,7 @@ export async function fetchSimilarRoastedProducts(productId, value) {
       roast: value,
     },
   };
-  const url = "/product?" + new URLSearchParams(filter).toString();
+  const url = "/products?" + new URLSearchParams(filter).toString();
   const productsReq = await axios.get(url);
   let products = productsReq.data.products;
   products = products.filter(
@@ -127,7 +127,7 @@ export async function fetchSimilarRoastedProducts(productId, value) {
 }
 
 export async function fetchProductInfo(id) {
-  const url = "/product/" + id;
+  const url = "/products/" + id;
   const productReq = await axios.get(url);
   var product = productReq.data;
   product.productImage = productImages[id];
@@ -135,7 +135,7 @@ export async function fetchProductInfo(id) {
 }
 
 export async function fetchAllProducts() {
-  const productsReq = await axios.get("/product");
+  const productsReq = await axios.get("/products");
   const products = productsReq.data;
   return products.map((product) => {
     const productId = parseInt(product.productId);
@@ -145,7 +145,7 @@ export async function fetchAllProducts() {
 }
 
 export async function fetchFilteredProducts(filter) {
-  const url = "/product?" + new URLSearchParams(filter).toString();
+  const url = "/products?" + new URLSearchParams(filter).toString();
   const productsReq = await axios.get(url);
 
   return productsReq.data.products.map((product) => {
