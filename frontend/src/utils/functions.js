@@ -25,11 +25,11 @@ export async function transformBasket(basket) {
   return productInfo;
 }
 
-export async function removeOneFromBasket(productId, user) {
-  const suser = localStorage.getItem("user") || null;
-  if (suser) {
+export async function removeOneFromBasket(productId) {
+  const currentUser = localStorage.getItem("user") || null;
+  if (currentUser) {
     //loggedIn
-    const userObject = JSON.parse(suser);
+    const userObject = JSON.parse(currentUser);
     const productData = {
       userId: userObject.userID,
       productId: productId,
