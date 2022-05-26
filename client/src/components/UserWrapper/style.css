@@ -1,0 +1,24 @@
+.user-info {
+  display: flex;
+  column-gap: 10px;
+}
+
+.username-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  color: #1f2131;
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  position: relative;
+}
+
+.logout-button-wrapper {
+  margin-top: 10px;
+}
+
+.user-icon {
+  height: 30px;
+  margin-right: 4px;
+}
