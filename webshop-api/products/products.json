@@ -6,7 +6,7 @@
     "productPrice": 59,
     "description": "Notes of sweet orange and brown sugar mingle in our lightest medium roast coffee.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee20.png",
@@ -20,7 +20,7 @@
     "productPrice": 49,
     "description": "Dark roasted beans for your delightful morning...",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee1.png",
@@ -34,7 +34,7 @@
     "productPrice": 49,
     "description": "Enjoy our special blend of balanced and sweet flavours with herbal and maple notes.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee2.png",
@@ -48,7 +48,7 @@
     "productPrice": 49,
     "description": "Smooth with chocolate notes, Starbucks Pike Place Roast Whole Bean Coffee, ready to grind.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee3.png",
@@ -62,7 +62,7 @@
     "productPrice": 49,
     "description": "Lightly roasted Latin American coffee that is mellow and flavourful with a nice softness.",
     "productCategories": {
-      "roast": "lightroast",
+      "roast": "light",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee4.png",
@@ -76,7 +76,7 @@
     "productPrice": 49,
     "description": "Soft and balanced, it highlights the sweeter side of milk, making espresso drinks extra smooth.",
     "productCategories": {
-      "roast": "lightroast",
+      "roast": "light",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee5.png",
@@ -90,7 +90,7 @@
     "productPrice": 49,
     "description": "House Blend is a medium roast with notes of cocoa and toffee.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee6.png",
@@ -104,7 +104,7 @@
     "productPrice": 49,
     "description": "Full-bodied with a smooth mouthfeel, lingering notes of dried herbs and fresh earth.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "starbucks"
     },
     "productImage": "../assets/product_images/coffee7.png",
@@ -117,7 +117,7 @@
     "productPrice": 139,
     "description": "Strong and fruity, with notes of citrus and almond and scents of caramel and chocolate.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee8.png",
@@ -131,7 +131,7 @@
     "productPrice": 139,
     "description": "Deliciously creamy and smooth with well-balanced acidity. Notes of nuts and chocolate.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee9.png",
@@ -145,7 +145,7 @@
     "productPrice": 139,
     "description": "Smooth and creamy Java with a hint of citrus and light note of spice.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee10.png",
@@ -159,7 +159,7 @@
     "productPrice": 139,
     "description": "Fruity with notes of nuts and chocolate.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee11.png",
@@ -173,7 +173,7 @@
     "productPrice": 159,
     "description": "Formidable strong flavoured, with low-acidity and scent of caramel and fresh tobacco leaves.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee12.png",
@@ -187,7 +187,7 @@
     "productPrice": 99,
     "description": "Original Luigi Lavazza blend with intense aroma of coffee. Full-bodied, soft and aromatic.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee13.png",
@@ -201,7 +201,7 @@
     "productPrice": 99,
     "description": "Full-bodied and intense - intensity 7/10.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee14.png",
@@ -215,7 +215,7 @@
     "productPrice": 129,
     "description": "Full-bodied and well-balanced espresso with notes of honey and roasted nuts.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee15.png",
@@ -229,7 +229,7 @@
     "productPrice": 99,
     "description": "The coffee is pleasant and full-bodied with an intense aroma and a taste of chocolate.",
     "productCategories": {
-      "roast": "mediumroast",
+      "roast": "medium",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee16.png",
@@ -243,7 +243,7 @@
     "productPrice": 59,
     "description": "The coffee is balanced and aromatic with notes of chocolate - intensity 5/10.",
     "productCategories": {
-      "roast": "lightroast",
+      "roast": "light",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee17.png",
@@ -257,7 +257,7 @@
     "productPrice": 199,
     "description": "A hint of sweetness and low-acidity with notes of chocolate and a scent of nuts.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "depresso"
     },
     "productImage": "../assets/product_images/coffee18.png",
@@ -271,7 +271,7 @@
     "productPrice": 99,
     "description": "The coffee is round and balanced with fine floral and fruity undertones.",
     "productCategories": {
-      "roast": "darkroast",
+      "roast": "dark",
       "brand": "lavazza"
     },
     "productImage": "../assets/product_images/Coffee19.png",

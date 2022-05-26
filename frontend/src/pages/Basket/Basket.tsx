@@ -1,59 +1,31 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
 import NoResultImg from "./../../assets/coffee.gif";
-
-import {
-  addProductToBasket,
-  removeOneFromBasket,
-  removeAllFromBasket,
-  transformBasket,
-} from "../../utils/functions";
-import { useBasket, useBasketUpdate } from "../../utils/providers/UserProvider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
-import { capitalizeFirstLetter } from "../../components/Product/Product";
-
-interface BasketProduct {
-  productId: number;
-  productName: string;
-  productWeight: string;
-  productPrice: number;
-  quantity: number;
-  productCategories: {
-    roast: string;
-    brand: string;
-  };
-  image: string;
-  description: string;
-}
+import { useBasket } from "../../utils/providers/UserProvider";
+import { BasketProduct } from "../../components/BasketProduct";
+import { BasketProductInterface } from "../../components/BasketProduct/BasketProduct";
+import { transformBasket } from "../../utils/basketFunctions";
 
 export const Basket = () => {
+  // Custom hook utilizing React Context Provider giving the state of basket
   const basket: number[] = useBasket();
-  const setBasket: (basket: number[]) => void = useBasketUpdate();
 
-  const [basketProducts, setBasketProducts] = useState<BasketProduct[]>([]);
+  // List of basket products transformed (with product metadata)
+  const [basketProducts, setBasketProducts] = useState<
+    BasketProductInterface[]
+  >([]);
+
+  // Basket total state
   const [basketTotal, setBasketTotal] = useState(0);
 
-  async function addProductToBasketHandler(pId: number) {
-    const newBasket = await addProductToBasket(pId);
-    setBasket(newBasket);
-  }
-
-  async function removeProductFromBasketHandler(pId: number) {
-    const newBasket = await removeOneFromBasket(pId);
-    setBasket(newBasket);
-  }
-
-  async function removeAllProducts(pId: number) {
-    const newBasket = await removeAllFromBasket(pId);
-    setBasket(newBasket);
-  }
-
+  // Handles basket transformation and basket total on changing basket
   useEffect(() => {
+    // Transforms current user basket (list of product IDs) into a  list with quantity and product description
     const getBasketInfo = async () => {
       return await transformBasket(basket);
     };
 
+    // Once we have the basket meta-data, we also count the basket total
     getBasketInfo().then((basketInfo) => {
       setBasketProducts(basketInfo);
       let counter = 0;
@@ -74,69 +46,8 @@ export const Basket = () => {
             <img src={NoResultImg} alt="No basket content" />
           </div>
         )}
-        {basketProducts.map((product: BasketProduct) => (
-          <div className={"basket-product"} key={product.productId}>
-            <div className={"basket-image-wrapper"}>
-              <img src={product.image} alt="Product pic" />
-            </div>
-
-            <div className={"basket-meta"}>
-              <div className="basket-name-brand-wrapper">
-                <div className="product-name basket-product-name">
-                  {product.productName}
-                </div>
-                <div className="product-brand basket-product-brand">
-                  {capitalizeFirstLetter(product.productCategories.brand)}
-                </div>
-              </div>
-
-              <div>
-                <div className="basket-product-price">
-                  {product.productPrice}kr
-                </div>{" "}
-                / {product.productWeight}
-              </div>
-
-              <div className="basket-product-description">
-                {product.description}
-              </div>
-            </div>
-
-            <div className="basket-price-qty">
-              <div className="quantity-input">
-                <button
-                  className="quantity-input__modifier quantity-input__modifier--left"
-                  onClick={() =>
-                    removeProductFromBasketHandler(product.productId)
-                  }
-                >
-                  <FontAwesomeIcon icon={faMinus} />
-                </button>
-                <input
-                  className="quantity-input__screen"
-                  type="text"
-                  value={product.quantity}
-                  readOnly
-                />
-                <button
-                  className="quantity-input__modifier quantity-input__modifier--right"
-                  onClick={() => addProductToBasketHandler(product.productId)}
-                >
-                  <FontAwesomeIcon icon={faAdd} />
-                </button>
-              </div>
-              <div className="basket-product-total-price">
-                Item total: {product.productPrice * product.quantity}kr
-              </div>
-            </div>
-
-            <button
-              className={"close-modal"}
-              onClick={() => removeAllProducts(product.productId)}
-            >
-              <FontAwesomeIcon icon={faClose} />
-            </button>
-          </div>
+        {basketProducts.map((product: BasketProductInterface) => (
+          <BasketProduct product={product} />
         ))}
       </div>
 

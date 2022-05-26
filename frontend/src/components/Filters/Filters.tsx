@@ -13,16 +13,19 @@ export const Filters = () => {
     Object.fromEntries([...filter])
   );
 
+  //if url changes, the filter is put into the state for filterInput, allows for synchronizing url with selected filters
   useEffect(() => {
     setFilterInput(Object.fromEntries([...filter]));
   }, [filter]);
 
+  //once the user changes the filter, we redirect them to the appropriate url
   const navigate = useNavigate();
   useEffect(() => {
     const url = "/products?" + new URLSearchParams(filterInput).toString();
     navigate(url);
   }, [filterInput]);
 
+  //toggling discount filter while keeping other filters intact
   function toggleDiscount() {
     if (!filterInput.discount)
       setFilterInput((currFilter) => {
@@ -75,9 +78,9 @@ export const Filters = () => {
               }}
             >
               <MenuItem value="">All</MenuItem>
-              <MenuItem value="lightroast">Light</MenuItem>
-              <MenuItem value="darkroast">Dark</MenuItem>
-              <MenuItem value="mediumroast">Medium</MenuItem>
+              <MenuItem value="light">Light</MenuItem>
+              <MenuItem value="dark">Dark</MenuItem>
+              <MenuItem value="medium">Medium</MenuItem>
             </Select>
           </FormControl>
         </Box>

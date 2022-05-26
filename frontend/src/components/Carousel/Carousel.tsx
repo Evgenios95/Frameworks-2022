@@ -5,7 +5,10 @@ import Sale1 from "./../../assets/carousel/Carousel1.png";
 import Sale2 from "./../../assets/carousel/Carousel2.png";
 
 export const Carousel = () => {
+  // State holding currently displayed image
   const [currentImageId, setCurrentImageId] = useState(0);
+
+  // Carousel images in an array so we can loop through them
   const images = [Sale0, Sale1, Sale2];
 
   useEffect(() => {
@@ -22,7 +25,7 @@ export const Carousel = () => {
 
   return (
     <div className={"carousel-wrapper"}>
-      <img src={images[currentImageId]} />
+      <img src={images[currentImageId]} alt={"carousel image"} />
     </div>
   );
 };

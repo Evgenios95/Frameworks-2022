@@ -15,9 +15,9 @@ export const Footer = () => {
       <div className={"footer-wrapper"}>
         <div className={"footer-categories"}>
           <h3>Roasts</h3>
-          <Link to="/products?roast=lightroast">Light</Link>
-          <Link to="/products?roast=mediumroast">Medium</Link>
-          <Link to="/products?roast=darkroast">Dark</Link>
+          <Link to="/products?roast=light">Light</Link>
+          <Link to="/products?roast=medium">Medium</Link>
+          <Link to="/products?roast=dark">Dark</Link>
         </div>
 
         <div className={"footer-categories"}>

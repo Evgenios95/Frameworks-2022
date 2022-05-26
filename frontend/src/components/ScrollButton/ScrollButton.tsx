@@ -15,6 +15,7 @@ export const ScrollButton = () => {
     return scrolled <= 450 ? setIsVisible(false) : setIsVisible(true);
   };
 
+  // Function to scroll to the top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

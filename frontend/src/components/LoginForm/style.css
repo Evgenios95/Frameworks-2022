@@ -47,3 +47,8 @@
     cursor: pointer;
     padding-left: 10px;
 }
+
+
+.register-modal-button:hover {
+    text-decoration: underline;
+}

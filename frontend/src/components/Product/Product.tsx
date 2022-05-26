@@ -1,11 +1,12 @@
 import "./style.css";
 import React from "react";
 import { motion } from "framer-motion";
-import { addProductToBasket } from "../../utils/functions";
 import { Link } from "react-router-dom";
 import { useBasketUpdate } from "../../utils/providers/UserProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { capitalizeFirstLetter } from "../../utils/functions";
+import { addProductToBasket } from "../../utils/basketFunctions";
 
 export interface ProductProps {
   productId: number;
@@ -22,12 +23,6 @@ export interface ProductProps {
   discountAmount: string;
 }
 
-// Used to capitalize product properties that are lower case in the JSON
-export function capitalizeFirstLetter(str: string) {
-  const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-  return capitalized;
-}
-
 export const Product = ({ product }: { product: ProductProps }) => {
   const setBasket: (basket: number[]) => void = useBasketUpdate();
 
@@ -38,6 +33,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
     show: { opacity: 1, y: 0 },
   };
 
+  // Adds product to the basket using product ID
   async function addProductToBasketHandler(pID: number) {
     const newBasket = await addProductToBasket(pID);
     setBasket(newBasket);
@@ -57,7 +53,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
         <div className="product-brand">
           {capitalizeFirstLetter(product.productCategories.brand)}
         </div>
-        <div>{product.productCategories.roast}</div>
+        <div>{product.productCategories.roast} roast</div>
         <div> {product.productWeight}</div>
       </div>
 
@@ -75,7 +71,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
         className="product-button"
         onClick={() => addProductToBasketHandler(product.productId)}
       >
-        Add to Basket{" "}
+        Add to Basket
         <FontAwesomeIcon className="shopping-basket" icon={faShoppingBasket} />
       </button>
 

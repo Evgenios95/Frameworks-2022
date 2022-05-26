@@ -14,3 +14,7 @@
     cursor: pointer;
     padding-left: 10px;
 }
+
+.loginFormButton:hover {
+    text-decoration: underline;
+}
