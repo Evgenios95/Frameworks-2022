@@ -75,9 +75,9 @@ export const Filters = () => {
               }}
             >
               <MenuItem value="">All</MenuItem>
-              <MenuItem value="lightroast">Light</MenuItem>
-              <MenuItem value="darkroast">Dark</MenuItem>
-              <MenuItem value="mediumroast">Medium</MenuItem>
+              <MenuItem value="light">Light</MenuItem>
+              <MenuItem value="dark">Dark</MenuItem>
+              <MenuItem value="medium">Medium</MenuItem>
             </Select>
           </FormControl>
         </Box>

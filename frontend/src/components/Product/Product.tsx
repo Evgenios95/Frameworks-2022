@@ -57,7 +57,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
         <div className="product-brand">
           {capitalizeFirstLetter(product.productCategories.brand)}
         </div>
-        <div>{product.productCategories.roast}</div>
+        <div>{product.productCategories.roast} roast</div>
         <div> {product.productWeight}</div>
       </div>
 
@@ -75,7 +75,7 @@ export const Product = ({ product }: { product: ProductProps }) => {
         className="product-button"
         onClick={() => addProductToBasketHandler(product.productId)}
       >
-        Add to Basket{" "}
+        Add to Basket
         <FontAwesomeIcon className="shopping-basket" icon={faShoppingBasket} />
       </button>
 
