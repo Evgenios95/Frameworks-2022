@@ -1,24 +1,31 @@
 import "./style.css";
 import React, { useEffect, useState } from "react";
 import NoResultImg from "./../../assets/coffee.gif";
-import { transformBasket } from "../../utils/functions";
 import { useBasket } from "../../utils/providers/UserProvider";
 import { BasketProduct } from "../../components/BasketProduct";
 import { BasketProductInterface } from "../../components/BasketProduct/BasketProduct";
+import { transformBasket } from "../../utils/basketFunctions";
 
 export const Basket = () => {
+  // Custom hook utilizing React Context Provider giving the state of basket
   const basket: number[] = useBasket();
 
+  // List of basket products transformed (with product metadata)
   const [basketProducts, setBasketProducts] = useState<
     BasketProductInterface[]
   >([]);
+
+  // Basket total state
   const [basketTotal, setBasketTotal] = useState(0);
 
+  // Handles basket transformation and basket total on changing basket
   useEffect(() => {
+    // Transforms current user basket (list of product IDs) into a  list with quantity and product description
     const getBasketInfo = async () => {
       return await transformBasket(basket);
     };
 
+    // Once we have the basket meta-data, we also count the basket total
     getBasketInfo().then((basketInfo) => {
       setBasketProducts(basketInfo);
       let counter = 0;

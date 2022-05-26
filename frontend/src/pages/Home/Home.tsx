@@ -2,12 +2,14 @@ import "./style.css";
 import React, { useEffect, useState } from "react";
 import { ProductDisplay } from "../../components/ProductDisplay";
 import { Carousel } from "../../components/Carousel";
-import { fetchDiscountedProducts } from "../../utils/functions";
 import { Link } from "react-router-dom";
+import { fetchDiscountedProducts } from "../../utils/productFunctions";
 
 export const Home = () => {
+  // State with discounted products
   const [products, setProducts] = useState(null);
 
+  // Fetching of discounted products on load
   useEffect(() => {
     async function fetchDiscounted() {
       const productsOnDiscount = await fetchDiscountedProducts();

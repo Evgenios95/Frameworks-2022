@@ -1,14 +1,15 @@
 import "./style.css";
 import React from "react";
-import { capitalizeFirstLetter } from "../Product/Product";
+import { capitalizeFirstLetter } from "../../utils/functions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd, faClose, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { useBasketUpdate } from "../../utils/providers/UserProvider";
 import {
   addProductToBasket,
   removeAllFromBasket,
   removeOneFromBasket,
-} from "../../utils/functions";
-import { useBasketUpdate } from "../../utils/providers/UserProvider";
+} from "../../utils/basketFunctions";
+import { Link } from "react-router-dom";
 
 export interface BasketProductInterface {
   productId: number;
@@ -29,18 +30,22 @@ export const BasketProduct = ({
 }: {
   product: BasketProductInterface;
 }) => {
+  // custom hook to get access to setBasket function that changes the state of the basket
   const setBasket: (basket: number[]) => void = useBasketUpdate();
 
+  // adds product to the basket by product id
   async function addProductToBasketHandler(pId: number) {
     const newBasket = await addProductToBasket(pId);
     setBasket(newBasket);
   }
 
+  // removes product from the basket by product id
   async function removeProductFromBasketHandler(pId: number) {
     const newBasket = await removeOneFromBasket(pId);
     setBasket(newBasket);
   }
 
+  //remove all products with the same id from the basket
   async function removeAllProducts(pId: number) {
     const newBasket = await removeAllFromBasket(pId);
     setBasket(newBasket);
@@ -60,6 +65,12 @@ export const BasketProduct = ({
           <div className="product-brand basket-product-brand">
             {capitalizeFirstLetter(product.productCategories.brand)}
           </div>
+          <Link
+            className={"product-link"}
+            to={"/products/" + product.productId}
+          >
+            Details
+          </Link>
         </div>
 
         <div>

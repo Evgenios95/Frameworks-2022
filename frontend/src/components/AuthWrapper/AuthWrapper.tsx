@@ -7,6 +7,7 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 export const AuthWrapper = () => {
   // Modal can be set to "register" or "login", otherwise null
+  // appropriate modal is then displayed to the user
   const [modalType, setModalType] = useState<string | null>(null);
 
   return (
@@ -32,7 +33,6 @@ export const AuthWrapper = () => {
             </button>
 
             {modalType === "login" && <LoginForm setModalType={setModalType} />}
-
             {modalType === "register" && (
               <RegisterForm setModalType={setModalType} />
             )}

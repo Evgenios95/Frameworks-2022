@@ -61,6 +61,12 @@
     border-radius: 50%;
 }
 
+.home-navbar-highlight {
+    width: 100%;
+    border: 2px solid #ffbb1a;
+    margin-top: 3px;
+}
+
 @media only screen and (max-width: 1050px) {
     .navbar-wrapper {
         flex-direction: column;

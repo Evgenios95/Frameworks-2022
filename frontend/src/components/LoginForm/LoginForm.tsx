@@ -14,12 +14,12 @@ interface FormValues {
 }
 
 export const LoginForm = ({ setModalType }: LoginFormProps) => {
+  // Custom hook using React Context to provide the function to change the state of user
   const setUser: React.Dispatch<undefined | any> = useUserUpdate();
 
   return (
     <>
       <div className="login-header">Login</div>
-
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values: FormValues) => {
