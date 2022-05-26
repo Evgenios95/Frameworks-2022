@@ -14,7 +14,8 @@ interface RegisterFormProps {
 interface FormValues {
   email: string;
   password: string;
-  username: string;
+  firstname: string;
+  lastname: string;
 }
 
 export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
@@ -32,9 +33,14 @@ export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
       errors.password = "Required";
     }
 
-    if (!values.username) {
-      errors.username = "Required";
+    if (!values.firstname) {
+      errors.firstname = "Required";
     }
+
+    if (!values.lastname) {
+      errors.lastname = "Required";
+    }
+
     return errors;
   };
 
@@ -56,9 +62,8 @@ export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
   return (
     <>
       <div className="login-header">Register</div>
-
       <Formik
-        initialValues={{ email: "", password: "", username: "" }}
+        initialValues={{ email: "", password: "", firstname: "", lastname: "" }}
         validate={validateRegisterValues}
         onSubmit={submitRegisterValues}
       >
@@ -74,12 +79,22 @@ export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
               className={"form-error"}
             />
 
-            <label htmlFor={"username"}>Name</label>
+            <label htmlFor={"firstname"}>First Name</label>
 
-            <Field type="text" name="username" placeholder={"Name"} />
+            <Field type="text" name="firstname" placeholder={"First Name"} />
 
             <ErrorMessage
-              name="username"
+              name="firstname"
+              component="div"
+              className={"form-error"}
+            />
+
+            <label htmlFor={"lastname"}>Last Name</label>
+
+            <Field type="text" name="lastname" placeholder={"Last Name"} />
+
+            <ErrorMessage
+              name="lastname"
               component="div"
               className={"form-error"}
             />
@@ -101,6 +116,15 @@ export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
             >
               Submit
             </button>
+            <p>
+              Already have an account?
+              <span
+                className={"loginFormButton"}
+                onClick={() => setModalType("login")}
+              >
+                Login
+              </span>
+            </p>
           </Form>
         )}
       </Formik>

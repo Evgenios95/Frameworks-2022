@@ -1,43 +1,49 @@
 .authForm {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 5px;
 }
 
 .login-header {
-  font-family: "Koulen";
-  font-size: 35px;
-  letter-spacing: 2px;
-  color: #1f2131;
+    font-family: "Koulen";
+    font-size: 35px;
+    letter-spacing: 2px;
+    color: #1f2131;
 }
 
 .authForm > input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-  border: 1px solid #1f2131;
-  background-color: #fffbfba6 !important;
-  outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #1f2131;
+    background-color: #fffbfba6 !important;
+    outline: none;
 }
 
 .authForm > label {
-  color: #1f2131;
-  margin-top: 20px;
-  font-family: "Work Sans";
-  font-weight: 500;
+    color: #1f2131;
+    margin-top: 20px;
+    font-family: "Work Sans";
+    font-weight: 500;
 }
 
 .authForm > button {
-  cursor: pointer;
-  padding: 10px 20px;
-  transition: background-color 500ms;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 500ms;
 }
 
 .authForm > button:hover {
-  background: #4ecffd;
-  transition: background-color 500ms;
+    background: #4ecffd;
+    transition: background-color 500ms;
+}
+
+.register-modal-button {
+    color: darkblue;
+    cursor: pointer;
+    padding-left: 10px;
 }

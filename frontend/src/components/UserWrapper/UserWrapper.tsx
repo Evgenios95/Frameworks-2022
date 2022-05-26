@@ -35,7 +35,7 @@ export const UserWrapper = () => {
 
       <div className="username-display">
         <FontAwesomeIcon className="user-icon" icon={faUserCircle} />
-        <div>{user.username}</div>
+        <div>{user.firstname}</div>
       </div>
     </motion.div>
   );
