@@ -3,7 +3,8 @@ import axios from "axios";
 
 export interface LoggedInUserProps {
   userID: number;
-  username: string;
+  firstname: string;
+  lastname: string;
   basket: number[];
 }
 

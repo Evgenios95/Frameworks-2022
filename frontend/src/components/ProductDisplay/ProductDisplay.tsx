@@ -7,7 +7,6 @@ import { ProductProps } from "../Product/Product";
 import useProductsPagination from "../../utils/hooks/useProductsPagination";
 import { Pagination } from "@mui/material";
 import { useLocation } from "react-router";
-import { ScrollButton } from "../ScrollButton";
 
 interface ProductDisplayProps {
   products: ProductProps[];
@@ -83,8 +82,6 @@ export const ProductDisplay = ({ products }: ProductDisplayProps) => {
           onChange={handleChange}
         />
       )}
-
-      <ScrollButton />
 
       {products.length === 0 && (
         <div className={"no-products-message"}>

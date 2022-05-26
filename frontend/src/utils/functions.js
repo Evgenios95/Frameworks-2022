@@ -108,12 +108,7 @@ export async function fetchDiscountedProducts() {
 }
 
 export async function fetchSimilarRoastedProducts(productId, value) {
-  const filter = {
-    filters: {
-      roast: value,
-    },
-  };
-  const url = "/products?" + new URLSearchParams(filter).toString();
+  const url = "/products?roast=" + value;
   const productsReq = await axios.get(url);
   let products = productsReq.data.products;
   products = products.filter(

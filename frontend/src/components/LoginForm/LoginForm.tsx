@@ -79,6 +79,15 @@ export const LoginForm = ({ setModalType }: LoginFormProps) => {
             >
               Submit
             </button>
+            <p>
+              Do not have an account yet?
+              <span
+                className={"register-modal-button"}
+                onClick={() => setModalType("register")}
+              >
+                Register
+              </span>
+            </p>
           </Form>
         )}
       </Formik>

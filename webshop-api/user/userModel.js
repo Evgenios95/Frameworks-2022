@@ -22,20 +22,21 @@ export async function processLogin(email, password) {
   return user;
 }
 
-export async function processRegister(username, password, email) {
+export async function processRegister(firstname, lastname, password, email) {
   const isUnique = await isUniqueEmail(email);
   if (!isUnique) throw Error("User already exists");
-  const user = await addNewUser(username, password, email);
+  const user = await addNewUser(firstname, lastname, password, email);
   delete user.password;
   delete user.email;
   return user;
 }
 
-async function addNewUser(username, password, email) {
+async function addNewUser(firstname, lastname, password, email) {
   const users = await getUsers();
   const newUser = {
     userID: Object.keys(users).length + 1,
-    username: username,
+    firstname: firstname,
+    lastname: lastname,
     password: password,
     email: email,
     basket: [],

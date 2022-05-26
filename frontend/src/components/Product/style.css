@@ -1,117 +1,116 @@
 .product-wrapper {
-  color: #1f2131;
-  display: flex;
-  flex-direction: column;
-  border-radius: 22px;
-  box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  padding: 40px 20px;
-  padding-top: 0;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
+    color: #1f2131;
+    display: flex;
+    flex-direction: column;
+    border-radius: 22px;
+    box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    padding: 40px 30px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .product-wrapper img {
-  width: 60%;
-  height: 50%;
+    width: 60%;
+    height: 50%;
 }
 
 .product-name {
-  font-family: "Koulen";
-  letter-spacing: 1.5px;
-  min-height: 72px;
-  align-items: center;
-  font-size: 30px;
-  display: flex;
-  line-height: 1;
+    font-family: "Koulen";
+    letter-spacing: 1.5px;
+    min-height: 72px;
+    align-items: center;
+    font-size: 30px;
+    display: flex;
+    line-height: 1;
 }
 
 .product-specifics {
-  font-family: "Work Sans", sans-serif;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  flex-direction: row;
-  padding: auto 10px;
-  border-bottom: 0.2px solid rgb(0 0 0 / 33%);
-  border-top: 0.2px solid rgb(0 0 0 / 33%);
+    font-family: "Work Sans", sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: row;
+    padding: auto 10px;
+    border-bottom: 0.2px solid rgb(0 0 0 / 33%);
+    border-top: 0.2px solid rgb(0 0 0 / 33%);
 }
 
 .product-brand {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .product-price {
-  justify-content: center;
-  border-bottom: none;
+    justify-content: center;
+    border-bottom: none;
 }
 
 .discount-price {
-  margin-left: 10px;
-  font-weight: 500;
-  font-size: 18px;
-  color: #ff910a;
-  text-decoration: line-through;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #ff910a;
+    text-decoration: line-through;
 }
 
 .sale-tag {
-  background: rgb(255, 188, 31);
-  color: white;
-  padding: 5px 10px;
-  font-weight: 700;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-bottom-right-radius: 10px;
+    background: rgb(255, 188, 31);
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 10px;
 }
 
 .product-button {
-  width: 175px;
-  font-family: "Work Sans";
-  background-color: #1f2131;
-  height: 40px;
-  border-radius: 8px;
-  color: #f2eee5;
-  font-size: 16px;
-  margin-bottom: 11px;
-  cursor: pointer;
+    width: 175px;
+    font-family: "Work Sans";
+    background-color: #1f2131;
+    height: 40px;
+    border-radius: 8px;
+    color: #f2eee5;
+    font-size: 16px;
+    margin-bottom: 11px;
+    cursor: pointer;
 }
 
 .product-button:hover {
-  border: 2px solid #1f2131;
-  color: #1f2131;
-  background-color: #f2eee5;
+    border: 2px solid #1f2131;
+    color: #1f2131;
+    background-color: #f2eee5;
 }
 
 .product-button:active {
-  transform: translateY(1.5px);
+    transform: translateY(1.5px);
 }
 
 .shopping-basket {
-  margin-left: 7px;
+    margin-left: 7px;
 }
 
 .product-link {
-  color: #1f2131;
+    color: #1f2131;
 }
 
 .product-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 1250px) {
-  .product-categories {
-    flex-direction: column;
-  }
+    .product-categories {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 800px) {
-  .product-categories {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
+    .product-categories {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }

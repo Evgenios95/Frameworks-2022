@@ -1,10 +1,16 @@
 .user-action-button {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 120px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 120px;
 }
 
 .user-action-button:first-child {
-  margin-right: 10px;
+    margin-right: 10px;
+}
+
+.loginFormButton {
+    color: darkblue;
+    cursor: pointer;
+    padding-left: 10px;
 }

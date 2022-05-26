@@ -127,4 +127,8 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .footer-mostbot-wrapper > div {
+    margin-top: 10px;
+  }
 }

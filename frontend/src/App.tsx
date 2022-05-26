@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar";
 import { UserProvider } from "./utils/providers/UserProvider";
 import { Footer } from "./components/Footer";
 import { ProductDescription } from "./pages/ProductDescription";
+import { ScrollButton } from "./components/ScrollButton";
 import React from "react";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDescription />} />
           <Route path="/basket" element={<Basket />} />
         </Routes>
+        <ScrollButton />
         <Footer />
       </UserProvider>
     </div>
