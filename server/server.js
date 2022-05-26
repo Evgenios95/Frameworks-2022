@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import basketRouter from "./basket/basketRouter.js";
 import productRouter from "./products/productRouter.js";
 import { allCategories } from "./products/productController.js";
@@ -6,6 +7,8 @@ import { login, register } from "./user/userController.js";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+
 const port = 4000;
 
 //routing for Basket
