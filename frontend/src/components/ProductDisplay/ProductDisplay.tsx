@@ -73,7 +73,7 @@ export const ProductDisplay = ({ products }: ProductDisplayProps) => {
         ))}
       </motion.div>
 
-      {isProductsPage && (
+      {isProductsPage && paginatedProducts.currentProducts().length > 0 && (
         <Pagination
           count={productCount}
           size="large"
