@@ -13,6 +13,7 @@ interface ProductDisplayProps {
 }
 
 export const ProductDisplay = ({ products }: ProductDisplayProps) => {
+  const location = useLocation();
   let [page, setPage] = useState(1);
 
   // Check more information about framer-motion
@@ -29,11 +30,10 @@ export const ProductDisplay = ({ products }: ProductDisplayProps) => {
     },
   };
 
+  // Reset pagination when products change. F.ex., filtered.
   useEffect(() => {
     paginatedProducts.jump(1);
     setPage(1);
-
-    // eslint-disable-next-line
   }, [products]);
 
   useEffect(() => {
@@ -43,15 +43,19 @@ export const ProductDisplay = ({ products }: ProductDisplayProps) => {
     });
   }, [page]);
 
-  const productCount = Math.ceil(products.length / 9);
+  const totalPagesCount = Math.ceil(products.length / 9);
+
+  // The custom hooks accepts the products & the number of products per page, so 9.
   const paginatedProducts: any = useProductsPagination(products, 9);
+
+  // Set the page & switch paginated products on change
   const handleChange = (e: React.ChangeEvent<unknown>, p: number) => {
     setPage(p);
     paginatedProducts.jump(p);
   };
 
-  const location = useLocation();
-
+  // Show  plain products or paginated products dynamically,
+  // depending on the URL path of the user.
   const shownProducts =
     location.pathname === "/products"
       ? paginatedProducts.currentProducts()
@@ -74,7 +78,7 @@ export const ProductDisplay = ({ products }: ProductDisplayProps) => {
 
       {isProductsPage && paginatedProducts.currentProducts().length > 0 && (
         <Pagination
-          count={productCount}
+          count={totalPagesCount}
           size="large"
           page={page}
           variant="outlined"

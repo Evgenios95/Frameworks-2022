@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 export const AuthWrapper = () => {
+  // Modal can be set to "register" or "login", otherwise null
   const [modalType, setModalType] = useState<string | null>(null);
 
   return (

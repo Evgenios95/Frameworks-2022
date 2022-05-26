@@ -9,12 +9,13 @@ export const Carousel = () => {
   const images = [Sale0, Sale1, Sale2];
 
   useEffect(() => {
+    // Basic implementation for carousel animation.
     const intervalForCarousel = setInterval(() => {
       setCurrentImageId((id) => {
         const newId = (id + 1) % 3;
         return newId;
       });
-    }, 2500);
+    }, 3900);
 
     return () => clearInterval(intervalForCarousel);
   }, []);

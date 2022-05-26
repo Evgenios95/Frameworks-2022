@@ -5,8 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./style.css";
 
 export const ScrollButton = () => {
+  // State of the button's visibility
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
+  // The scrollTop property gets or sets the number of pixels that an element's content is scrolled vertically.
+  // If more than 450px, set the button visibility to true
   const toggleScrollButtonVisibility = () => {
     const scrolled = document.documentElement.scrollTop;
     return scrolled <= 450 ? setIsVisible(false) : setIsVisible(true);
@@ -19,6 +22,7 @@ export const ScrollButton = () => {
     });
   };
 
+  // Attach the toggleScrollButtonVisibility function to the scroll event type
   window.addEventListener("scroll", toggleScrollButtonVisibility);
 
   const scrollButtonVariants = {

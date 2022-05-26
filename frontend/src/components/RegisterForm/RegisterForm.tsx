@@ -19,8 +19,9 @@ interface FormValues {
 }
 
 export const RegisterForm = ({ setModalType }: RegisterFormProps) => {
-  // Form validation, error messages
   const setUser: (user: LoggedInUserProps) => void = useUserUpdate();
+
+  // Formik functionality for validation & error messages
   const validateRegisterValues = (values: FormValues) => {
     const errors: FormikErrors<FormValues> = {};
     if (!values.email) {

@@ -43,6 +43,7 @@ export function useBasketUpdate() {
 export const UserProvider = ({ children }: UserProviderProps) => {
   const loggedIn = JSON.parse(localStorage.getItem("user")!) || false;
   const [user, setUser] = useState(loggedIn);
+
   const initialBasket = user
     ? user.basket
     : JSON.parse(localStorage.getItem("basket")!) || [];
